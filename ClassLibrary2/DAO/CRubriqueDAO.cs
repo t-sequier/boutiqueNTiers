@@ -1,7 +1,5 @@
-﻿using ClassLibrary2.Objets;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
@@ -9,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary2.DAO
 {
-    public abstract class CPaysDAO : DAO<CPays, int>
+    public abstract class CRubriqueDAO : DAO<CRubrique, int>
     {
-        public CPaysDAO(String connexionString) : base(connexionString) { }
+        public CRubriqueDAO(String connexionString) : base(connexionString) { }
 
-        public override int create(CPays obj)
+        public override int create(CRubrique obj)
         {
             return 0;
         }
 
         public override List<CPays> getAll()
         {
-            List<CPays> lstAll = new List<CPays>();
+            List<CRubrique> lstAll = new List<CRubrique>();
 
-           //lstAll.Add(new CPays; 
+            //lstAll.Add(new CPays; 
 
             OracleCommand req = new OracleCommand();
             req.Connection = _connex;
@@ -33,7 +31,7 @@ namespace ClassLibrary2.DAO
             {
                 int id = int.Parse(res["id"].ToString());
                 String nom = res["nom"].ToString();
-                lstAll.Add(new CPays(id, nom));
+                lstAll.Add(new CRubrique(id, nom));
             }
             res.Close();
 
@@ -41,19 +39,19 @@ namespace ClassLibrary2.DAO
             return lstAll;
         }
 
-        public override Boolean update(CPays obj)
+        public override Boolean update(CRubrique obj)
         {
             return true;
         }
 
-        public override Boolean delete(CPays obj)
+        public override Boolean delete(CRubrique obj)
         {
             return true;
         }
 
-        public override CPays find(int id)
+        public override CRubrique find(int id)
         {
-            CPays tmp = null;
+            CRubrique tmp = null;
 
             return tmp;
         }
