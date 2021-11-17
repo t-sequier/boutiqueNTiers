@@ -28,6 +28,7 @@ public class WebService : System.Web.Services.WebService
         return "Salut " + nom + "!";
     }
 
+    //WS
     [WebMethod]
     public List<CPays> getTousLesPays()
     {
