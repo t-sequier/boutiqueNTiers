@@ -16,5 +16,10 @@ namespace ClassLibrary2.DAO
         {
             return new _CPaysDAO(_connexionString);
         }
+
+        public static _CRubriqueDAO getCRubriqueDAO()
+        {
+            return new _CRubriqueDAO(_connexionString);
+        }
     }
 }

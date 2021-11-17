@@ -10,6 +10,8 @@ namespace ClassLibrary2.Objets
     {
         int _id;
         string _nom;
+        string _description;
+        int _id_parent;
 
         public int Id
         {
@@ -35,15 +37,40 @@ namespace ClassLibrary2.Objets
             }
         }
 
+        public String Description
+        {
+            get
+            {
+                return this._description;
+            }
+            set
+            {
+                this._description = value;
+            }
+        }
+        public int Id_Parent
+        {
+            get
+            {
+                return this._id_parent;
+            }
+            set
+            {
+                this._id_parent = value;
+            }
+        }
+
         public CRubrique()
         {
             this._id = 1;
             this._nom = "unset";
         }
 
-        public CRubrique(int _id, String _nom)
+        public CRubrique(int _id, String _nom, String _description, int _id_parent)
         {
             this._id = _id;
             this._nom = _nom;
+            this._description = _description;
+            this._id_parent = _id_parent;
         }
     }
