@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAO\Client\CClientDAO.cs" />
+    <Compile Include="DAO\Client\_CClientDAO.cs" />
     <Compile Include="DAO\Pays\CPaysDAO.cs" />
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\DAOFactory.cs" />
