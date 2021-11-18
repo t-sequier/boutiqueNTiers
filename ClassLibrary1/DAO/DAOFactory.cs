@@ -23,5 +23,10 @@ namespace ClassLibrary1.DAO
         {
             return new _CRegionsDAO(_connexionString);
         }
+
+        public static _CClientDAO getCClients()
+        {
+            return new _CClientDAO(_connexionString);
+        }
     }
 }

@@ -36,16 +36,4 @@ public class WebService : System.Web.Services.WebService
         CPays = ClassLibrary1.DAO.DAOFactory.getCPaysDAO().getAll();
         return CPays;
     }
-
-    [WebMethod]
-    public List<CRegions> getToutesLesRegions(int idPays)
-    {
-
-        List<CRegions> CRegions = new List<CRegions>();
-        CRegions = ClassLibrary1.DAO.DAOFactory.getCRegions().getAll(idPays);
-        return CRegions;
-    }
-
-
-
 }

@@ -8,3 +8,10 @@ Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.csproj.GenerateResource
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.csproj.CoreCompileInputs.cache
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.exe
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.pdb
+Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.csprojAssemblyReference.cache
+Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.Form1.resources
+Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.Properties.Resources.resources
+Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.csproj.GenerateResource.cache
+Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.csproj.CoreCompileInputs.cache
+Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.exe
+Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.pdb

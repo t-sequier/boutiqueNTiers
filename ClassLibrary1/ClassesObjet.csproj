@@ -52,6 +52,7 @@
     <Compile Include="DAO\Regions\_CRegionsDAO.cs" />
     <Compile Include="DAO\SingleConnexion.cs" />
     <Compile Include="DAO\Pays\_CPaysDAO.cs" />
+    <Compile Include="Objets\CClient.cs" />
     <Compile Include="Objets\CPays.cs" />
     <Compile Include="Objets\CRegions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
