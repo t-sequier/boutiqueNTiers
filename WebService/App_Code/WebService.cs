@@ -12,7 +12,7 @@ using System.Web.Services;
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // Pour autoriser l'appel de ce service Web depuis un script à l'aide d'ASP.NET AJAX, supprimez les marques de commentaire de la ligne suivante. 
 // [System.Web.Script.Services.ScriptService]
-public class WebService : System.Web.Services.WebService
+public partial class WebService : System.Web.Services.WebService
 {
 
     public WebService()
@@ -35,5 +35,13 @@ public class WebService : System.Web.Services.WebService
         List<CPays> CPays = new List<CPays>();
         CPays = ClassLibrary1.DAO.DAOFactory.getCPaysDAO().getAll();
         return CPays;
+    }
+
+    [WebMethod]
+    public List<CRegions> getToutesLesRegions(int idPays)
+    {
+        List<CRegions> CRegions = new List<CRegions>();
+        CRegions = ClassLibrary1.DAO.DAOFactory.getCRegions().getAll(idPays);
+        return CRegions;
     }
 }

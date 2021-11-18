@@ -18,6 +18,7 @@ namespace ClassLibrary1.DAO.Client
             return 0;
         }
 
+        //récupère la liste de tous les clients (uniquement l'id (numero) et le nom)
         public override List<CClient> getAll()
         {
             List<CClient> lstAll = new List<CClient>();
@@ -40,9 +41,9 @@ namespace ClassLibrary1.DAO.Client
         }
 
         //TODO : récupère les infos d'un client dont l'id (numero) est précisé en paramètre
-        public List<CClient> getClient(int idClient)
+        public List<CClient> getUn(int idClient)
         {
-            List<CClient> lstAll = new List<CClient>();
+            List<CClient> lstUn = new List<CClient>();
 
             OracleCommand req = new OracleCommand();
             req.Connection = _connex;
@@ -53,10 +54,10 @@ namespace ClassLibrary1.DAO.Client
             {
                 int id = int.Parse(res["numero"].ToString());
                 String nom = (res["nom"].ToString());
-                lstAll.Add(new CClient(id, nom));
+                lstUn.Add(new CClient(id, nom));
             }
             res.Close(); //fermeture lecteur BD
-            return lstAll;
+            return lstUn;
         }
 
         public override Boolean update(CClient obj)
