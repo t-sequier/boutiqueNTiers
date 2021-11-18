@@ -10,6 +10,8 @@ namespace ClassLibrary2.Objets
     {
         int _id;
         string _nom;
+        
+
 
         public int Id
         {

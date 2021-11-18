@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary2.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace ClassLibrary2.Objets
         string _nom;
         string _description;
         int _id_parent;
+        List<CRubrique> rubriquesFilles = new List<CRubrique>();
 
         public int Id
         {
@@ -48,6 +50,7 @@ namespace ClassLibrary2.Objets
                 this._description = value;
             }
         }
+
         public int Id_Parent
         {
             get
@@ -57,6 +60,18 @@ namespace ClassLibrary2.Objets
             set
             {
                 this._id_parent = value;
+            }
+        }
+
+        public List<CRubrique> RubriquesFilles
+        {
+            get
+            {
+                return this.rubriquesFilles;
+            }
+            set
+            {
+                this.rubriquesFilles = value;
             }
         }
 
@@ -74,3 +89,4 @@ namespace ClassLibrary2.Objets
             this._id_parent = _id_parent;
         }
     }
+}
