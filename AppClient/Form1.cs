@@ -25,16 +25,16 @@ namespace AppClient
             }*/
 
             /*Appel WS asynchrone*/
-            client.lesPaysCompleted += Client_lesPaysCompleted;
-            client.lesPaysAsync();
+            //client.getTousLesPays += client.getTousLesPaysCompleted;
+            //client.getTousLesPays();
         }
 
-        private void Client_lesPaysCompleted(object sender, Webservice.lesPaysCompletedEventArgs e)
+        /*private void Client_lesPaysCompleted(object sender, Webservice.getTousLesPaysCompletedEventArgs e)
         {
             foreach (Webservice.CPays p in e.Result)
             {
                 textBox1.Text += "\r\n" + p.Id + " - " + p.Nom;
             }
-        }
+        }*/
     }
 }

@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAO\Articles\CArticlesDAO.cs" />
+    <Compile Include="DAO\Articles\_CArticlesDAO.cs" />
     <Compile Include="DAO\Pays\CPaysDAO.cs" />
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\DAOFactory.cs" />
@@ -50,6 +52,7 @@
     <Compile Include="DAO\Regions\_CRegionsDAO.cs" />
     <Compile Include="DAO\SingleConnexion.cs" />
     <Compile Include="DAO\Pays\_CPaysDAO.cs" />
+    <Compile Include="Objets\CArticles.cs" />
     <Compile Include="Objets\CPays.cs" />
     <Compile Include="Objets\CRegions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

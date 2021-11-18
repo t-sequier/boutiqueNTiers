@@ -19,9 +19,14 @@ namespace ClassLibrary1.DAO
             return new _CPaysDAO(_connexionString);
         }
 
-        public static _CRegionsDAO getCRegions()
+        public static _CRegionsDAO getCRegionsDAO()
         {
             return new _CRegionsDAO(_connexionString);
+        }
+
+        public static _CArticlesDAO getCArticlesDAO()
+        {
+            return new _CArticlesDAO(_connexionString);
         }
     }
 }
