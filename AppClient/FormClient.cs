@@ -12,9 +12,21 @@ namespace AppClient
 {
     public partial class FormClient : Form
     {
+
+        Webservice.WebServiceSoapClient wsClient = new Webservice.WebServiceSoapClient();
+
         public FormClient()
         {
             InitializeComponent();
+
+            /*Appel WS asynchrone*/
+            wsClient.getTousLesClientsCompleted += WsClient_getTousLesClientsCompleted;
+            wsClient.getTousLesClientsAsync();
+        }
+
+        private void WsClient_getTousLesClientsCompleted(object sender, Webservice.getTousLesClientsCompletedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -22,9 +34,12 @@ namespace AppClient
             this.Close();
         }
 
-        private void gvCli_rempli()
+        private void gvCliAll_rempli()
         {
             //Todo: remplir la grid view au chargement (asynch) avec CClientDAO.getAll() ?
+            gvClientAll.DataSource = wsClient;
+            
         }
+
     }
 }

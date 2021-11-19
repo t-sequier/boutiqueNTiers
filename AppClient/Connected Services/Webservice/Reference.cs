@@ -133,6 +133,66 @@ namespace AppClient.Webservice {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CClient", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Webservice.WebServiceSoap")]
     public interface WebServiceSoap {
@@ -163,6 +223,15 @@ namespace AppClient.Webservice {
         System.IAsyncResult BegingetToutesLesRegions(AppClient.Webservice.getToutesLesRegionsRequest request, System.AsyncCallback callback, object asyncState);
         
         AppClient.Webservice.getToutesLesRegionsResponse EndgetToutesLesRegions(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getTousLesClientsResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getTousLesClients", ReplyAction="*")]
+        AppClient.Webservice.getTousLesClientsResponse getTousLesClients(AppClient.Webservice.getTousLesClientsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getTousLesClients", ReplyAction="*")]
+        System.IAsyncResult BegingetTousLesClients(AppClient.Webservice.getTousLesClientsRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getTousLesClientsResponse EndgetTousLesClients(System.IAsyncResult result);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -362,6 +431,67 @@ namespace AppClient.Webservice {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesClientsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesClients", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesClientsRequestBody Body;
+        
+        public getTousLesClientsRequest() {
+        }
+        
+        public getTousLesClientsRequest(AppClient.Webservice.getTousLesClientsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getTousLesClientsRequestBody {
+        
+        public getTousLesClientsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesClientsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesClientsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesClientsResponseBody Body;
+        
+        public getTousLesClientsResponse() {
+        }
+        
+        public getTousLesClientsResponse(AppClient.Webservice.getTousLesClientsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getTousLesClientsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CClient[] getTousLesClientsResult;
+        
+        public getTousLesClientsResponseBody() {
+        }
+        
+        public getTousLesClientsResponseBody(AppClient.Webservice.CClient[] getTousLesClientsResult) {
+            this.getTousLesClientsResult = getTousLesClientsResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebServiceSoapChannel : AppClient.Webservice.WebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -425,6 +555,25 @@ namespace AppClient.Webservice {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getTousLesClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getTousLesClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CClient[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CClient[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class WebServiceSoapClient : System.ServiceModel.ClientBase<AppClient.Webservice.WebServiceSoap>, AppClient.Webservice.WebServiceSoap {
         
         private BeginOperationDelegate onBeginHelloWorldDelegate;
@@ -444,6 +593,12 @@ namespace AppClient.Webservice {
         private EndOperationDelegate onEndgetToutesLesRegionsDelegate;
         
         private System.Threading.SendOrPostCallback ongetToutesLesRegionsCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetTousLesClientsDelegate;
+        
+        private EndOperationDelegate onEndgetTousLesClientsDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetTousLesClientsCompletedDelegate;
         
         public WebServiceSoapClient() {
         }
@@ -469,6 +624,8 @@ namespace AppClient.Webservice {
         public event System.EventHandler<getTousLesPaysCompletedEventArgs> getTousLesPaysCompleted;
         
         public event System.EventHandler<getToutesLesRegionsCompletedEventArgs> getToutesLesRegionsCompleted;
+        
+        public event System.EventHandler<getTousLesClientsCompletedEventArgs> getTousLesClientsCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         AppClient.Webservice.HelloWorldResponse AppClient.Webservice.WebServiceSoap.HelloWorld(AppClient.Webservice.HelloWorldRequest request) {
@@ -683,6 +840,75 @@ namespace AppClient.Webservice {
             }
             base.InvokeAsync(this.onBegingetToutesLesRegionsDelegate, new object[] {
                         idPays}, this.onEndgetToutesLesRegionsDelegate, this.ongetToutesLesRegionsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesClientsResponse AppClient.Webservice.WebServiceSoap.getTousLesClients(AppClient.Webservice.getTousLesClientsRequest request) {
+            return base.Channel.getTousLesClients(request);
+        }
+        
+        public AppClient.Webservice.CClient[] getTousLesClients() {
+            AppClient.Webservice.getTousLesClientsRequest inValue = new AppClient.Webservice.getTousLesClientsRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesClientsRequestBody();
+            AppClient.Webservice.getTousLesClientsResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getTousLesClients(inValue);
+            return retVal.Body.getTousLesClientsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetTousLesClients(AppClient.Webservice.getTousLesClientsRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetTousLesClients(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetTousLesClients(System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getTousLesClientsRequest inValue = new AppClient.Webservice.getTousLesClientsRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesClientsRequestBody();
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetTousLesClients(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesClientsResponse AppClient.Webservice.WebServiceSoap.EndgetTousLesClients(System.IAsyncResult result) {
+            return base.Channel.EndgetTousLesClients(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CClient[] EndgetTousLesClients(System.IAsyncResult result) {
+            AppClient.Webservice.getTousLesClientsResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetTousLesClients(result);
+            return retVal.Body.getTousLesClientsResult;
+        }
+        
+        private System.IAsyncResult OnBegingetTousLesClients(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BegingetTousLesClients(callback, asyncState);
+        }
+        
+        private object[] OnEndgetTousLesClients(System.IAsyncResult result) {
+            AppClient.Webservice.CClient[] retVal = this.EndgetTousLesClients(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetTousLesClientsCompleted(object state) {
+            if ((this.getTousLesClientsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getTousLesClientsCompleted(this, new getTousLesClientsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getTousLesClientsAsync() {
+            this.getTousLesClientsAsync(null);
+        }
+        
+        public void getTousLesClientsAsync(object userState) {
+            if ((this.onBegingetTousLesClientsDelegate == null)) {
+                this.onBegingetTousLesClientsDelegate = new BeginOperationDelegate(this.OnBegingetTousLesClients);
+            }
+            if ((this.onEndgetTousLesClientsDelegate == null)) {
+                this.onEndgetTousLesClientsDelegate = new EndOperationDelegate(this.OnEndgetTousLesClients);
+            }
+            if ((this.ongetTousLesClientsCompletedDelegate == null)) {
+                this.ongetTousLesClientsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetTousLesClientsCompleted);
+            }
+            base.InvokeAsync(this.onBegingetTousLesClientsDelegate, null, this.onEndgetTousLesClientsDelegate, this.ongetTousLesClientsCompletedDelegate, userState);
         }
     }
 }
