@@ -15,3 +15,7 @@ Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.csproj.GenerateResource.cache
 Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.csproj.CoreCompileInputs.cache
 Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.exe
 Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.pdb
+Z:\C#\boutiqueNTiers\AppClient\bin\Debug\AppClient.exe.config
+Z:\C#\boutiqueNTiers\AppClient\bin\Debug\AppClient.exe
+Z:\C#\boutiqueNTiers\AppClient\bin\Debug\AppClient.pdb
+Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.FormClient.resources

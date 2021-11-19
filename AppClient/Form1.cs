@@ -29,6 +29,18 @@ namespace AppClient
             client.lesPaysAsync();*/
         }
 
+        private void btnGestCli_Click(object sender, EventArgs e)
+        {
+            //Appel le formulaire de Gestion de Client lors du clic sur bouton
+            FormClient formCli = new FormClient();
+            formCli.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         /*private void Client_lesPaysCompleted(object sender, Webservice.lesPaysCompletedEventArgs e)
         {
             foreach (Webservice.CPays p in e.Result)

@@ -16,13 +16,13 @@ public partial class WebService : System.Web.Services.WebService
     }
 
     //TODO
-    [WebMethod]
+    /*[WebMethod]
     public List<CClient> getUnClient()
     {
         List<CClient> CClient = new List<CClient>();
         CClient = ClassLibrary1.DAO.DAOFactory.getCClients().getUn();
         return CClient;
-    }
+    }*/
 
     /*
      * TODO : Ajout Client
