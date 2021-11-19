@@ -21,14 +21,6 @@ namespace ClassLibrary2.DAO
         {
             OracleCommand req = new OracleCommand();
             req.Connection = _connex;
-            if(idR == null)
-            {
-                req.CommandText = "select * from rubrique";
-            }
-            else
-            {
-                req.CommandText = "select * from rubrique where id_parent = " + idR;
-            }
             req.CommandText = "select * from rubrique where id_parent = "+idR;
             OracleDataReader res = req.ExecuteReader();
             List<CRubrique> rubriquesFilles = new List<CRubrique>();
@@ -37,19 +29,9 @@ namespace ClassLibrary2.DAO
                 int id = int.Parse(res["id"].ToString());
                 String nom = res["nom"].ToString();
                 String description = res["description"].ToString();
-
-                int id_parent;
-                if (res["id_parent"].ToString() == "")
-                {
-                    id_parent = -1;
-                }
-                else
-                {
-                    id_parent = int.Parse(res["id_parent"].ToString());
-                }
-
+                int id_parent = int.Parse(res["id_parent"].ToString());
                 CRubrique rubrique = new CRubrique(id, nom, description, id_parent);
-                rubrique.RubriquesFilles = RecurRubrique(id_parent);
+                rubrique.RubriquesFilles = RecurRubrique(id);
                 rubriquesFilles.Add(rubrique);
 
             }
@@ -59,33 +41,21 @@ namespace ClassLibrary2.DAO
 
         public override List<CRubrique> getAll()
         {
-            List<CRubrique> lstAll = RecurRubrique(null);
+            List<CRubrique> lstAll = new List<CRubrique>();
 
 
-            /*OracleCommand req = new OracleCommand();
+            OracleCommand req = new OracleCommand();
             req.Connection = _connex;
-            req.CommandText = "select * from rubrique";
+            req.CommandText = "select * from rubrique where id_parent IS NULL";
 
             OracleDataReader res = req.ExecuteReader();
+
             while (res.Read())
             {
                 int id = int.Parse(res["id"].ToString());
-                String nom = res["nom"].ToString();
-                String description = res["description"].ToString();
-
-                int id_parent;
-                if (res["id_parent"].ToString() == "")
-                {
-                    id_parent = -1;
-                }
-                else
-                {
-                    id_parent = int.Parse(res["id_parent"].ToString());
-                }
-               
-                lstAll.Add(new CRubrique(id, nom, description, id_parent));
+                lstAll = RecurRubrique(id);
             }
-            res.Close();*/
+            res.Close();
 
 
             return lstAll;
