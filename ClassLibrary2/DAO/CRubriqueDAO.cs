@@ -31,10 +31,14 @@ namespace ClassLibrary2.DAO
                 String description = res["description"].ToString();
                 int id_parent = int.Parse(res["id_parent"].ToString());
                 CRubrique rubrique = new CRubrique(id, nom, description, id_parent);
-                rubrique.RubriquesFilles = RecurRubrique(id);
                 rubriquesFilles.Add(rubrique);
-
             }
+            
+            foreach(CRubrique rubrique in rubriquesFilles)
+            {
+                rubrique.RubriquesFilles = RecurRubrique(rubrique.Id);
+            }
+
             res.Close();
             return rubriquesFilles;
         }
@@ -53,7 +57,12 @@ namespace ClassLibrary2.DAO
             while (res.Read())
             {
                 int id = int.Parse(res["id"].ToString());
-                lstAll = RecurRubrique(id);
+                String nom = res["nom"].ToString();
+                String description = res["description"].ToString();
+                int id_parent = -1;
+                CRubrique rubrique = new CRubrique(id, nom, description, id_parent);
+                rubrique.RubriquesFilles = RecurRubrique(rubrique.Id);
+                lstAll.Add(rubrique);
             }
             res.Close();
 
