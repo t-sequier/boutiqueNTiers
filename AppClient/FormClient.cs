@@ -15,6 +15,9 @@ namespace AppClient
 
         Webservice.WebServiceSoapClient wsClient = new Webservice.WebServiceSoapClient();
 
+        //Récupère la cellule selectionnée
+        private DataGridViewCell clickedCell;
+
         public FormClient()
         {
             InitializeComponent();
@@ -22,24 +25,42 @@ namespace AppClient
             /*Appel WS asynchrone*/
             wsClient.getTousLesClientsCompleted += WsClient_getTousLesClientsCompleted;
             wsClient.getTousLesClientsAsync();
+
+            //Modifie les couleurs des boutons
+            btnAddCli.ForeColor = Color.Green;
+            btnDelCli.ForeColor = Color.Red;
+            btnOkCli.ForeColor = Color.Blue;
         }
 
         private void WsClient_getTousLesClientsCompleted(object sender, Webservice.getTousLesClientsCompletedEventArgs e)
         {
+            //définit la source de la gridView comme étant la liste retournée par le WS
             gvClientAll.DataSource = wsClient.getTousLesClients();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRetour_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void gvCliAll_rempli()
+        private void btnOkCli_Click(object sender, EventArgs e)
         {
-            //Todo: remplir la grid view au chargement (asynch) (avec WebServiceClient.getTousLesClients() ?)
+            //TODO: Enregistrer les modifications effectuées (ajout/modif/supp)
 
-
+            //TODO: Affiche un message si les modifications on bien été pris en compte
+            MessageBox.Show("Modification enregistrés ! (non)");
         }
 
+        private void btnAddCli_Click(object sender, EventArgs e)
+        {
+            //TODO: Créer/ouvrir une nouvelle ligne dans la grid view
+            //gvClientAll.Rows.Add();
+        }
+
+        private void btnDelCli_Click(object sender, EventArgs e)
+        {
+            //TODO: Supprimer l'élément sélectionné
+
+        }
     }
 }

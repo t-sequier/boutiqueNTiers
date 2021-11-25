@@ -147,6 +147,25 @@ namespace AppClient.Webservice {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NomField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrenomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NumAdrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RueAdrField;
+        
+        private int CpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TelField;
+        
+        private int CivField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -179,6 +198,97 @@ namespace AppClient.Webservice {
                 if ((object.ReferenceEquals(this.NomField, value) != true)) {
                     this.NomField = value;
                     this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Prenom {
+            get {
+                return this.PrenomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrenomField, value) != true)) {
+                    this.PrenomField = value;
+                    this.RaisePropertyChanged("Prenom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string NumAdr {
+            get {
+                return this.NumAdrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumAdrField, value) != true)) {
+                    this.NumAdrField = value;
+                    this.RaisePropertyChanged("NumAdr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string RueAdr {
+            get {
+                return this.RueAdrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RueAdrField, value) != true)) {
+                    this.RueAdrField = value;
+                    this.RaisePropertyChanged("RueAdr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Cp {
+            get {
+                return this.CpField;
+            }
+            set {
+                if ((this.CpField.Equals(value) != true)) {
+                    this.CpField = value;
+                    this.RaisePropertyChanged("Cp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Tel {
+            get {
+                return this.TelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TelField, value) != true)) {
+                    this.TelField = value;
+                    this.RaisePropertyChanged("Tel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public int Civ {
+            get {
+                return this.CivField;
+            }
+            set {
+                if ((this.CivField.Equals(value) != true)) {
+                    this.CivField = value;
+                    this.RaisePropertyChanged("Civ");
                 }
             }
         }
