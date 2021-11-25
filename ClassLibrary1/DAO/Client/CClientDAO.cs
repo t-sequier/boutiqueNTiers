@@ -30,13 +30,21 @@ namespace ClassLibrary1.DAO.Client
             OracleDataReader res = req.ExecuteReader();
             while (res.Read())
             {
-                int id = int.Parse(res["numero"].ToString());
-                String nom = (res["nom"].ToString());
-                lstAll.Add(new CClient(id, nom));
+                int id          = int.Parse(res["numero"].ToString());
+                String nom      = (res["nom"].ToString());
+                String prenom   = (res["prenom"].ToString());
+                String numAdr   = (res["adresse_numero"].ToString());
+                String rueAdr   = (res["adresse_rue"].ToString());
+                int cp          = int.Parse(res["code_postal"].ToString());
+                String email    = (res["email"].ToString());
+                String tel      = (res["tel"].ToString());
+                int civ         = int.Parse(res["id_civilite"].ToString());
 
-
+                lstAll.Add(new CClient(id, nom, prenom, numAdr, rueAdr, cp, email, tel, civ));
             }
+
             res.Close(); //fermeture lecteur BD
+
             return lstAll;
         }
 
@@ -54,7 +62,14 @@ namespace ClassLibrary1.DAO.Client
             {
                 int id = int.Parse(res["numero"].ToString());
                 String nom = (res["nom"].ToString());
-                lstUn.Add(new CClient(id, nom));
+                String prenom = (res["prenom"].ToString());
+                String numAdr = (res["adresse_numero"].ToString());
+                String rueAdr = (res["adresse_rue"].ToString());
+                int cp = int.Parse(res["code_postal"].ToString());
+                String email = (res["email"].ToString());
+                String tel = (res["tel"].ToString());
+                int civ = int.Parse(res["id_civilite"].ToString());
+                lstUn.Add(new CClient(id, nom, prenom, numAdr, rueAdr, cp, email, tel, civ));
             }
             res.Close(); //fermeture lecteur BD
             return lstUn;

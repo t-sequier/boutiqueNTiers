@@ -6,7 +6,6 @@ Z:\Archi N Tiers\AppClient\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 Z:\Archi N Tiers\AppClient\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
 Z:\C#\boutiqueNTiers\ClassLibrary1\bin\Debug\ClassLibrary1.dll
 Z:\C#\boutiqueNTiers\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
-Z:\C#\boutiqueNTiers\ClassLibrary1\obj\Debug\ClassesObjet.csprojAssemblyReference.cache
 Z:\C#\boutiqueNTiers\ClassLibrary1\obj\Debug\ClassesObjet.csproj.CoreCompileInputs.cache
 Z:\C#\boutiqueNTiers\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 Z:\C#\boutiqueNTiers\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

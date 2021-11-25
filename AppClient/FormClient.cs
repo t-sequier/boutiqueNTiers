@@ -26,7 +26,7 @@ namespace AppClient
 
         private void WsClient_getTousLesClientsCompleted(object sender, Webservice.getTousLesClientsCompletedEventArgs e)
         {
-            throw new NotImplementedException();
+            gvClientAll.DataSource = wsClient.getTousLesClients();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,9 +36,9 @@ namespace AppClient
 
         private void gvCliAll_rempli()
         {
-            //Todo: remplir la grid view au chargement (asynch) avec CClientDAO.getAll() ?
-            gvClientAll.DataSource = wsClient;
-            
+            //Todo: remplir la grid view au chargement (asynch) (avec WebServiceClient.getTousLesClients() ?)
+
+
         }
 
     }

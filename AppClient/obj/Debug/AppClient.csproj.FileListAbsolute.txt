@@ -19,3 +19,6 @@ Z:\C#\boutiqueNTiers\AppClient\bin\Debug\AppClient.exe.config
 Z:\C#\boutiqueNTiers\AppClient\bin\Debug\AppClient.exe
 Z:\C#\boutiqueNTiers\AppClient\bin\Debug\AppClient.pdb
 Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.FormClient.resources
+Z:\C#\boutiqueNTiers\AppClient\bin\Debug\ClassLibrary1.dll
+Z:\C#\boutiqueNTiers\AppClient\bin\Debug\ClassLibrary1.pdb
+Z:\C#\boutiqueNTiers\AppClient\obj\Debug\AppClient.csproj.CopyComplete

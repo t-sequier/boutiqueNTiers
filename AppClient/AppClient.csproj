@@ -126,5 +126,11 @@
   <ItemGroup>
     <None Include="Connected Services\Webservice\WebService1.disco" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ClassesObjet.csproj">
+      <Project>{D4B3442B-4890-44B9-A4E5-20F1C67F3028}</Project>
+      <Name>ClassesObjet</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
