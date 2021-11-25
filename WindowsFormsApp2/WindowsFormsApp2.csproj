@@ -74,7 +74,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Connected Services\webservice\WebService1.wsdl" />
+    <None Include="Connected Services\webservice\WindowsFormsApp2.webservice.CArticles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\webservice\WindowsFormsApp2.webservice.CClient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\webservice\WindowsFormsApp2.webservice.CLignePanier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\webservice\WindowsFormsApp2.webservice.CPays.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\webservice\WindowsFormsApp2.webservice.CRubrique.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">

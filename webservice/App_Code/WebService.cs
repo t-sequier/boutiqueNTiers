@@ -52,4 +52,27 @@ public partial class WebService : System.Web.Services.WebService
         return retour;
     }
 
+    [WebMethod(Description = "Charge toutes les clients")]
+    public List<CClient> GetAllClient()
+    {
+        List<CClient> retour = new List<CClient>();
+        retour = DAOFactory.getCClientDAO().getAll();
+        return retour;
+    }
+
+    [WebMethod(Description = "Charge toutes les rubriques")]
+    public List<CArticles> GetAllArticles()
+    {
+        List<CArticles> retour = new List<CArticles>();
+        retour = DAOFactory.getCArticlesDAO().getAll();
+        return retour;
+    }
+
+    [WebMethod(Description = "Charge toutes les lignes panier")]
+    public List<CLignePanier> GetAllLignePanier()
+    {
+        List<CLignePanier> retour = new List<CLignePanier>();
+        retour = DAOFactory.getCLignePanierDAO().getAll();
+        return retour;
+    }
 }

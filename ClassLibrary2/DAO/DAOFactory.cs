@@ -21,5 +21,20 @@ namespace ClassLibrary2.DAO
         {
             return new _CRubriqueDAO(_connexionString);
         }
+
+        public static _CClientDAO getCClientDAO()
+        {
+            return new _CClientDAO(_connexionString);
+        }
+
+        public static _CArticlesDAO getCArticlesDAO()
+        {
+            return new _CArticlesDAO(_connexionString);
+        }
+
+        public static _CLignePanierDAO getCLignePanierDAO()
+        {
+            return new _CLignePanierDAO(_connexionString);
+        }
     }
 }

@@ -11,9 +11,5 @@ namespace ClassLibrary2.DAO
     {
         public _CRubriqueDAO(String connexionString) : base(connexionString) { }
 
-        /*public List<CRegion> getRegion(CPays pays)
-        {
-            return DAOFactory.getCPaysDAO().getRegion(pays);
-        }*/
     }
 }

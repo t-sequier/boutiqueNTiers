@@ -52,6 +52,106 @@
           <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetAllRubriques">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllRubriquesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllRubriquesResult" type="tns:ArrayOfCRubrique" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRubrique">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRubrique" nillable="true" type="tns:CRubrique" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRubrique">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Parent" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RubriquesFilles" type="tns:ArrayOfCRubrique" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllClient">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllClientResult" type="tns:ArrayOfCClient" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCClient">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CClient" nillable="true" type="tns:CClient" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CClient">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prenom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumAdr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RueAdr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cp" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Civ" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllArticles">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllArticlesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllArticlesResult" type="tns:ArrayOfCArticles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCArticles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CArticles" nillable="true" type="tns:CArticles" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CArticles">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdRubrique" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Poids" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrixUnitaire" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantiteStock" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllLignePanier">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllLignePanierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllLignePanierResult" type="tns:ArrayOfCLignePanier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCLignePanier">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CLignePanier" nillable="true" type="tns:CLignePanier" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CLignePanier">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Numero_client" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id_article" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qte" type="s:int" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -72,6 +172,30 @@
   <wsdl:message name="GetAllPaysSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllPaysResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllRubriquesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllRubriques" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRubriquesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllRubriquesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllClientSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllClient" />
+  </wsdl:message>
+  <wsdl:message name="GetAllClientSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllArticlesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllArticles" />
+  </wsdl:message>
+  <wsdl:message name="GetAllArticlesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllArticlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllLignePanierSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllLignePanier" />
+  </wsdl:message>
+  <wsdl:message name="GetAllLignePanierSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllLignePanierResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -85,6 +209,26 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Charge tous les Pays</wsdl:documentation>
       <wsdl:input message="tns:GetAllPaysSoapIn" />
       <wsdl:output message="tns:GetAllPaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRubriques">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Charge toutes les rubriques</wsdl:documentation>
+      <wsdl:input message="tns:GetAllRubriquesSoapIn" />
+      <wsdl:output message="tns:GetAllRubriquesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Charge toutes les clients</wsdl:documentation>
+      <wsdl:input message="tns:GetAllClientSoapIn" />
+      <wsdl:output message="tns:GetAllClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllArticles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Charge toutes les rubriques</wsdl:documentation>
+      <wsdl:input message="tns:GetAllArticlesSoapIn" />
+      <wsdl:output message="tns:GetAllArticlesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLignePanier">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Charge toutes les lignes panier</wsdl:documentation>
+      <wsdl:input message="tns:GetAllLignePanierSoapIn" />
+      <wsdl:output message="tns:GetAllLignePanierSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -116,6 +260,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllRubriques">
+      <soap:operation soapAction="http://tempuri.org/GetAllRubriques" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClient">
+      <soap:operation soapAction="http://tempuri.org/GetAllClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllArticles">
+      <soap:operation soapAction="http://tempuri.org/GetAllArticles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLignePanier">
+      <soap:operation soapAction="http://tempuri.org/GetAllLignePanier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -139,6 +319,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllPays">
       <soap12:operation soapAction="http://tempuri.org/GetAllPays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRubriques">
+      <soap12:operation soapAction="http://tempuri.org/GetAllRubriques" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClient">
+      <soap12:operation soapAction="http://tempuri.org/GetAllClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllArticles">
+      <soap12:operation soapAction="http://tempuri.org/GetAllArticles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLignePanier">
+      <soap12:operation soapAction="http://tempuri.org/GetAllLignePanier" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

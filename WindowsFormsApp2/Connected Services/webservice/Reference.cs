@@ -73,6 +73,494 @@ namespace WindowsFormsApp2.webservice {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRubrique", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRubrique : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        private int Id_ParentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WindowsFormsApp2.webservice.CRubrique[] RubriquesFillesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Id_Parent {
+            get {
+                return this.Id_ParentField;
+            }
+            set {
+                if ((this.Id_ParentField.Equals(value) != true)) {
+                    this.Id_ParentField = value;
+                    this.RaisePropertyChanged("Id_Parent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public WindowsFormsApp2.webservice.CRubrique[] RubriquesFilles {
+            get {
+                return this.RubriquesFillesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RubriquesFillesField, value) != true)) {
+                    this.RubriquesFillesField = value;
+                    this.RaisePropertyChanged("RubriquesFilles");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CClient", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrenomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NumAdrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RueAdrField;
+        
+        private int CpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TelField;
+        
+        private int CivField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Prenom {
+            get {
+                return this.PrenomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrenomField, value) != true)) {
+                    this.PrenomField = value;
+                    this.RaisePropertyChanged("Prenom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string NumAdr {
+            get {
+                return this.NumAdrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumAdrField, value) != true)) {
+                    this.NumAdrField = value;
+                    this.RaisePropertyChanged("NumAdr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string RueAdr {
+            get {
+                return this.RueAdrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RueAdrField, value) != true)) {
+                    this.RueAdrField = value;
+                    this.RaisePropertyChanged("RueAdr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Cp {
+            get {
+                return this.CpField;
+            }
+            set {
+                if ((this.CpField.Equals(value) != true)) {
+                    this.CpField = value;
+                    this.RaisePropertyChanged("Cp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Tel {
+            get {
+                return this.TelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TelField, value) != true)) {
+                    this.TelField = value;
+                    this.RaisePropertyChanged("Tel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public int Civ {
+            get {
+                return this.CivField;
+            }
+            set {
+                if ((this.CivField.Equals(value) != true)) {
+                    this.CivField = value;
+                    this.RaisePropertyChanged("Civ");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CArticles", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CArticles : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        private int IdRubriqueField;
+        
+        private float PoidsField;
+        
+        private float PrixUnitaireField;
+        
+        private int QuantiteStockField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int IdRubrique {
+            get {
+                return this.IdRubriqueField;
+            }
+            set {
+                if ((this.IdRubriqueField.Equals(value) != true)) {
+                    this.IdRubriqueField = value;
+                    this.RaisePropertyChanged("IdRubrique");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public float Poids {
+            get {
+                return this.PoidsField;
+            }
+            set {
+                if ((this.PoidsField.Equals(value) != true)) {
+                    this.PoidsField = value;
+                    this.RaisePropertyChanged("Poids");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public float PrixUnitaire {
+            get {
+                return this.PrixUnitaireField;
+            }
+            set {
+                if ((this.PrixUnitaireField.Equals(value) != true)) {
+                    this.PrixUnitaireField = value;
+                    this.RaisePropertyChanged("PrixUnitaire");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int QuantiteStock {
+            get {
+                return this.QuantiteStockField;
+            }
+            set {
+                if ((this.QuantiteStockField.Equals(value) != true)) {
+                    this.QuantiteStockField = value;
+                    this.RaisePropertyChanged("QuantiteStock");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CLignePanier", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CLignePanier : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int Numero_clientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Id_articleField;
+        
+        private int QteField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Numero_client {
+            get {
+                return this.Numero_clientField;
+            }
+            set {
+                if ((this.Numero_clientField.Equals(value) != true)) {
+                    this.Numero_clientField = value;
+                    this.RaisePropertyChanged("Numero_client");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Id_article {
+            get {
+                return this.Id_articleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Id_articleField, value) != true)) {
+                    this.Id_articleField = value;
+                    this.RaisePropertyChanged("Id_article");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Qte {
+            get {
+                return this.QteField;
+            }
+            set {
+                if ((this.QteField.Equals(value) != true)) {
+                    this.QteField = value;
+                    this.RaisePropertyChanged("Qte");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="webservice.WebServiceSoap")]
     public interface WebServiceSoap {
@@ -102,6 +590,42 @@ namespace WindowsFormsApp2.webservice {
         System.IAsyncResult BeginGetAllPays(WindowsFormsApp2.webservice.GetAllPaysRequest request, System.AsyncCallback callback, object asyncState);
         
         WindowsFormsApp2.webservice.GetAllPaysResponse EndGetAllPays(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément GetAllRubriquesResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllRubriques", ReplyAction="*")]
+        WindowsFormsApp2.webservice.GetAllRubriquesResponse GetAllRubriques(WindowsFormsApp2.webservice.GetAllRubriquesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/GetAllRubriques", ReplyAction="*")]
+        System.IAsyncResult BeginGetAllRubriques(WindowsFormsApp2.webservice.GetAllRubriquesRequest request, System.AsyncCallback callback, object asyncState);
+        
+        WindowsFormsApp2.webservice.GetAllRubriquesResponse EndGetAllRubriques(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément GetAllClientResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllClient", ReplyAction="*")]
+        WindowsFormsApp2.webservice.GetAllClientResponse GetAllClient(WindowsFormsApp2.webservice.GetAllClientRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/GetAllClient", ReplyAction="*")]
+        System.IAsyncResult BeginGetAllClient(WindowsFormsApp2.webservice.GetAllClientRequest request, System.AsyncCallback callback, object asyncState);
+        
+        WindowsFormsApp2.webservice.GetAllClientResponse EndGetAllClient(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément GetAllArticlesResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllArticles", ReplyAction="*")]
+        WindowsFormsApp2.webservice.GetAllArticlesResponse GetAllArticles(WindowsFormsApp2.webservice.GetAllArticlesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/GetAllArticles", ReplyAction="*")]
+        System.IAsyncResult BeginGetAllArticles(WindowsFormsApp2.webservice.GetAllArticlesRequest request, System.AsyncCallback callback, object asyncState);
+        
+        WindowsFormsApp2.webservice.GetAllArticlesResponse EndGetAllArticles(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément GetAllLignePanierResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllLignePanier", ReplyAction="*")]
+        WindowsFormsApp2.webservice.GetAllLignePanierResponse GetAllLignePanier(WindowsFormsApp2.webservice.GetAllLignePanierRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/GetAllLignePanier", ReplyAction="*")]
+        System.IAsyncResult BeginGetAllLignePanier(WindowsFormsApp2.webservice.GetAllLignePanierRequest request, System.AsyncCallback callback, object asyncState);
+        
+        WindowsFormsApp2.webservice.GetAllLignePanierResponse EndGetAllLignePanier(System.IAsyncResult result);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -233,6 +757,250 @@ namespace WindowsFormsApp2.webservice {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllRubriquesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllRubriques", Namespace="http://tempuri.org/", Order=0)]
+        public WindowsFormsApp2.webservice.GetAllRubriquesRequestBody Body;
+        
+        public GetAllRubriquesRequest() {
+        }
+        
+        public GetAllRubriquesRequest(WindowsFormsApp2.webservice.GetAllRubriquesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllRubriquesRequestBody {
+        
+        public GetAllRubriquesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllRubriquesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllRubriquesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WindowsFormsApp2.webservice.GetAllRubriquesResponseBody Body;
+        
+        public GetAllRubriquesResponse() {
+        }
+        
+        public GetAllRubriquesResponse(WindowsFormsApp2.webservice.GetAllRubriquesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllRubriquesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WindowsFormsApp2.webservice.CRubrique[] GetAllRubriquesResult;
+        
+        public GetAllRubriquesResponseBody() {
+        }
+        
+        public GetAllRubriquesResponseBody(WindowsFormsApp2.webservice.CRubrique[] GetAllRubriquesResult) {
+            this.GetAllRubriquesResult = GetAllRubriquesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllClientRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllClient", Namespace="http://tempuri.org/", Order=0)]
+        public WindowsFormsApp2.webservice.GetAllClientRequestBody Body;
+        
+        public GetAllClientRequest() {
+        }
+        
+        public GetAllClientRequest(WindowsFormsApp2.webservice.GetAllClientRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllClientRequestBody {
+        
+        public GetAllClientRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllClientResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllClientResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WindowsFormsApp2.webservice.GetAllClientResponseBody Body;
+        
+        public GetAllClientResponse() {
+        }
+        
+        public GetAllClientResponse(WindowsFormsApp2.webservice.GetAllClientResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllClientResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WindowsFormsApp2.webservice.CClient[] GetAllClientResult;
+        
+        public GetAllClientResponseBody() {
+        }
+        
+        public GetAllClientResponseBody(WindowsFormsApp2.webservice.CClient[] GetAllClientResult) {
+            this.GetAllClientResult = GetAllClientResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllArticlesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllArticles", Namespace="http://tempuri.org/", Order=0)]
+        public WindowsFormsApp2.webservice.GetAllArticlesRequestBody Body;
+        
+        public GetAllArticlesRequest() {
+        }
+        
+        public GetAllArticlesRequest(WindowsFormsApp2.webservice.GetAllArticlesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllArticlesRequestBody {
+        
+        public GetAllArticlesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllArticlesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllArticlesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WindowsFormsApp2.webservice.GetAllArticlesResponseBody Body;
+        
+        public GetAllArticlesResponse() {
+        }
+        
+        public GetAllArticlesResponse(WindowsFormsApp2.webservice.GetAllArticlesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllArticlesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WindowsFormsApp2.webservice.CArticles[] GetAllArticlesResult;
+        
+        public GetAllArticlesResponseBody() {
+        }
+        
+        public GetAllArticlesResponseBody(WindowsFormsApp2.webservice.CArticles[] GetAllArticlesResult) {
+            this.GetAllArticlesResult = GetAllArticlesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllLignePanierRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllLignePanier", Namespace="http://tempuri.org/", Order=0)]
+        public WindowsFormsApp2.webservice.GetAllLignePanierRequestBody Body;
+        
+        public GetAllLignePanierRequest() {
+        }
+        
+        public GetAllLignePanierRequest(WindowsFormsApp2.webservice.GetAllLignePanierRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllLignePanierRequestBody {
+        
+        public GetAllLignePanierRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllLignePanierResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllLignePanierResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WindowsFormsApp2.webservice.GetAllLignePanierResponseBody Body;
+        
+        public GetAllLignePanierResponse() {
+        }
+        
+        public GetAllLignePanierResponse(WindowsFormsApp2.webservice.GetAllLignePanierResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllLignePanierResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WindowsFormsApp2.webservice.CLignePanier[] GetAllLignePanierResult;
+        
+        public GetAllLignePanierResponseBody() {
+        }
+        
+        public GetAllLignePanierResponseBody(WindowsFormsApp2.webservice.CLignePanier[] GetAllLignePanierResult) {
+            this.GetAllLignePanierResult = GetAllLignePanierResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebServiceSoapChannel : WindowsFormsApp2.webservice.WebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -296,6 +1064,82 @@ namespace WindowsFormsApp2.webservice {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAllRubriquesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAllRubriquesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public WindowsFormsApp2.webservice.CRubrique[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((WindowsFormsApp2.webservice.CRubrique[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAllClientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAllClientCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public WindowsFormsApp2.webservice.CClient[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((WindowsFormsApp2.webservice.CClient[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAllArticlesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAllArticlesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public WindowsFormsApp2.webservice.CArticles[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((WindowsFormsApp2.webservice.CArticles[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAllLignePanierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAllLignePanierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public WindowsFormsApp2.webservice.CLignePanier[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((WindowsFormsApp2.webservice.CLignePanier[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class WebServiceSoapClient : System.ServiceModel.ClientBase<WindowsFormsApp2.webservice.WebServiceSoap>, WindowsFormsApp2.webservice.WebServiceSoap {
         
         private BeginOperationDelegate onBeginHelloWorldDelegate;
@@ -315,6 +1159,30 @@ namespace WindowsFormsApp2.webservice {
         private EndOperationDelegate onEndGetAllPaysDelegate;
         
         private System.Threading.SendOrPostCallback onGetAllPaysCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAllRubriquesDelegate;
+        
+        private EndOperationDelegate onEndGetAllRubriquesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAllRubriquesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAllClientDelegate;
+        
+        private EndOperationDelegate onEndGetAllClientDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAllClientCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAllArticlesDelegate;
+        
+        private EndOperationDelegate onEndGetAllArticlesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAllArticlesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAllLignePanierDelegate;
+        
+        private EndOperationDelegate onEndGetAllLignePanierDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAllLignePanierCompletedDelegate;
         
         public WebServiceSoapClient() {
         }
@@ -340,6 +1208,14 @@ namespace WindowsFormsApp2.webservice {
         public event System.EventHandler<TestCompletedEventArgs> TestCompleted;
         
         public event System.EventHandler<GetAllPaysCompletedEventArgs> GetAllPaysCompleted;
+        
+        public event System.EventHandler<GetAllRubriquesCompletedEventArgs> GetAllRubriquesCompleted;
+        
+        public event System.EventHandler<GetAllClientCompletedEventArgs> GetAllClientCompleted;
+        
+        public event System.EventHandler<GetAllArticlesCompletedEventArgs> GetAllArticlesCompleted;
+        
+        public event System.EventHandler<GetAllLignePanierCompletedEventArgs> GetAllLignePanierCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WindowsFormsApp2.webservice.HelloWorldResponse WindowsFormsApp2.webservice.WebServiceSoap.HelloWorld(WindowsFormsApp2.webservice.HelloWorldRequest request) {
@@ -533,6 +1409,282 @@ namespace WindowsFormsApp2.webservice {
                 this.onGetAllPaysCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllPaysCompleted);
             }
             base.InvokeAsync(this.onBeginGetAllPaysDelegate, null, this.onEndGetAllPaysDelegate, this.onGetAllPaysCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp2.webservice.GetAllRubriquesResponse WindowsFormsApp2.webservice.WebServiceSoap.GetAllRubriques(WindowsFormsApp2.webservice.GetAllRubriquesRequest request) {
+            return base.Channel.GetAllRubriques(request);
+        }
+        
+        public WindowsFormsApp2.webservice.CRubrique[] GetAllRubriques() {
+            WindowsFormsApp2.webservice.GetAllRubriquesRequest inValue = new WindowsFormsApp2.webservice.GetAllRubriquesRequest();
+            inValue.Body = new WindowsFormsApp2.webservice.GetAllRubriquesRequestBody();
+            WindowsFormsApp2.webservice.GetAllRubriquesResponse retVal = ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).GetAllRubriques(inValue);
+            return retVal.Body.GetAllRubriquesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WindowsFormsApp2.webservice.WebServiceSoap.BeginGetAllRubriques(WindowsFormsApp2.webservice.GetAllRubriquesRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllRubriques(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetAllRubriques(System.AsyncCallback callback, object asyncState) {
+            WindowsFormsApp2.webservice.GetAllRubriquesRequest inValue = new WindowsFormsApp2.webservice.GetAllRubriquesRequest();
+            inValue.Body = new WindowsFormsApp2.webservice.GetAllRubriquesRequestBody();
+            return ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).BeginGetAllRubriques(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp2.webservice.GetAllRubriquesResponse WindowsFormsApp2.webservice.WebServiceSoap.EndGetAllRubriques(System.IAsyncResult result) {
+            return base.Channel.EndGetAllRubriques(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public WindowsFormsApp2.webservice.CRubrique[] EndGetAllRubriques(System.IAsyncResult result) {
+            WindowsFormsApp2.webservice.GetAllRubriquesResponse retVal = ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).EndGetAllRubriques(result);
+            return retVal.Body.GetAllRubriquesResult;
+        }
+        
+        private System.IAsyncResult OnBeginGetAllRubriques(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetAllRubriques(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAllRubriques(System.IAsyncResult result) {
+            WindowsFormsApp2.webservice.CRubrique[] retVal = this.EndGetAllRubriques(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAllRubriquesCompleted(object state) {
+            if ((this.GetAllRubriquesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAllRubriquesCompleted(this, new GetAllRubriquesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAllRubriquesAsync() {
+            this.GetAllRubriquesAsync(null);
+        }
+        
+        public void GetAllRubriquesAsync(object userState) {
+            if ((this.onBeginGetAllRubriquesDelegate == null)) {
+                this.onBeginGetAllRubriquesDelegate = new BeginOperationDelegate(this.OnBeginGetAllRubriques);
+            }
+            if ((this.onEndGetAllRubriquesDelegate == null)) {
+                this.onEndGetAllRubriquesDelegate = new EndOperationDelegate(this.OnEndGetAllRubriques);
+            }
+            if ((this.onGetAllRubriquesCompletedDelegate == null)) {
+                this.onGetAllRubriquesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllRubriquesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAllRubriquesDelegate, null, this.onEndGetAllRubriquesDelegate, this.onGetAllRubriquesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp2.webservice.GetAllClientResponse WindowsFormsApp2.webservice.WebServiceSoap.GetAllClient(WindowsFormsApp2.webservice.GetAllClientRequest request) {
+            return base.Channel.GetAllClient(request);
+        }
+        
+        public WindowsFormsApp2.webservice.CClient[] GetAllClient() {
+            WindowsFormsApp2.webservice.GetAllClientRequest inValue = new WindowsFormsApp2.webservice.GetAllClientRequest();
+            inValue.Body = new WindowsFormsApp2.webservice.GetAllClientRequestBody();
+            WindowsFormsApp2.webservice.GetAllClientResponse retVal = ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).GetAllClient(inValue);
+            return retVal.Body.GetAllClientResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WindowsFormsApp2.webservice.WebServiceSoap.BeginGetAllClient(WindowsFormsApp2.webservice.GetAllClientRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllClient(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetAllClient(System.AsyncCallback callback, object asyncState) {
+            WindowsFormsApp2.webservice.GetAllClientRequest inValue = new WindowsFormsApp2.webservice.GetAllClientRequest();
+            inValue.Body = new WindowsFormsApp2.webservice.GetAllClientRequestBody();
+            return ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).BeginGetAllClient(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp2.webservice.GetAllClientResponse WindowsFormsApp2.webservice.WebServiceSoap.EndGetAllClient(System.IAsyncResult result) {
+            return base.Channel.EndGetAllClient(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public WindowsFormsApp2.webservice.CClient[] EndGetAllClient(System.IAsyncResult result) {
+            WindowsFormsApp2.webservice.GetAllClientResponse retVal = ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).EndGetAllClient(result);
+            return retVal.Body.GetAllClientResult;
+        }
+        
+        private System.IAsyncResult OnBeginGetAllClient(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetAllClient(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAllClient(System.IAsyncResult result) {
+            WindowsFormsApp2.webservice.CClient[] retVal = this.EndGetAllClient(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAllClientCompleted(object state) {
+            if ((this.GetAllClientCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAllClientCompleted(this, new GetAllClientCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAllClientAsync() {
+            this.GetAllClientAsync(null);
+        }
+        
+        public void GetAllClientAsync(object userState) {
+            if ((this.onBeginGetAllClientDelegate == null)) {
+                this.onBeginGetAllClientDelegate = new BeginOperationDelegate(this.OnBeginGetAllClient);
+            }
+            if ((this.onEndGetAllClientDelegate == null)) {
+                this.onEndGetAllClientDelegate = new EndOperationDelegate(this.OnEndGetAllClient);
+            }
+            if ((this.onGetAllClientCompletedDelegate == null)) {
+                this.onGetAllClientCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllClientCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAllClientDelegate, null, this.onEndGetAllClientDelegate, this.onGetAllClientCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp2.webservice.GetAllArticlesResponse WindowsFormsApp2.webservice.WebServiceSoap.GetAllArticles(WindowsFormsApp2.webservice.GetAllArticlesRequest request) {
+            return base.Channel.GetAllArticles(request);
+        }
+        
+        public WindowsFormsApp2.webservice.CArticles[] GetAllArticles() {
+            WindowsFormsApp2.webservice.GetAllArticlesRequest inValue = new WindowsFormsApp2.webservice.GetAllArticlesRequest();
+            inValue.Body = new WindowsFormsApp2.webservice.GetAllArticlesRequestBody();
+            WindowsFormsApp2.webservice.GetAllArticlesResponse retVal = ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).GetAllArticles(inValue);
+            return retVal.Body.GetAllArticlesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WindowsFormsApp2.webservice.WebServiceSoap.BeginGetAllArticles(WindowsFormsApp2.webservice.GetAllArticlesRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllArticles(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetAllArticles(System.AsyncCallback callback, object asyncState) {
+            WindowsFormsApp2.webservice.GetAllArticlesRequest inValue = new WindowsFormsApp2.webservice.GetAllArticlesRequest();
+            inValue.Body = new WindowsFormsApp2.webservice.GetAllArticlesRequestBody();
+            return ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).BeginGetAllArticles(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp2.webservice.GetAllArticlesResponse WindowsFormsApp2.webservice.WebServiceSoap.EndGetAllArticles(System.IAsyncResult result) {
+            return base.Channel.EndGetAllArticles(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public WindowsFormsApp2.webservice.CArticles[] EndGetAllArticles(System.IAsyncResult result) {
+            WindowsFormsApp2.webservice.GetAllArticlesResponse retVal = ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).EndGetAllArticles(result);
+            return retVal.Body.GetAllArticlesResult;
+        }
+        
+        private System.IAsyncResult OnBeginGetAllArticles(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetAllArticles(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAllArticles(System.IAsyncResult result) {
+            WindowsFormsApp2.webservice.CArticles[] retVal = this.EndGetAllArticles(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAllArticlesCompleted(object state) {
+            if ((this.GetAllArticlesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAllArticlesCompleted(this, new GetAllArticlesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAllArticlesAsync() {
+            this.GetAllArticlesAsync(null);
+        }
+        
+        public void GetAllArticlesAsync(object userState) {
+            if ((this.onBeginGetAllArticlesDelegate == null)) {
+                this.onBeginGetAllArticlesDelegate = new BeginOperationDelegate(this.OnBeginGetAllArticles);
+            }
+            if ((this.onEndGetAllArticlesDelegate == null)) {
+                this.onEndGetAllArticlesDelegate = new EndOperationDelegate(this.OnEndGetAllArticles);
+            }
+            if ((this.onGetAllArticlesCompletedDelegate == null)) {
+                this.onGetAllArticlesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllArticlesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAllArticlesDelegate, null, this.onEndGetAllArticlesDelegate, this.onGetAllArticlesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp2.webservice.GetAllLignePanierResponse WindowsFormsApp2.webservice.WebServiceSoap.GetAllLignePanier(WindowsFormsApp2.webservice.GetAllLignePanierRequest request) {
+            return base.Channel.GetAllLignePanier(request);
+        }
+        
+        public WindowsFormsApp2.webservice.CLignePanier[] GetAllLignePanier() {
+            WindowsFormsApp2.webservice.GetAllLignePanierRequest inValue = new WindowsFormsApp2.webservice.GetAllLignePanierRequest();
+            inValue.Body = new WindowsFormsApp2.webservice.GetAllLignePanierRequestBody();
+            WindowsFormsApp2.webservice.GetAllLignePanierResponse retVal = ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).GetAllLignePanier(inValue);
+            return retVal.Body.GetAllLignePanierResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WindowsFormsApp2.webservice.WebServiceSoap.BeginGetAllLignePanier(WindowsFormsApp2.webservice.GetAllLignePanierRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllLignePanier(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetAllLignePanier(System.AsyncCallback callback, object asyncState) {
+            WindowsFormsApp2.webservice.GetAllLignePanierRequest inValue = new WindowsFormsApp2.webservice.GetAllLignePanierRequest();
+            inValue.Body = new WindowsFormsApp2.webservice.GetAllLignePanierRequestBody();
+            return ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).BeginGetAllLignePanier(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp2.webservice.GetAllLignePanierResponse WindowsFormsApp2.webservice.WebServiceSoap.EndGetAllLignePanier(System.IAsyncResult result) {
+            return base.Channel.EndGetAllLignePanier(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public WindowsFormsApp2.webservice.CLignePanier[] EndGetAllLignePanier(System.IAsyncResult result) {
+            WindowsFormsApp2.webservice.GetAllLignePanierResponse retVal = ((WindowsFormsApp2.webservice.WebServiceSoap)(this)).EndGetAllLignePanier(result);
+            return retVal.Body.GetAllLignePanierResult;
+        }
+        
+        private System.IAsyncResult OnBeginGetAllLignePanier(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetAllLignePanier(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAllLignePanier(System.IAsyncResult result) {
+            WindowsFormsApp2.webservice.CLignePanier[] retVal = this.EndGetAllLignePanier(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAllLignePanierCompleted(object state) {
+            if ((this.GetAllLignePanierCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAllLignePanierCompleted(this, new GetAllLignePanierCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAllLignePanierAsync() {
+            this.GetAllLignePanierAsync(null);
+        }
+        
+        public void GetAllLignePanierAsync(object userState) {
+            if ((this.onBeginGetAllLignePanierDelegate == null)) {
+                this.onBeginGetAllLignePanierDelegate = new BeginOperationDelegate(this.OnBeginGetAllLignePanier);
+            }
+            if ((this.onEndGetAllLignePanierDelegate == null)) {
+                this.onEndGetAllLignePanierDelegate = new EndOperationDelegate(this.OnEndGetAllLignePanier);
+            }
+            if ((this.onGetAllLignePanierCompletedDelegate == null)) {
+                this.onGetAllLignePanierCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllLignePanierCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAllLignePanierDelegate, null, this.onEndGetAllLignePanierDelegate, this.onGetAllLignePanierCompletedDelegate, userState);
         }
     }
 }
