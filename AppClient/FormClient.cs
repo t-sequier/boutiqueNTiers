@@ -30,6 +30,7 @@ namespace AppClient
             btnAddCli.ForeColor = Color.Green;
             btnDelCli.ForeColor = Color.Red;
             btnOkCli.ForeColor = Color.Blue;
+
         }
 
         private void WsClient_getTousLesClientsCompleted(object sender, Webservice.getTousLesClientsCompletedEventArgs e)
@@ -53,13 +54,15 @@ namespace AppClient
 
         private void btnAddCli_Click(object sender, EventArgs e)
         {
-            //TODO: Créer/ouvrir une nouvelle ligne dans la grid view
-            //gvClientAll.Rows.Add();
+            //Appel un form dans une autre fenêtre pour ajouter un nouveau client
+            FormAddClient formAddCli = new FormAddClient();
+            //On laisse en show pour avoir accès au tableau si besoin
+            formAddCli.Show();
         }
 
         private void btnDelCli_Click(object sender, EventArgs e)
         {
-            //TODO: Supprimer l'élément sélectionné
+            //TODO: Supprimer l'élément (ligne) sélectionné
 
         }
     }
