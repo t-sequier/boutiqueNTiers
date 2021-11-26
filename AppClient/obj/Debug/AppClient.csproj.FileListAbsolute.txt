@@ -8,3 +8,4 @@ Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.csproj.GenerateResource
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.csproj.CoreCompileInputs.cache
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.exe
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.pdb
+Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.FormArticles.resources

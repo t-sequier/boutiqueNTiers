@@ -28,17 +28,4 @@ public partial class WebService : System.Web.Services.WebService
         return "Salut " + nom + "!";
     }
 
-    
-
-    [WebMethod]
-    public List<CRegions> getToutesLesRegions(int idPays)
-    {
-
-        List<CRegions> CRegions = new List<CRegions>();
-        CRegions = ClassLibrary1.DAO.DAOFactory.getCRegionsDAO().getAll(idPays);
-        return CRegions;
-    }
-
-
-
 }

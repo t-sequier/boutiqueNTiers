@@ -28,5 +28,10 @@ namespace ClassLibrary1.DAO
         {
             return new _CArticlesDAO(_connexionString);
         }
+
+        public static _CRubriqueDAO getCRubriquesDAO()
+        {
+            return new _CRubriqueDAO(_connexionString);
+        }
     }
 }

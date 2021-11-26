@@ -25,16 +25,22 @@ namespace AppClient
             }*/
 
             /*Appel WS asynchrone*/
-            //client.getTousLesPays += client.getTousLesPaysCompleted;
+            //client.getTousLesPaysCompleted += Client_getTousLesPaysCompleted;
             //client.getTousLesPays();
         }
 
-        /*private void Client_lesPaysCompleted(object sender, Webservice.getTousLesPaysCompletedEventArgs e)
+        private void Client_lesPaysCompleted(object sender, Webservice.getTousLesPaysCompletedEventArgs e)
         {
             foreach (Webservice.CPays p in e.Result)
             {
                 textBox1.Text += "\r\n" + p.Id + " - " + p.Nom;
             }
-        }*/
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormArticles frm2 = new FormArticles();
+            frm2.ShowDialog();
+        }
     }
 }

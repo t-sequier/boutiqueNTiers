@@ -48,6 +48,8 @@
     <Compile Include="DAO\Pays\CPaysDAO.cs" />
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\DAOFactory.cs" />
+    <Compile Include="DAO\Rubrique\CRubriqueDAO.cs" />
+    <Compile Include="DAO\Rubrique\_CRubriqueDAO.cs" />
     <Compile Include="DAO\Regions\CRegionsDAO.cs" />
     <Compile Include="DAO\Regions\_CRegionsDAO.cs" />
     <Compile Include="DAO\SingleConnexion.cs" />
@@ -55,6 +57,7 @@
     <Compile Include="Objets\CArticles.cs" />
     <Compile Include="Objets\CPays.cs" />
     <Compile Include="Objets\CRegions.cs" />
+    <Compile Include="Objets\CRubrique.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
