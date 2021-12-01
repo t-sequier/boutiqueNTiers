@@ -75,4 +75,12 @@ public partial class WebService : System.Web.Services.WebService
         retour = DAOFactory.getCLignePanierDAO().getAll();
         return retour;
     }
+
+    [WebMethod(Description = "ajoute une ligne au panier")]
+    public int AddLignePanier(int numClient, String idArticle, int qte)
+    {
+        CLignePanier ligne = new CLignePanier(numClient, idArticle, qte);
+        int result = DAOFactory.getCLignePanierDAO().create(ligne);
+        return result;
+    }
 }

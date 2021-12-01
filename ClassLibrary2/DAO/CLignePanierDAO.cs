@@ -15,7 +15,21 @@ namespace ClassLibrary2.DAO
 
         public override int create(CLignePanier obj)
         {
-            return 0;
+            try
+            {
+                OracleCommand req = new OracleCommand();
+                req.Connection = _connex;
+                req.CommandText = "EXEC ADDPANIER @NUM_CLIENT_IN = '" + obj.Numero_client+"', @ID_ARTICLE_IN = '"+obj.Id_article+"',  @QUANTITE_IN = '"+obj.Qte+"';";
+                OracleDataReader res = req.ExecuteReader();
+                res.Close();
+                return 1;
+            }
+            catch(Exception e)
+            {
+                Console.Write(e);
+                return 0;
+            }
+           
         }
 
         public override List<CLignePanier> getAll()
