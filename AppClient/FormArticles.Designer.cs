@@ -42,6 +42,21 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewArticles = new System.Windows.Forms.DataGridView();
+            this.PoidsArticleModif = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.RubriqueArticleModif = new System.Windows.Forms.TextBox();
+            this.DescriptionArticleModif = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.nomArticleModif = new System.Windows.Forms.TextBox();
+            this.BoutonModiferArticle = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.QuantiteStockArticleModif = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.PrixArticleModif = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,13 +161,154 @@
             this.dataGridViewArticles.Name = "dataGridViewArticles";
             this.dataGridViewArticles.Size = new System.Drawing.Size(1230, 383);
             this.dataGridViewArticles.TabIndex = 14;
+            this.dataGridViewArticles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clickSurUnProduit);
             this.dataGridViewArticles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArticles_CellContentClick);
+            // 
+            // PoidsArticleModif
+            // 
+            this.PoidsArticleModif.Location = new System.Drawing.Point(626, 623);
+            this.PoidsArticleModif.Name = "PoidsArticleModif";
+            this.PoidsArticleModif.Size = new System.Drawing.Size(365, 20);
+            this.PoidsArticleModif.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(623, 607);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Poids";
+            // 
+            // RubriqueArticleModif
+            // 
+            this.RubriqueArticleModif.Location = new System.Drawing.Point(626, 574);
+            this.RubriqueArticleModif.Name = "RubriqueArticleModif";
+            this.RubriqueArticleModif.ReadOnly = true;
+            this.RubriqueArticleModif.Size = new System.Drawing.Size(365, 20);
+            this.RubriqueArticleModif.TabIndex = 21;
+            // 
+            // DescriptionArticleModif
+            // 
+            this.DescriptionArticleModif.Location = new System.Drawing.Point(626, 520);
+            this.DescriptionArticleModif.Name = "DescriptionArticleModif";
+            this.DescriptionArticleModif.Size = new System.Drawing.Size(365, 20);
+            this.DescriptionArticleModif.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(623, 504);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Description";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(623, 446);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Nom";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(617, 409);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(338, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Modification d\'un article (Séléctionnez un article dans la liste plus haut)";
+            // 
+            // nomArticleModif
+            // 
+            this.nomArticleModif.Location = new System.Drawing.Point(626, 462);
+            this.nomArticleModif.Name = "nomArticleModif";
+            this.nomArticleModif.Size = new System.Drawing.Size(365, 20);
+            this.nomArticleModif.TabIndex = 16;
+            // 
+            // BoutonModiferArticle
+            // 
+            this.BoutonModiferArticle.Location = new System.Drawing.Point(626, 761);
+            this.BoutonModiferArticle.Name = "BoutonModiferArticle";
+            this.BoutonModiferArticle.Size = new System.Drawing.Size(174, 23);
+            this.BoutonModiferArticle.TabIndex = 15;
+            this.BoutonModiferArticle.Text = "Modifier l\'article";
+            this.BoutonModiferArticle.UseVisualStyleBackColor = true;
+            this.BoutonModiferArticle.Click += new System.EventHandler(this.BoutonModiferArticle_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(623, 558);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Rubrique";
+            // 
+            // QuantiteStockArticleModif
+            // 
+            this.QuantiteStockArticleModif.Location = new System.Drawing.Point(626, 724);
+            this.QuantiteStockArticleModif.Name = "QuantiteStockArticleModif";
+            this.QuantiteStockArticleModif.Size = new System.Drawing.Size(365, 20);
+            this.QuantiteStockArticleModif.TabIndex = 26;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(623, 708);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 13);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Quantité Stock";
+            // 
+            // PrixArticleModif
+            // 
+            this.PrixArticleModif.Location = new System.Drawing.Point(626, 671);
+            this.PrixArticleModif.Name = "PrixArticleModif";
+            this.PrixArticleModif.Size = new System.Drawing.Size(365, 20);
+            this.PrixArticleModif.TabIndex = 28;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(623, 655);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(24, 13);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Prix";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(817, 761);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(174, 23);
+            this.button3.TabIndex = 29;
+            this.button3.Text = "Supprimer l\'article";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // FormArticles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1488, 836);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.PrixArticleModif);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.QuantiteStockArticleModif);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.PoidsArticleModif);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.RubriqueArticleModif);
+            this.Controls.Add(this.DescriptionArticleModif);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.nomArticleModif);
+            this.Controls.Add(this.BoutonModiferArticle);
             this.Controls.Add(this.dataGridViewArticles);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label5);
@@ -187,5 +343,20 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridViewArticles;
+        private System.Windows.Forms.TextBox PoidsArticleModif;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox RubriqueArticleModif;
+        private System.Windows.Forms.TextBox DescriptionArticleModif;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox nomArticleModif;
+        private System.Windows.Forms.Button BoutonModiferArticle;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox QuantiteStockArticleModif;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox PrixArticleModif;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -118,6 +118,37 @@ namespace AppClient
                 rempliArticle(int.Parse(e.Node.Tag.ToString()));
             }
         }
+
+        private void clickSurUnProduit(object sender, DataGridViewCellEventArgs e)
+        {
+            String nom="", description="", idRubrique="", poids="", prix="", quantiteStock="" ;
+            foreach (DataGridViewRow row in dataGridViewArticles.SelectedRows)
+            {
+                nom  = row.Cells[1].Value.ToString();
+                description = row.Cells[2].Value.ToString();
+                idRubrique = row.Cells[3].Value.ToString();
+                poids = row.Cells[4].Value.ToString();
+                prix = row.Cells[5].Value.ToString();
+                quantiteStock = row.Cells[6].Value.ToString();
+                //MessageBox.Show(nom.ToString(),description.ToString()+" "+idRubrique.ToString()+" "+poids.ToString()+" "+prix.ToString()+" "+quantiteStock.ToString());
+            }
+            nomArticleModif.Text = nom;
+            DescriptionArticleModif.Text = description;
+            RubriqueArticleModif.Text = idRubrique;
+            PoidsArticleModif.Text = poids;
+            PrixArticleModif.Text = prix;
+            QuantiteStockArticleModif.Text = quantiteStock;
+        }
+
+        private void BoutonModiferArticle_Click(object sender, EventArgs e)
+        {
+            /*Lors du clic sur le bouton pour modifier un article*/
+
+            //vérification que tous les champs sont rentrés
+            if (nomArticleModif.Text == "" || DescriptionArticleModif.Text == "" || RubriqueArticleModif.Text == "" || PoidsArticleModif.Text == "" || PrixArticleModif.Text == "" || QuantiteStockArticleModif.Text == "") {
+                MessageBox.Show("Tous les champs doivent être remplis","Erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+        }
     }
 
 }
