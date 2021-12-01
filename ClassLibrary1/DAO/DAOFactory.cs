@@ -28,5 +28,17 @@ namespace ClassLibrary1.DAO
         {
             return new _CClientDAO(_connexionString);
         }
+
+        public static _CDepartementsDAO getCDepartements()
+        {
+            return new _CDepartementsDAO(_connexionString);
+        }
+
+
+        public static _CVillesDAO getCVilles()
+        {
+            return new _CVillesDAO(_connexionString);
+        }
+
     }
 }

@@ -94,10 +94,16 @@
     <None Include="Connected Services\Webservice\AppClient.Webservice.CClient.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CDepartements.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Webservice\AppClient.Webservice.CPays.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Webservice\AppClient.Webservice.CRegions1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CVilles.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Webservice\WebService1.wsdl" />

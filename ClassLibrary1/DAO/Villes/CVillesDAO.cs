@@ -9,55 +9,56 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1.DAO
 {
-    public abstract class CRegionsDAO : DAO<CRegions, int>
+    public abstract class CVillesDAO : DAO<CVilles, int>
     {
-        public CRegionsDAO(String connexionString) : base(connexionString) { }
+        public CVillesDAO(String connexionString) : base(connexionString) { }
 
-        public override int create(CRegions obj)
+        public override int create(CVilles obj)
         {
             return 0;
         }
 
-        public override List<CRegions> getAll()
+        public override List<CVilles> getAll()
         {
             //TODO faire lever une exception 
-            List<CRegions> lstAll = new List<CRegions>();
+            List<CVilles> lstAll = new List<CVilles>();
             return lstAll;
         }
 
         //récupère les régions d'un pays dont l'id est précisé en paramètre
-        public List<CRegions> getAll(int idRegions)
+        public List<CVilles> getAll(int idDepartement)
         {
-            List<CRegions> lstAll = new List<CRegions>();
+            List<CVilles> lstAll = new List<CVilles>();
 
             OracleCommand req = new OracleCommand();
             req.Connection = _connex;
-            req.CommandText = "SELECT * FROM DEPARTEMENT WHERE ID_REGION =" + idRegions;
+            //Enchainement de simple cotes/doubles cotes car c'est une chaine de charactères dans la table, pas un int
+            req.CommandText = "SELECT * FROM VILLE WHERE NUMERO_DEPARTEMENT = '" + idDepartement + "'";
 
             OracleDataReader res = req.ExecuteReader();
             while (res.Read())
             {
-                int id = int.Parse(res["numero"].ToString());
+                int id = int.Parse(res["code_postal"].ToString());
                 String nom = (res["nom"].ToString());
-                lstAll.Add(new CRegions(id, nom));
+                lstAll.Add(new CVilles(id, nom));
             }
             res.Close(); //fermeture lecteur BD
             return lstAll;
         }
 
-        public override Boolean update(CRegions obj)
+        public override Boolean update(CVilles obj)
         {
             return true;
         }
 
-        public override Boolean delete(CRegions obj)
+        public override Boolean delete(CVilles obj)
         {
             return true;
         }
 
-        public override CRegions find(int id)
+        public override CVilles find(int id)
         {
-            CRegions tmp = null;
+            CVilles tmp = null;
             return tmp;
         }
     }

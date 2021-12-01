@@ -62,6 +62,56 @@
           <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="getTousLesDepartements">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idRegion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTousLesDepartementsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTousLesDepartementsResult" type="tns:ArrayOfCDepartements" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCDepartements">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CDepartements" nillable="true" type="tns:CDepartements" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CDepartements">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getToutesLesVilles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idDepartement" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getToutesLesVillesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getToutesLesVillesResult" type="tns:ArrayOfCVilles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCVilles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CVilles" nillable="true" type="tns:CVilles" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CVilles">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="getTousLesClients">
         <s:complexType />
       </s:element>
@@ -110,6 +160,18 @@
   <wsdl:message name="getToutesLesRegionsSoapOut">
     <wsdl:part name="parameters" element="tns:getToutesLesRegionsResponse" />
   </wsdl:message>
+  <wsdl:message name="getTousLesDepartementsSoapIn">
+    <wsdl:part name="parameters" element="tns:getTousLesDepartements" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesDepartementsSoapOut">
+    <wsdl:part name="parameters" element="tns:getTousLesDepartementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getToutesLesVillesSoapIn">
+    <wsdl:part name="parameters" element="tns:getToutesLesVilles" />
+  </wsdl:message>
+  <wsdl:message name="getToutesLesVillesSoapOut">
+    <wsdl:part name="parameters" element="tns:getToutesLesVillesResponse" />
+  </wsdl:message>
   <wsdl:message name="getTousLesClientsSoapIn">
     <wsdl:part name="parameters" element="tns:getTousLesClients" />
   </wsdl:message>
@@ -128,6 +190,14 @@
     <wsdl:operation name="getToutesLesRegions">
       <wsdl:input message="tns:getToutesLesRegionsSoapIn" />
       <wsdl:output message="tns:getToutesLesRegionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesDepartements">
+      <wsdl:input message="tns:getTousLesDepartementsSoapIn" />
+      <wsdl:output message="tns:getTousLesDepartementsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesVilles">
+      <wsdl:input message="tns:getToutesLesVillesSoapIn" />
+      <wsdl:output message="tns:getToutesLesVillesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getTousLesClients">
       <wsdl:input message="tns:getTousLesClientsSoapIn" />
@@ -156,6 +226,24 @@
     </wsdl:operation>
     <wsdl:operation name="getToutesLesRegions">
       <soap:operation soapAction="http://tempuri.org/getToutesLesRegions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesDepartements">
+      <soap:operation soapAction="http://tempuri.org/getTousLesDepartements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesVilles">
+      <soap:operation soapAction="http://tempuri.org/getToutesLesVilles" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -195,6 +283,24 @@
     </wsdl:operation>
     <wsdl:operation name="getToutesLesRegions">
       <soap12:operation soapAction="http://tempuri.org/getToutesLesRegions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesDepartements">
+      <soap12:operation soapAction="http://tempuri.org/getTousLesDepartements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesVilles">
+      <soap12:operation soapAction="http://tempuri.org/getToutesLesVilles" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -44,4 +44,20 @@ public partial class WebService : System.Web.Services.WebService
         CRegions = ClassLibrary1.DAO.DAOFactory.getCRegions().getAll(idPays);
         return CRegions;
     }
+
+    [WebMethod]
+    public List<CDepartements> getTousLesDepartements(int idRegion)
+    {
+        List<CDepartements> CDepartements = new List<CDepartements>();
+        CDepartements = ClassLibrary1.DAO.DAOFactory.getCDepartements().getAll(idRegion);
+        return CDepartements;
+    }
+
+    [WebMethod]
+    public List<CVilles> getToutesLesVilles(int idDepartement)
+    {
+        List<CVilles> CVilles = new List<CVilles>();
+        CVilles = ClassLibrary1.DAO.DAOFactory.getCVilles().getAll(idDepartement);
+        return CVilles;
+    }
 }
