@@ -36,5 +36,10 @@ namespace ClassLibrary2.DAO
         {
             return new _CLignePanierDAO(_connexionString);
         }
+
+        public static _CLigneCommandeDAO getCLigneCommandeDAO()
+        {
+            return new _CLigneCommandeDAO(_connexionString);
+        }
     }
 }

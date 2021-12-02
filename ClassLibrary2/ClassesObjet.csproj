@@ -45,6 +45,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DAO\CArticlesDAO.cs" />
     <Compile Include="DAO\CClientDAO.cs" />
+    <Compile Include="DAO\CLigneCommandeDAO.cs" />
     <Compile Include="DAO\CLignePanierDAO.cs" />
     <Compile Include="DAO\CPaysDAO.cs" />
     <Compile Include="DAO\CRubriqueDAO.cs" />
@@ -54,10 +55,12 @@
     <Compile Include="DAO\SingleConnexion.cs" />
     <Compile Include="DAO\_CArticlesDAO.cs" />
     <Compile Include="DAO\_CClientDAO.cs" />
+    <Compile Include="DAO\_CLigneCommandeDAO.cs" />
     <Compile Include="DAO\_CLignePanierDAO.cs" />
     <Compile Include="DAO\_CPaysDAO.cs" />
     <Compile Include="Objets\CArticles.cs" />
     <Compile Include="Objets\CClient.cs" />
+    <Compile Include="Objets\CLigneCommande.cs" />
     <Compile Include="Objets\CLignePanier.cs" />
     <Compile Include="Objets\CPays.cs" />
     <Compile Include="Objets\CRubrique.cs" />

@@ -83,4 +83,12 @@ public partial class WebService : System.Web.Services.WebService
         int result = DAOFactory.getCLignePanierDAO().create(ligne);
         return result;
     }
+
+    [WebMethod(Description = "Charge toutes les lignes commande")]
+    public List<CLigneCommande> GetAllCLigneCommande()
+    {
+        List<CLigneCommande> retour = new List<CLigneCommande>();
+        retour = DAOFactory.getCLigneCommandeDAO().getAll();
+        return retour;
+    }
 }
