@@ -17,11 +17,27 @@ namespace ClassLibrary2.DAO
         {
             try
             {
-                OracleCommand req = new OracleCommand();
-                req.Connection = _connex;
-                req.CommandText = "EXEC ADDPANIER @NUM_CLIENT_IN = '" + obj.Numero_client+"', @ID_ARTICLE_IN = '"+obj.Id_article+"',  @QUANTITE_IN = '"+obj.Qte+"';";
-                OracleDataReader res = req.ExecuteReader();
-                res.Close();
+                OracleCommand reqP = new OracleCommand();
+                reqP.Connection = _connex;
+                reqP.CommandType = System.Data.CommandType.StoredProcedure;
+                reqP.CommandText = "ADDPANIER";
+
+                OracleParameter paramRequeteClient = new OracleParameter("NUM_CLIENT_IN", OracleType.Number);
+                paramRequeteClient.Value = obj.Numero_client;
+
+                OracleParameter paramRequeteArticle = new OracleParameter("ID_ARTICLE_IN", OracleType.Number);
+                paramRequeteArticle.Value = obj.Id_article;
+
+                OracleParameter paramRequeteQte = new OracleParameter("QUANTITE_IN", OracleType.Number);
+                paramRequeteQte.Value = obj.Qte;
+
+                /* ajout des params*/
+                reqP.Parameters.Add(paramRequeteClient);
+                reqP.Parameters.Add(paramRequeteArticle);
+                reqP.Parameters.Add(paramRequeteQte);
+
+                reqP.ExecuteNonQuery();
+
                 return 1;
             }
             catch(Exception e)
