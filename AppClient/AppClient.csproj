@@ -94,6 +94,9 @@
     <None Include="Connected Services\Webservice\AppClient.Webservice.CClient.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CCommandes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Webservice\AppClient.Webservice.CDepartements.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -101,6 +104,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Webservice\AppClient.Webservice.CRegions1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CStatutCommande.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Webservice\AppClient.Webservice.CVilles.datasource">

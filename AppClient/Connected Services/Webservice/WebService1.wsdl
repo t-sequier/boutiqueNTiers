@@ -112,6 +112,116 @@
           <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="getToutesLesCommandes">
+        <s:complexType />
+      </s:element>
+      <s:element name="getToutesLesCommandesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getToutesLesCommandesResult" type="tns:ArrayOfCCommandes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCCommandes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CCommandes" nillable="true" type="tns:CCommandes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CCommandes">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCom" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCli" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdStat" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFP" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getUneCommande">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCommande" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUneCommandeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUneCommandeResult" type="tns:ArrayOfCCommandes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTousLesStatutCommandes">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTousLesStatutCommandesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTousLesStatutCommandesResult" type="tns:ArrayOfCStatutCommande" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCStatutCommande">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CStatutCommande" nillable="true" type="tns:CStatutCommande" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CStatutCommande">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Libelle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fini" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ordre" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getUnStatutCommande">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idStatut" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnStatutCommandeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnStatutCommandeResult" type="tns:ArrayOfCStatutCommande" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTousLesFraisPort">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTousLesFraisPortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTousLesFraisPortResult" type="tns:ArrayOfCFraisPort" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCFraisPort">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CFraisPort" nillable="true" type="tns:CFraisPort" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CFraisPort">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PoidsMax" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prix" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getUnFraisPort">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFP" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnFraisPortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnFraisPortResult" type="tns:ArrayOfCFraisPort" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="getTousLesClients">
         <s:complexType />
       </s:element>
@@ -172,6 +282,42 @@
   <wsdl:message name="getToutesLesVillesSoapOut">
     <wsdl:part name="parameters" element="tns:getToutesLesVillesResponse" />
   </wsdl:message>
+  <wsdl:message name="getToutesLesCommandesSoapIn">
+    <wsdl:part name="parameters" element="tns:getToutesLesCommandes" />
+  </wsdl:message>
+  <wsdl:message name="getToutesLesCommandesSoapOut">
+    <wsdl:part name="parameters" element="tns:getToutesLesCommandesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUneCommandeSoapIn">
+    <wsdl:part name="parameters" element="tns:getUneCommande" />
+  </wsdl:message>
+  <wsdl:message name="getUneCommandeSoapOut">
+    <wsdl:part name="parameters" element="tns:getUneCommandeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesStatutCommandesSoapIn">
+    <wsdl:part name="parameters" element="tns:getTousLesStatutCommandes" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesStatutCommandesSoapOut">
+    <wsdl:part name="parameters" element="tns:getTousLesStatutCommandesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnStatutCommandeSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnStatutCommande" />
+  </wsdl:message>
+  <wsdl:message name="getUnStatutCommandeSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnStatutCommandeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesFraisPortSoapIn">
+    <wsdl:part name="parameters" element="tns:getTousLesFraisPort" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesFraisPortSoapOut">
+    <wsdl:part name="parameters" element="tns:getTousLesFraisPortResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnFraisPortSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnFraisPort" />
+  </wsdl:message>
+  <wsdl:message name="getUnFraisPortSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnFraisPortResponse" />
+  </wsdl:message>
   <wsdl:message name="getTousLesClientsSoapIn">
     <wsdl:part name="parameters" element="tns:getTousLesClients" />
   </wsdl:message>
@@ -198,6 +344,30 @@
     <wsdl:operation name="getToutesLesVilles">
       <wsdl:input message="tns:getToutesLesVillesSoapIn" />
       <wsdl:output message="tns:getToutesLesVillesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesCommandes">
+      <wsdl:input message="tns:getToutesLesCommandesSoapIn" />
+      <wsdl:output message="tns:getToutesLesCommandesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUneCommande">
+      <wsdl:input message="tns:getUneCommandeSoapIn" />
+      <wsdl:output message="tns:getUneCommandeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesStatutCommandes">
+      <wsdl:input message="tns:getTousLesStatutCommandesSoapIn" />
+      <wsdl:output message="tns:getTousLesStatutCommandesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnStatutCommande">
+      <wsdl:input message="tns:getUnStatutCommandeSoapIn" />
+      <wsdl:output message="tns:getUnStatutCommandeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesFraisPort">
+      <wsdl:input message="tns:getTousLesFraisPortSoapIn" />
+      <wsdl:output message="tns:getTousLesFraisPortSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnFraisPort">
+      <wsdl:input message="tns:getUnFraisPortSoapIn" />
+      <wsdl:output message="tns:getUnFraisPortSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getTousLesClients">
       <wsdl:input message="tns:getTousLesClientsSoapIn" />
@@ -244,6 +414,60 @@
     </wsdl:operation>
     <wsdl:operation name="getToutesLesVilles">
       <soap:operation soapAction="http://tempuri.org/getToutesLesVilles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesCommandes">
+      <soap:operation soapAction="http://tempuri.org/getToutesLesCommandes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUneCommande">
+      <soap:operation soapAction="http://tempuri.org/getUneCommande" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesStatutCommandes">
+      <soap:operation soapAction="http://tempuri.org/getTousLesStatutCommandes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnStatutCommande">
+      <soap:operation soapAction="http://tempuri.org/getUnStatutCommande" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesFraisPort">
+      <soap:operation soapAction="http://tempuri.org/getTousLesFraisPort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnFraisPort">
+      <soap:operation soapAction="http://tempuri.org/getUnFraisPort" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -301,6 +525,60 @@
     </wsdl:operation>
     <wsdl:operation name="getToutesLesVilles">
       <soap12:operation soapAction="http://tempuri.org/getToutesLesVilles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesCommandes">
+      <soap12:operation soapAction="http://tempuri.org/getToutesLesCommandes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUneCommande">
+      <soap12:operation soapAction="http://tempuri.org/getUneCommande" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesStatutCommandes">
+      <soap12:operation soapAction="http://tempuri.org/getTousLesStatutCommandes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnStatutCommande">
+      <soap12:operation soapAction="http://tempuri.org/getUnStatutCommande" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesFraisPort">
+      <soap12:operation soapAction="http://tempuri.org/getTousLesFraisPort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnFraisPort">
+      <soap12:operation soapAction="http://tempuri.org/getUnFraisPort" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -45,8 +45,12 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DAO\Clients\CClientDAO.cs" />
     <Compile Include="DAO\Clients\_CClientDAO.cs" />
+    <Compile Include="DAO\Commandes\CCommandesDAO.cs" />
+    <Compile Include="DAO\Commandes\_CCommandesDAO.cs" />
     <Compile Include="DAO\Departements\CDepartementsDAO.cs" />
     <Compile Include="DAO\Departements\_CDepartementsDAO.cs" />
+    <Compile Include="DAO\FraisPort\CFraisPortDAO.cs" />
+    <Compile Include="DAO\FraisPort\_CFraisPortDAO.cs" />
     <Compile Include="DAO\Pays\CPaysDAO.cs" />
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\DAOFactory.cs" />
@@ -54,9 +58,14 @@
     <Compile Include="DAO\Regions\_CRegionsDAO.cs" />
     <Compile Include="DAO\SingleConnexion.cs" />
     <Compile Include="DAO\Pays\_CPaysDAO.cs" />
+    <Compile Include="DAO\StatutCommande\CStatutCommandeDAO.cs" />
+    <Compile Include="DAO\StatutCommande\_CStatutCommandeDAO.cs" />
     <Compile Include="DAO\Villes\CVillesDAO.cs" />
     <Compile Include="DAO\Villes\_CVillesDAO.cs" />
     <Compile Include="Objets\CClient.cs" />
+    <Compile Include="Objets\CFraisPort.cs" />
+    <Compile Include="Objets\CStatutCommande.cs" />
+    <Compile Include="Objets\CCommandes.cs" />
     <Compile Include="Objets\CPays.cs" />
     <Compile Include="Objets\CVilles.cs" />
     <Compile Include="Objets\CDepartements.cs" />
@@ -65,10 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAO\Civilites\" />
-    <Folder Include="DAO\Commandes\" />
-    <Folder Include="DAO\FraisPort\" />
     <Folder Include="DAO\LigneCommande\" />
-    <Folder Include="DAO\StatutCommande\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

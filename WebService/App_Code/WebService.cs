@@ -60,4 +60,54 @@ public partial class WebService : System.Web.Services.WebService
         CVilles = ClassLibrary1.DAO.DAOFactory.getCVilles().getAll(idDepartement);
         return CVilles;
     }
+
+    //Todo: Mettre les webmethod de commandes (frais_port, statut, ligne_commande, commande) dans un nouveau WS
+    //----------Commandes------------
+    [WebMethod]
+    public List<CCommandes> getToutesLesCommandes()
+    {
+        List<CCommandes> CCommandes = new List<CCommandes>();
+        CCommandes = ClassLibrary1.DAO.DAOFactory.getCCommandesDAO().getAll();
+        return CCommandes;
+    }
+
+    [WebMethod]
+    public List<CCommandes> getUneCommande(int idCommande)
+    {
+        List<CCommandes> CCommandes = new List<CCommandes>();
+        CCommandes = ClassLibrary1.DAO.DAOFactory.getCCommandesDAO().getUn(idCommande);
+        return CCommandes;
+    }
+    //----------Statut commande------------
+    [WebMethod]
+    public List<CStatutCommande> getTousLesStatutCommandes()
+    {
+        List<CStatutCommande> CStatutCommande = new List<CStatutCommande>();
+        CStatutCommande = ClassLibrary1.DAO.DAOFactory.getCStatutCommandeDAO().getAll();
+        return CStatutCommande;
+    }
+
+    [WebMethod]
+    public List<CStatutCommande> getUnStatutCommande(int idStatut)
+    {
+        List<CStatutCommande> CStatutCommande = new List<CStatutCommande>();
+        CStatutCommande = ClassLibrary1.DAO.DAOFactory.getCStatutCommandeDAO().getUn(idStatut);
+        return CStatutCommande;
+    }
+    //----------Frais port------------
+    [WebMethod]
+    public List<CFraisPort> getTousLesFraisPort()
+    {
+        List<CFraisPort> CFraisPort = new List<CFraisPort>();
+        CFraisPort = ClassLibrary1.DAO.DAOFactory.getCFraisPortDAO().getAll();
+        return CFraisPort;
+    }
+
+    [WebMethod]
+    public List<CFraisPort> getUnFraisPort(int idFP)
+    {
+        List<CFraisPort> CFraisPort = new List<CFraisPort>();
+        CFraisPort = ClassLibrary1.DAO.DAOFactory.getCFraisPortDAO().getUn(idFP);
+        return CFraisPort;
+    }
 }

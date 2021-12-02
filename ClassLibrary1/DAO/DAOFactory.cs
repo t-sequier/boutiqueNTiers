@@ -34,11 +34,24 @@ namespace ClassLibrary1.DAO
             return new _CDepartementsDAO(_connexionString);
         }
 
-
         public static _CVillesDAO getCVilles()
         {
             return new _CVillesDAO(_connexionString);
         }
 
+        public static _CCommandesDAO getCCommandesDAO()
+        {
+            return new _CCommandesDAO(_connexionString);
+        }
+
+        public static _CStatutCommandeDAO getCStatutCommandeDAO()
+        {
+            return new _CStatutCommandeDAO(_connexionString);
+        }
+
+        public static _CFraisPortDAO getCFraisPortDAO()
+        {
+            return new _CFraisPortDAO(_connexionString);
+        }
     }
 }
