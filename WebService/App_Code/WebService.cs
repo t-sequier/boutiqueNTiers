@@ -28,7 +28,7 @@ public partial class WebService : System.Web.Services.WebService
         return "Salut " + nom + "!";
     }
 
-    [WebMethod]
+    [WebMethod(Description = "Renvoie tous les Pays")]
     public List<CPays> getTousLesPays()
     {
         
@@ -37,7 +37,7 @@ public partial class WebService : System.Web.Services.WebService
         return CPays;
     }
 
-    [WebMethod]
+    [WebMethod(Description = "Renvoie toutes les régions d'un pays")]
     public List<CRegions> getToutesLesRegions(int idPays)
     {
         List<CRegions> CRegions = new List<CRegions>();
@@ -45,7 +45,7 @@ public partial class WebService : System.Web.Services.WebService
         return CRegions;
     }
 
-    [WebMethod]
+    [WebMethod(Description = "Renvoie tous les départements d'une région")]
     public List<CDepartements> getTousLesDepartements(int idRegion)
     {
         List<CDepartements> CDepartements = new List<CDepartements>();
@@ -53,7 +53,7 @@ public partial class WebService : System.Web.Services.WebService
         return CDepartements;
     }
 
-    [WebMethod]
+    [WebMethod(Description = "Renvoie toutes les villes d'un département")]
     public List<CVilles> getToutesLesVilles(int idDepartement)
     {
         List<CVilles> CVilles = new List<CVilles>();
@@ -63,7 +63,7 @@ public partial class WebService : System.Web.Services.WebService
 
     //Todo: Mettre les webmethod de commandes (frais_port, statut, ligne_commande, commande) dans un nouveau WS
     //----------Commandes------------
-    [WebMethod]
+    [WebMethod(Description = "Renvoie toutes les commandes")]
     public List<CCommandes> getToutesLesCommandes()
     {
         List<CCommandes> CCommandes = new List<CCommandes>();
@@ -71,7 +71,7 @@ public partial class WebService : System.Web.Services.WebService
         return CCommandes;
     }
 
-    [WebMethod]
+    [WebMethod(Description = "Renvoie une commande en fonction de son ID")]
     public List<CCommandes> getUneCommande(int idCommande)
     {
         List<CCommandes> CCommandes = new List<CCommandes>();
@@ -79,7 +79,7 @@ public partial class WebService : System.Web.Services.WebService
         return CCommandes;
     }
     //----------Statut commande------------
-    [WebMethod]
+    [WebMethod(Description = "Renvoie tous les status_commande (information)")]
     public List<CStatutCommande> getTousLesStatutCommandes()
     {
         List<CStatutCommande> CStatutCommande = new List<CStatutCommande>();
@@ -87,7 +87,7 @@ public partial class WebService : System.Web.Services.WebService
         return CStatutCommande;
     }
 
-    [WebMethod]
+    [WebMethod(Description = "Renvoie un statut_commande en fonction de son ID (information)")]
     public List<CStatutCommande> getUnStatutCommande(int idStatut)
     {
         List<CStatutCommande> CStatutCommande = new List<CStatutCommande>();
@@ -95,7 +95,7 @@ public partial class WebService : System.Web.Services.WebService
         return CStatutCommande;
     }
     //----------Frais port------------
-    [WebMethod]
+    [WebMethod(Description = "Renvoie tous les frais_port (information)")]
     public List<CFraisPort> getTousLesFraisPort()
     {
         List<CFraisPort> CFraisPort = new List<CFraisPort>();
@@ -103,11 +103,27 @@ public partial class WebService : System.Web.Services.WebService
         return CFraisPort;
     }
 
-    [WebMethod]
+    [WebMethod(Description = "Renvoie un frais_port en fonction de son ID (information)")]
     public List<CFraisPort> getUnFraisPort(int idFP)
     {
         List<CFraisPort> CFraisPort = new List<CFraisPort>();
         CFraisPort = ClassLibrary1.DAO.DAOFactory.getCFraisPortDAO().getUn(idFP);
         return CFraisPort;
+    }
+    //----------Civilite------------
+    [WebMethod(Description = "Renvoie toutes les civilités (information)")]
+    public List<CCivilite> getToutesLesCivilite()
+    {
+        List<CCivilite> CCivilite = new List<CCivilite>();
+        CCivilite = ClassLibrary1.DAO.DAOFactory.getCCiviliteDAO().getAll();
+        return CCivilite;
+    }
+
+    [WebMethod (Description = "Renvoie une civilité en fonction de son ID (information)")]
+    public List<CCivilite> getUneCivilite(int idCiv)
+    {
+        List<CCivilite> CCivilite = new List<CCivilite>();
+        CCivilite = ClassLibrary1.DAO.DAOFactory.getCCiviliteDAO().getUn(idCiv);
+        return CCivilite;
     }
 }

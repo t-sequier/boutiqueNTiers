@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAO\Civilites\CCiviliteDAO.cs" />
+    <Compile Include="DAO\Civilites\_CCiviliteDAO.cs" />
     <Compile Include="DAO\Clients\CClientDAO.cs" />
     <Compile Include="DAO\Clients\_CClientDAO.cs" />
     <Compile Include="DAO\Commandes\CCommandesDAO.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="DAO\Villes\CVillesDAO.cs" />
     <Compile Include="DAO\Villes\_CVillesDAO.cs" />
     <Compile Include="Objets\CClient.cs" />
+    <Compile Include="Objets\CCivilite.cs" />
     <Compile Include="Objets\CFraisPort.cs" />
     <Compile Include="Objets\CStatutCommande.cs" />
     <Compile Include="Objets\CCommandes.cs" />
@@ -73,7 +76,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAO\Civilites\" />
     <Folder Include="DAO\LigneCommande\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

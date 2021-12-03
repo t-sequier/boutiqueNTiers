@@ -222,6 +222,41 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getToutesLesCivilite">
+        <s:complexType />
+      </s:element>
+      <s:element name="getToutesLesCiviliteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getToutesLesCiviliteResult" type="tns:ArrayOfCCivilite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCCivilite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CCivilite" nillable="true" type="tns:CCivilite" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CCivilite">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Libelle" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getUneCivilite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCiv" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUneCiviliteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUneCiviliteResult" type="tns:ArrayOfCCivilite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="getTousLesClients">
         <s:complexType />
       </s:element>
@@ -318,6 +353,18 @@
   <wsdl:message name="getUnFraisPortSoapOut">
     <wsdl:part name="parameters" element="tns:getUnFraisPortResponse" />
   </wsdl:message>
+  <wsdl:message name="getToutesLesCiviliteSoapIn">
+    <wsdl:part name="parameters" element="tns:getToutesLesCivilite" />
+  </wsdl:message>
+  <wsdl:message name="getToutesLesCiviliteSoapOut">
+    <wsdl:part name="parameters" element="tns:getToutesLesCiviliteResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUneCiviliteSoapIn">
+    <wsdl:part name="parameters" element="tns:getUneCivilite" />
+  </wsdl:message>
+  <wsdl:message name="getUneCiviliteSoapOut">
+    <wsdl:part name="parameters" element="tns:getUneCiviliteResponse" />
+  </wsdl:message>
   <wsdl:message name="getTousLesClientsSoapIn">
     <wsdl:part name="parameters" element="tns:getTousLesClients" />
   </wsdl:message>
@@ -330,44 +377,64 @@
       <wsdl:output message="tns:HelloWorldSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getTousLesPays">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie tous les Pays</wsdl:documentation>
       <wsdl:input message="tns:getTousLesPaysSoapIn" />
       <wsdl:output message="tns:getTousLesPaysSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getToutesLesRegions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie toutes les régions d'un pays</wsdl:documentation>
       <wsdl:input message="tns:getToutesLesRegionsSoapIn" />
       <wsdl:output message="tns:getToutesLesRegionsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getTousLesDepartements">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie tous les départements d'une région</wsdl:documentation>
       <wsdl:input message="tns:getTousLesDepartementsSoapIn" />
       <wsdl:output message="tns:getTousLesDepartementsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getToutesLesVilles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie toutes les villes d'un département</wsdl:documentation>
       <wsdl:input message="tns:getToutesLesVillesSoapIn" />
       <wsdl:output message="tns:getToutesLesVillesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getToutesLesCommandes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie toutes les commandes</wsdl:documentation>
       <wsdl:input message="tns:getToutesLesCommandesSoapIn" />
       <wsdl:output message="tns:getToutesLesCommandesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getUneCommande">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie une commande en fonction de son ID</wsdl:documentation>
       <wsdl:input message="tns:getUneCommandeSoapIn" />
       <wsdl:output message="tns:getUneCommandeSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getTousLesStatutCommandes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie tous les status_commande (information)</wsdl:documentation>
       <wsdl:input message="tns:getTousLesStatutCommandesSoapIn" />
       <wsdl:output message="tns:getTousLesStatutCommandesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getUnStatutCommande">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie un statut_commande en fonction de son ID (information)</wsdl:documentation>
       <wsdl:input message="tns:getUnStatutCommandeSoapIn" />
       <wsdl:output message="tns:getUnStatutCommandeSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getTousLesFraisPort">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie tous les frais_port (information)</wsdl:documentation>
       <wsdl:input message="tns:getTousLesFraisPortSoapIn" />
       <wsdl:output message="tns:getTousLesFraisPortSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getUnFraisPort">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie un frais_port en fonction de son ID (information)</wsdl:documentation>
       <wsdl:input message="tns:getUnFraisPortSoapIn" />
       <wsdl:output message="tns:getUnFraisPortSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesCivilite">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie toutes les civilités (information)</wsdl:documentation>
+      <wsdl:input message="tns:getToutesLesCiviliteSoapIn" />
+      <wsdl:output message="tns:getToutesLesCiviliteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUneCivilite">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Renvoie une civilité en fonction de son ID (information)</wsdl:documentation>
+      <wsdl:input message="tns:getUneCiviliteSoapIn" />
+      <wsdl:output message="tns:getUneCiviliteSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getTousLesClients">
       <wsdl:input message="tns:getTousLesClientsSoapIn" />
@@ -468,6 +535,24 @@
     </wsdl:operation>
     <wsdl:operation name="getUnFraisPort">
       <soap:operation soapAction="http://tempuri.org/getUnFraisPort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesCivilite">
+      <soap:operation soapAction="http://tempuri.org/getToutesLesCivilite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUneCivilite">
+      <soap:operation soapAction="http://tempuri.org/getUneCivilite" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -579,6 +664,24 @@
     </wsdl:operation>
     <wsdl:operation name="getUnFraisPort">
       <soap12:operation soapAction="http://tempuri.org/getUnFraisPort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesCivilite">
+      <soap12:operation soapAction="http://tempuri.org/getToutesLesCivilite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUneCivilite">
+      <soap12:operation soapAction="http://tempuri.org/getUneCivilite" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

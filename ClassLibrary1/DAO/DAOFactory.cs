@@ -53,5 +53,10 @@ namespace ClassLibrary1.DAO
         {
             return new _CFraisPortDAO(_connexionString);
         }
+
+        public static _CCiviliteDAO getCCiviliteDAO()
+        {
+            return new _CCiviliteDAO(_connexionString);
+        }
     }
 }

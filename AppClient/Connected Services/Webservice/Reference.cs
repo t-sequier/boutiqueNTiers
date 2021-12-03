@@ -509,6 +509,66 @@ namespace AppClient.Webservice {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CCivilite", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CCivilite : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LibelleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Libelle {
+            get {
+                return this.LibelleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LibelleField, value) != true)) {
+                    this.LibelleField = value;
+                    this.RaisePropertyChanged("Libelle");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CClient", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class CClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -779,6 +839,24 @@ namespace AppClient.Webservice {
         System.IAsyncResult BegingetUnFraisPort(AppClient.Webservice.getUnFraisPortRequest request, System.AsyncCallback callback, object asyncState);
         
         AppClient.Webservice.getUnFraisPortResponse EndgetUnFraisPort(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getToutesLesCiviliteResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getToutesLesCivilite", ReplyAction="*")]
+        AppClient.Webservice.getToutesLesCiviliteResponse getToutesLesCivilite(AppClient.Webservice.getToutesLesCiviliteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getToutesLesCivilite", ReplyAction="*")]
+        System.IAsyncResult BegingetToutesLesCivilite(AppClient.Webservice.getToutesLesCiviliteRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getToutesLesCiviliteResponse EndgetToutesLesCivilite(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getUneCiviliteResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getUneCivilite", ReplyAction="*")]
+        AppClient.Webservice.getUneCiviliteResponse getUneCivilite(AppClient.Webservice.getUneCiviliteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getUneCivilite", ReplyAction="*")]
+        System.IAsyncResult BegingetUneCivilite(AppClient.Webservice.getUneCiviliteRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getUneCiviliteResponse EndgetUneCivilite(System.IAsyncResult result);
         
         // CODEGEN : La génération du contrat de message depuis le nom d'élément getTousLesClientsResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getTousLesClients", ReplyAction="*")]
@@ -1514,6 +1592,135 @@ namespace AppClient.Webservice {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getToutesLesCiviliteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getToutesLesCivilite", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getToutesLesCiviliteRequestBody Body;
+        
+        public getToutesLesCiviliteRequest() {
+        }
+        
+        public getToutesLesCiviliteRequest(AppClient.Webservice.getToutesLesCiviliteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getToutesLesCiviliteRequestBody {
+        
+        public getToutesLesCiviliteRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getToutesLesCiviliteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getToutesLesCiviliteResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getToutesLesCiviliteResponseBody Body;
+        
+        public getToutesLesCiviliteResponse() {
+        }
+        
+        public getToutesLesCiviliteResponse(AppClient.Webservice.getToutesLesCiviliteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getToutesLesCiviliteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CCivilite[] getToutesLesCiviliteResult;
+        
+        public getToutesLesCiviliteResponseBody() {
+        }
+        
+        public getToutesLesCiviliteResponseBody(AppClient.Webservice.CCivilite[] getToutesLesCiviliteResult) {
+            this.getToutesLesCiviliteResult = getToutesLesCiviliteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getUneCiviliteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getUneCivilite", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getUneCiviliteRequestBody Body;
+        
+        public getUneCiviliteRequest() {
+        }
+        
+        public getUneCiviliteRequest(AppClient.Webservice.getUneCiviliteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getUneCiviliteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idCiv;
+        
+        public getUneCiviliteRequestBody() {
+        }
+        
+        public getUneCiviliteRequestBody(int idCiv) {
+            this.idCiv = idCiv;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getUneCiviliteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getUneCiviliteResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getUneCiviliteResponseBody Body;
+        
+        public getUneCiviliteResponse() {
+        }
+        
+        public getUneCiviliteResponse(AppClient.Webservice.getUneCiviliteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getUneCiviliteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CCivilite[] getUneCiviliteResult;
+        
+        public getUneCiviliteResponseBody() {
+        }
+        
+        public getUneCiviliteResponseBody(AppClient.Webservice.CCivilite[] getUneCiviliteResult) {
+            this.getUneCiviliteResult = getUneCiviliteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class getTousLesClientsRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesClients", Namespace="http://tempuri.org/", Order=0)]
@@ -1786,6 +1993,44 @@ namespace AppClient.Webservice {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getToutesLesCiviliteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getToutesLesCiviliteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CCivilite[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CCivilite[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getUneCiviliteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getUneCiviliteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CCivilite[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CCivilite[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class getTousLesClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -1873,6 +2118,18 @@ namespace AppClient.Webservice {
         
         private System.Threading.SendOrPostCallback ongetUnFraisPortCompletedDelegate;
         
+        private BeginOperationDelegate onBegingetToutesLesCiviliteDelegate;
+        
+        private EndOperationDelegate onEndgetToutesLesCiviliteDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetToutesLesCiviliteCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetUneCiviliteDelegate;
+        
+        private EndOperationDelegate onEndgetUneCiviliteDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetUneCiviliteCompletedDelegate;
+        
         private BeginOperationDelegate onBegingetTousLesClientsDelegate;
         
         private EndOperationDelegate onEndgetTousLesClientsDelegate;
@@ -1919,6 +2176,10 @@ namespace AppClient.Webservice {
         public event System.EventHandler<getTousLesFraisPortCompletedEventArgs> getTousLesFraisPortCompleted;
         
         public event System.EventHandler<getUnFraisPortCompletedEventArgs> getUnFraisPortCompleted;
+        
+        public event System.EventHandler<getToutesLesCiviliteCompletedEventArgs> getToutesLesCiviliteCompleted;
+        
+        public event System.EventHandler<getUneCiviliteCompletedEventArgs> getUneCiviliteCompleted;
         
         public event System.EventHandler<getTousLesClientsCompletedEventArgs> getTousLesClientsCompleted;
         
@@ -2707,6 +2968,148 @@ namespace AppClient.Webservice {
             }
             base.InvokeAsync(this.onBegingetUnFraisPortDelegate, new object[] {
                         idFP}, this.onEndgetUnFraisPortDelegate, this.ongetUnFraisPortCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getToutesLesCiviliteResponse AppClient.Webservice.WebServiceSoap.getToutesLesCivilite(AppClient.Webservice.getToutesLesCiviliteRequest request) {
+            return base.Channel.getToutesLesCivilite(request);
+        }
+        
+        public AppClient.Webservice.CCivilite[] getToutesLesCivilite() {
+            AppClient.Webservice.getToutesLesCiviliteRequest inValue = new AppClient.Webservice.getToutesLesCiviliteRequest();
+            inValue.Body = new AppClient.Webservice.getToutesLesCiviliteRequestBody();
+            AppClient.Webservice.getToutesLesCiviliteResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getToutesLesCivilite(inValue);
+            return retVal.Body.getToutesLesCiviliteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetToutesLesCivilite(AppClient.Webservice.getToutesLesCiviliteRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetToutesLesCivilite(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetToutesLesCivilite(System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getToutesLesCiviliteRequest inValue = new AppClient.Webservice.getToutesLesCiviliteRequest();
+            inValue.Body = new AppClient.Webservice.getToutesLesCiviliteRequestBody();
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetToutesLesCivilite(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getToutesLesCiviliteResponse AppClient.Webservice.WebServiceSoap.EndgetToutesLesCivilite(System.IAsyncResult result) {
+            return base.Channel.EndgetToutesLesCivilite(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CCivilite[] EndgetToutesLesCivilite(System.IAsyncResult result) {
+            AppClient.Webservice.getToutesLesCiviliteResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetToutesLesCivilite(result);
+            return retVal.Body.getToutesLesCiviliteResult;
+        }
+        
+        private System.IAsyncResult OnBegingetToutesLesCivilite(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BegingetToutesLesCivilite(callback, asyncState);
+        }
+        
+        private object[] OnEndgetToutesLesCivilite(System.IAsyncResult result) {
+            AppClient.Webservice.CCivilite[] retVal = this.EndgetToutesLesCivilite(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetToutesLesCiviliteCompleted(object state) {
+            if ((this.getToutesLesCiviliteCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getToutesLesCiviliteCompleted(this, new getToutesLesCiviliteCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getToutesLesCiviliteAsync() {
+            this.getToutesLesCiviliteAsync(null);
+        }
+        
+        public void getToutesLesCiviliteAsync(object userState) {
+            if ((this.onBegingetToutesLesCiviliteDelegate == null)) {
+                this.onBegingetToutesLesCiviliteDelegate = new BeginOperationDelegate(this.OnBegingetToutesLesCivilite);
+            }
+            if ((this.onEndgetToutesLesCiviliteDelegate == null)) {
+                this.onEndgetToutesLesCiviliteDelegate = new EndOperationDelegate(this.OnEndgetToutesLesCivilite);
+            }
+            if ((this.ongetToutesLesCiviliteCompletedDelegate == null)) {
+                this.ongetToutesLesCiviliteCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetToutesLesCiviliteCompleted);
+            }
+            base.InvokeAsync(this.onBegingetToutesLesCiviliteDelegate, null, this.onEndgetToutesLesCiviliteDelegate, this.ongetToutesLesCiviliteCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getUneCiviliteResponse AppClient.Webservice.WebServiceSoap.getUneCivilite(AppClient.Webservice.getUneCiviliteRequest request) {
+            return base.Channel.getUneCivilite(request);
+        }
+        
+        public AppClient.Webservice.CCivilite[] getUneCivilite(int idCiv) {
+            AppClient.Webservice.getUneCiviliteRequest inValue = new AppClient.Webservice.getUneCiviliteRequest();
+            inValue.Body = new AppClient.Webservice.getUneCiviliteRequestBody();
+            inValue.Body.idCiv = idCiv;
+            AppClient.Webservice.getUneCiviliteResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getUneCivilite(inValue);
+            return retVal.Body.getUneCiviliteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetUneCivilite(AppClient.Webservice.getUneCiviliteRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetUneCivilite(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetUneCivilite(int idCiv, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getUneCiviliteRequest inValue = new AppClient.Webservice.getUneCiviliteRequest();
+            inValue.Body = new AppClient.Webservice.getUneCiviliteRequestBody();
+            inValue.Body.idCiv = idCiv;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetUneCivilite(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getUneCiviliteResponse AppClient.Webservice.WebServiceSoap.EndgetUneCivilite(System.IAsyncResult result) {
+            return base.Channel.EndgetUneCivilite(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CCivilite[] EndgetUneCivilite(System.IAsyncResult result) {
+            AppClient.Webservice.getUneCiviliteResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetUneCivilite(result);
+            return retVal.Body.getUneCiviliteResult;
+        }
+        
+        private System.IAsyncResult OnBegingetUneCivilite(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int idCiv = ((int)(inValues[0]));
+            return this.BegingetUneCivilite(idCiv, callback, asyncState);
+        }
+        
+        private object[] OnEndgetUneCivilite(System.IAsyncResult result) {
+            AppClient.Webservice.CCivilite[] retVal = this.EndgetUneCivilite(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetUneCiviliteCompleted(object state) {
+            if ((this.getUneCiviliteCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getUneCiviliteCompleted(this, new getUneCiviliteCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getUneCiviliteAsync(int idCiv) {
+            this.getUneCiviliteAsync(idCiv, null);
+        }
+        
+        public void getUneCiviliteAsync(int idCiv, object userState) {
+            if ((this.onBegingetUneCiviliteDelegate == null)) {
+                this.onBegingetUneCiviliteDelegate = new BeginOperationDelegate(this.OnBegingetUneCivilite);
+            }
+            if ((this.onEndgetUneCiviliteDelegate == null)) {
+                this.onEndgetUneCiviliteDelegate = new EndOperationDelegate(this.OnEndgetUneCivilite);
+            }
+            if ((this.ongetUneCiviliteCompletedDelegate == null)) {
+                this.ongetUneCiviliteCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetUneCiviliteCompleted);
+            }
+            base.InvokeAsync(this.onBegingetUneCiviliteDelegate, new object[] {
+                        idCiv}, this.onEndgetUneCiviliteDelegate, this.ongetUneCiviliteCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -65,5 +65,6 @@ namespace AppClient
             //TODO: Supprimer l'élément (ligne) sélectionné
 
         }
+
     }
 }
