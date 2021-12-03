@@ -91,4 +91,78 @@ public partial class WebService : System.Web.Services.WebService
         retour = DAOFactory.getCLigneCommandeDAO().getAll();
         return retour;
     }
+
+    [WebMethod]
+    public List<CRegions> getToutesLesRegions(int idPays)
+    {
+        List<CRegions> CRegions = new List<CRegions>();
+        CRegions = ClassLibrary2.DAO.DAOFactory.getCRegions().getAll(idPays);
+        return CRegions;
+    }
+
+    [WebMethod]
+    public List<CDepartements> getTousLesDepartements(int idRegion)
+    {
+        List<CDepartements> CDepartements = new List<CDepartements>();
+        CDepartements = ClassLibrary2.DAO.DAOFactory.getCDepartements().getAll(idRegion);
+        return CDepartements;
+    }
+
+    [WebMethod]
+    public List<CVilles> getToutesLesVilles(int idDepartement)
+    {
+        List<CVilles> CVilles = new List<CVilles>();
+        CVilles = ClassLibrary2.DAO.DAOFactory.getCVilles().getAll(idDepartement);
+        return CVilles;
+    }
+
+    //Todo: Mettre les webmethod de commandes (frais_port, statut, ligne_commande, commande) dans un nouveau WS
+    //----------Commandes------------
+    [WebMethod]
+    public List<CCommandes> getToutesLesCommandes()
+    {
+        List<CCommandes> CCommandes = new List<CCommandes>();
+        CCommandes = ClassLibrary2.DAO.DAOFactory.getCCommandesDAO().getAll();
+        return CCommandes;
+    }
+
+    [WebMethod]
+    public List<CCommandes> getUneCommande(int idCommande)
+    {
+        List<CCommandes> CCommandes = new List<CCommandes>();
+        CCommandes = ClassLibrary2.DAO.DAOFactory.getCCommandesDAO().getUn(idCommande);
+        return CCommandes;
+    }
+    //----------Statut commande------------
+    [WebMethod]
+    public List<CStatutCommande> getTousLesStatutCommandes()
+    {
+        List<CStatutCommande> CStatutCommande = new List<CStatutCommande>();
+        CStatutCommande = ClassLibrary2.DAO.DAOFactory.getCStatutCommandeDAO().getAll();
+        return CStatutCommande;
+    }
+
+    [WebMethod]
+    public List<CStatutCommande> getUnStatutCommande(int idStatut)
+    {
+        List<CStatutCommande> CStatutCommande = new List<CStatutCommande>();
+        CStatutCommande = ClassLibrary2.DAO.DAOFactory.getCStatutCommandeDAO().getUn(idStatut);
+        return CStatutCommande;
+    }
+    //----------Frais port------------
+    [WebMethod]
+    public List<CFraisPort> getTousLesFraisPort()
+    {
+        List<CFraisPort> CFraisPort = new List<CFraisPort>();
+        CFraisPort = ClassLibrary2.DAO.DAOFactory.getCFraisPortDAO().getAll();
+        return CFraisPort;
+    }
+
+    [WebMethod]
+    public List<CFraisPort> getUnFraisPort(int idFP)
+    {
+        List<CFraisPort> CFraisPort = new List<CFraisPort>();
+        CFraisPort = ClassLibrary2.DAO.DAOFactory.getCFraisPortDAO().getUn(idFP);
+        return CFraisPort;
+    }
 }

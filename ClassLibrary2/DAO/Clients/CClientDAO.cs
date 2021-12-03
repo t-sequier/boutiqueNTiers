@@ -1,4 +1,5 @@
-﻿using ClassLibrary2.Objets;
+﻿
+using ClassLibrary2.Objets;
 using System;
 using System.Collections.Generic;
 using System.Data.OracleClient;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ClassLibrary2.DAO.Client
+namespace ClassLibrary2.DAO
 {
     public abstract class CClientDAO : DAO<CClient, int>
     {

@@ -1,4 +1,4 @@
-﻿using ClassLibrary2.DAO.Client;
+﻿using ClassLibrary2.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

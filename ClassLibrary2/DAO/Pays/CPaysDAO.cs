@@ -1,11 +1,11 @@
 ﻿using ClassLibrary2.Objets;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace ClassLibrary2.DAO
 {
@@ -22,22 +22,20 @@ namespace ClassLibrary2.DAO
         {
             List<CPays> lstAll = new List<CPays>();
 
-           //lstAll.Add(new CPays; 
-
             OracleCommand req = new OracleCommand();
             req.Connection = _connex;
-            req.CommandText = "select id, nom from pays";
+            req.CommandText = "SELECT * FROM PAYS";
 
             OracleDataReader res = req.ExecuteReader();
             while (res.Read())
             {
                 int id = int.Parse(res["id"].ToString());
-                String nom = res["nom"].ToString();
+                String nom = (res["nom"].ToString());
                 lstAll.Add(new CPays(id, nom));
+
+
             }
-            res.Close();
-
-
+            res.Close(); //fermeture lecteur BD
             return lstAll;
         }
 

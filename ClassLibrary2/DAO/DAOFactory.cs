@@ -11,7 +11,7 @@ namespace ClassLibrary2.DAO
     {
         protected static String _connexionString = "SERVER=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=tcp)(HOST = 10.5.0.41)(PORT=1521)))(CONNECT_DATA=(SID=XE)));uid=mms06;pwd=mms06;";
 
-
+    
         public static _CPaysDAO getCPaysDAO()
         {
             return new _CPaysDAO(_connexionString);
@@ -40,6 +40,36 @@ namespace ClassLibrary2.DAO
         public static _CLigneCommandeDAO getCLigneCommandeDAO()
         {
             return new _CLigneCommandeDAO(_connexionString);
+        }
+
+        public static _CRegionsDAO getCRegions()
+        {
+            return new _CRegionsDAO(_connexionString);
+        }
+
+        public static _CDepartementsDAO getCDepartements()
+        {
+            return new _CDepartementsDAO(_connexionString);
+        }
+
+        public static _CVillesDAO getCVilles()
+        {
+            return new _CVillesDAO(_connexionString);
+        }
+
+        public static _CCommandesDAO getCCommandesDAO()
+        {
+            return new _CCommandesDAO(_connexionString);
+        }
+
+        public static _CStatutCommandeDAO getCStatutCommandeDAO()
+        {
+            return new _CStatutCommandeDAO(_connexionString);
+        }
+
+        public static _CFraisPortDAO getCFraisPortDAO()
+        {
+            return new _CFraisPortDAO(_connexionString);
         }
     }
 }
