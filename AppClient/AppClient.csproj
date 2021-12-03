@@ -91,6 +91,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CCivilite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Webservice\AppClient.Webservice.CClient.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -98,6 +101,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Webservice\AppClient.Webservice.CDepartements.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CFraisPort1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Webservice\AppClient.Webservice.CPays.datasource">
