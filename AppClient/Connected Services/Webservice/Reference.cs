@@ -599,7 +599,21 @@ namespace AppClient.Webservice {
         private string TelField;
         
         private int CivField;
-        
+        private string numRue;
+        private string rue;
+        private int v;
+
+        public CClient(string nom, string prenom, string numRue, string rue, int v, string email, string tel)
+        {
+            Nom = nom;
+            Prenom = prenom;
+            this.numRue = numRue;
+            this.rue = rue;
+            this.v = v;
+            Email = email;
+            Tel = tel;
+        }
+
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {

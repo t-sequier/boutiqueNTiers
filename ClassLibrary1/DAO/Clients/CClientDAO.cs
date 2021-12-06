@@ -13,9 +13,13 @@ namespace ClassLibrary1.DAO.Client
     {
         public CClientDAO(String connexionString) : base(connexionString) { }
 
-        public override int create(CClient obj)
+        public override Boolean create(CClient obj)
         {
-            return 0;
+            OracleCommand req = new OracleCommand();
+            req.Connection = _connex;
+            req.CommandText = "INSERT INTO CLIENT VALUES ('','','','','','','')";
+
+            return true;
         }
 
         //récupère la liste de tous les clients (uniquement l'id (numero) et le nom)

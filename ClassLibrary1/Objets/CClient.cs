@@ -29,6 +29,7 @@ namespace ClassLibrary1.Objets
         public String Tel { get { return this.tel; } set { this.tel = value; } }
         public int Civ { get { return this.civ; } set { this.civ = value; } }
 
+        //Constructeur par défaut
         public CClient()
         {
             this.id = 1;
@@ -42,7 +43,7 @@ namespace ClassLibrary1.Objets
             this.civ = 1;
         }
 
-        /*Constructeur*/
+        //Constructeur (avec id)
         public CClient(int id, String nom, String prenom, String numAdr, String rueAdr, int cp, String email, String tel, int civ)
         {
             this.id = id;
@@ -55,5 +56,20 @@ namespace ClassLibrary1.Objets
             this.tel = tel;
             this.civ = civ;
         }
+
+        //Constructeur (sans id)
+        public CClient(String nom, String prenom, String numAdr, String rueAdr, int cp, String email, String tel, int civ)
+        {
+            this.nom = nom;
+            this.prenom = prenom;
+            this.numAdr = numAdr;
+            this.rueAdr = rueAdr;
+            this.cp = cp;
+            this.email = email;
+            this.tel = tel;
+            this.civ = civ;
+        }
+
+
     }
 }

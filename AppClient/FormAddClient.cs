@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppClient.Webservice;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace AppClient
             String prenom = tbPrenom.Text;
             String numRue = tbNumAdr.Text;
             String rue = tbRue.Text;
-            int cp = int.Parse(tbCpAdr.Text);
+            String cp = tbCpAdr.Text; //Code postale devra être int pour insertion
             String email = tbEmail.Text;
             String tel = tbTel.Text;
             //Pour la civilite, on récupère la valeur du radio button selectionné:
@@ -36,9 +37,33 @@ namespace AppClient
             if (isChecked) {civ = radioHomme.Text; } else { civ = radioFemme.Text; }
 
             //On vérifie si tous les champs on été complété (sinon affiche popup avec message erreur)
-            if (nom == "" || prenom == "" || numRue == "" || rue == "" || cp.ToString() == "" || email == "" || tel == "")
+            if (nom != "" || prenom != "" || numRue != "" || rue != "" || cp != "" || email != "" || tel != "")
             {
+                //On vérifie ensuite que le code postal soit bien constitué uniquement de chiffres
+                try
+                {
+                    //Si on peut le parser, c'est qu'il n'y a pas de caractères autre que des chiffres
+                    int.Parse(cp);
+                }
+                catch (Exception)
+                {
+                    //Si on ne peut pas le parser, on renvoie une erreur
+                    MessageBox.Show("Le code postal ne doit contenir que des chiffres, veuillez effectuer les modifications nécessaires",
+                        "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                //Si on arrive ici, c'est que tout est bon.
+                //On créer un nouvel objet client
+                CClient newClient = new CClient(nom, prenom, numRue, rue, int.Parse(cp), email, tel);
+
+                //On appelle la méthode du WS qui fait l'insert du nouveau client créé
+
+            }
+            else
+            {
+                //Affiche popup erreur si tous les champs ne sont pas remplis
+                MessageBox.Show("Veuillez remplir tous les champs", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             
