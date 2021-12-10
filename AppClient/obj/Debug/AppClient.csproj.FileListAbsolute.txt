@@ -1,7 +1,6 @@
 Z:\Archi N Tiers\AppClient\AppClient\bin\Debug\AppClient.exe.config
 Z:\Archi N Tiers\AppClient\AppClient\bin\Debug\AppClient.exe
 Z:\Archi N Tiers\AppClient\AppClient\bin\Debug\AppClient.pdb
-Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.csprojAssemblyReference.cache
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.Form1.resources
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.Properties.Resources.resources
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.csproj.GenerateResource.cache
@@ -9,3 +8,7 @@ Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.csproj.CoreCompileInput
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.exe
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.pdb
 Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.FormArticles.resources
+Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.FormPagePrincipale.resources
+Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.FormClient.resources
+Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.csprojAssemblyReference.cache
+Z:\Archi N Tiers\AppClient\AppClient\obj\Debug\AppClient.FormCommandes.resources

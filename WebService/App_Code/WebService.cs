@@ -28,4 +28,11 @@ public partial class WebService : System.Web.Services.WebService
         return "Salut " + nom + "!";
     }
 
+    [WebMethod]
+    public CClient getConnect(String nom, String mail)
+    {
+        CClient result = ClassLibrary1.DAO.DAOFactory.getCClients().getConnect(nom, mail);
+        return result;
+    }
+
 }

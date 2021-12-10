@@ -15,7 +15,36 @@ namespace ClassLibrary1.DAO
 
         public override int create(CArticles obj)
         {
-            return 0;
+            OracleCommand req = new OracleCommand();
+            req.Connection = _connex;
+            req.CommandText = "INSERT INTO ARTICLE(ID, NOM, DESCRIPTION, ID_RUBRIQUE, POIDS, PRIX_UNITAIRE, QUANTITE_STOCK) VALUES("
+                    + "s_id_article.nextval,"
+                    + "'" + obj.Nom + "',"
+                    + "'" + obj.Description + "',"
+                    + "'" + obj.IdRubrique + "',"
+                    + "'" + obj.Poids + "',"
+                    + "'" + obj.PrixUnitaire + "',"
+                    + "'" + obj.QuantiteStock + "')";
+           
+            try
+            {
+                int res = req.ExecuteNonQuery();
+                if (res != 0) {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+                
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine("Error: " + e);
+                Console.WriteLine(e.StackTrace);
+                return 0;
+            }
         }
 
 
@@ -50,12 +79,20 @@ namespace ClassLibrary1.DAO
         {
             OracleCommand req = new OracleCommand();
             req.Connection = _connex;
-            req.CommandText = "UPDATE Article SET (NOM, ID_RUBRIQUE, POIDS, PRIX_UNITAIRE, QUANTITE_STOCK) = "+""+"WHERE ID = " + obj.Id;
+            req.CommandText = "UPDATE Article SET NOM='"+obj.Nom+"',DESCRIPTION='"+obj.Description+"' ,ID_RUBRIQUE="+obj.IdRubrique+", POIDS="+obj.Poids+", PRIX_UNITAIRE="+obj.PrixUnitaire+", QUANTITE_STOCK= "+obj.QuantiteStock+" WHERE ID = " + obj.Id;
+
 
             try
             {
-                req.ExecuteNonQuery();
-                return true;
+                int res = req.ExecuteNonQuery();
+                if (res != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception e)
             {
@@ -66,7 +103,7 @@ namespace ClassLibrary1.DAO
             }
         }
 
-        public List<CArticles> findUnArticleParRubrique(int idRubrique)
+        public List<CArticles> findArticleParRubrique(int idRubrique)
         {
             List<CArticles> lstAll = new List<CArticles>();
 
@@ -97,11 +134,18 @@ namespace ClassLibrary1.DAO
         {
             OracleCommand req = new OracleCommand();
             req.Connection = _connex;
-            req.CommandText = "Delete * FROM Article WHERE ID = " + obj.Id;
+            req.CommandText = "DELETE FROM Article WHERE ID = " + obj.Id;
 
             try {
-                req.ExecuteNonQuery();
-                return true;
+                int res = req.ExecuteNonQuery();
+                if (res != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception e)
             {

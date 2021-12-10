@@ -2,6 +2,231 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getTousLesDepartements">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idRegion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTousLesDepartementsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTousLesDepartementsResult" type="tns:ArrayOfCDepartements" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCDepartements">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CDepartements" nillable="true" type="tns:CDepartements" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CDepartements">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllCLigneCommande">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCLigneCommandeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCLigneCommandeResult" type="tns:ArrayOfCLigneCommande" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCLigneCommande">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CLigneCommande" nillable="true" type="tns:CLigneCommande" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CLigneCommande">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Numero_commande" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id_article" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qte" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prix_unitaire" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Poids" type="s:float" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getToutesLesCommandes">
+        <s:complexType />
+      </s:element>
+      <s:element name="getToutesLesCommandesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getToutesLesCommandesResult" type="tns:ArrayOfCCommandes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCCommandes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CCommandes" nillable="true" type="tns:CCommandes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CCommandes">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCom" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCli" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdStat" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFP" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getUneCommande">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCommande" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUneCommandeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUneCommandeResult" type="tns:ArrayOfCCommandes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTousLesStatutCommandes">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTousLesStatutCommandesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTousLesStatutCommandesResult" type="tns:ArrayOfCStatutCommande" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCStatutCommande">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CStatutCommande" nillable="true" type="tns:CStatutCommande" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CStatutCommande">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Libelle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fini" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ordre" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getUnStatutCommande">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idStatut" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnStatutCommandeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnStatutCommandeResult" type="tns:ArrayOfCStatutCommande" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllLignePanier">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllLignePanierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllLignePanierResult" type="tns:ArrayOfCLignePanier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCLignePanier">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CLignePanier" nillable="true" type="tns:CLignePanier" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CLignePanier">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Numero_client" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id_article" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qte" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddLignePanier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numClient" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="idArticle" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qte" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLignePanierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddLignePanierResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLignePanierClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idClient" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLignePanierClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getLignePanierClientResult" type="tns:ArrayOfCLignePanier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="paniertToCommande">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numClient" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="paniertToCommandeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="paniertToCommandeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTousLesFraisPort">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTousLesFraisPortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTousLesFraisPortResult" type="tns:ArrayOfCFraisPort" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCFraisPort">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CFraisPort" nillable="true" type="tns:CFraisPort" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CFraisPort">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PoidsMax" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prix" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getUnFraisPort">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFP" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnFraisPortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnFraisPortResult" type="tns:ArrayOfCFraisPort" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="HelloWorld">
         <s:complexType>
           <s:sequence>
@@ -16,80 +241,34 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="getTousLesArticles">
-        <s:complexType />
-      </s:element>
-      <s:element name="getTousLesArticlesResponse">
+      <s:element name="getConnect">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="getTousLesArticlesResult" type="tns:ArrayOfCArticles" />
+            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mail" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfCArticles">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="CArticles" nillable="true" type="tns:CArticles" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CArticles">
+      <s:element name="getConnectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getConnectResult" type="tns:CClient" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CClient">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="IdRubrique" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Poids" type="s:float" />
-          <s:element minOccurs="1" maxOccurs="1" name="PrixUnitaire" type="s:float" />
-          <s:element minOccurs="1" maxOccurs="1" name="QuantiteStock" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prenom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumAdr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RueAdr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cp" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Civ" type="s:int" />
         </s:sequence>
       </s:complexType>
-      <s:element name="updateArticle">
-        <s:complexType />
-      </s:element>
-      <s:element name="updateArticleResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="updateArticleResult" type="tns:ArrayOfCArticles" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deleteArticle">
-        <s:complexType />
-      </s:element>
-      <s:element name="deleteArticleResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="deleteArticleResult" type="tns:ArrayOfCArticles" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="findUnArticle">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idArticle" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="findUnArticleResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="findUnArticleResult" type="tns:CArticles" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="findUnArticleParRubrique">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idRubrique" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="findUnArticleParRubriqueResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="findUnArticleParRubriqueResult" type="tns:ArrayOfCArticles" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="getTousLesPays">
         <s:complexType />
       </s:element>
@@ -160,43 +339,269 @@
           <s:element minOccurs="0" maxOccurs="1" name="RubriquesFilles" type="tns:ArrayOfCRubrique" />
         </s:sequence>
       </s:complexType>
+      <s:element name="getToutesLesVilles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idDepartement" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getToutesLesVillesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getToutesLesVillesResult" type="tns:ArrayOfCVilles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCVilles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CVilles" nillable="true" type="tns:CVilles" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CVilles">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getTousLesArticles">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTousLesArticlesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTousLesArticlesResult" type="tns:ArrayOfCArticles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCArticles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CArticles" nillable="true" type="tns:CArticles" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CArticles">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdRubrique" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Poids" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrixUnitaire" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantiteStock" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="articleModifie" type="tns:CArticles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateArticleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="articleAAjouter" type="tns:CArticles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addArticleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="articleASupprimer" type="tns:CArticles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteArticleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findUnArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idArticle" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findUnArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findUnArticleResult" type="tns:CArticles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findArticleParRubrique">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idRubrique" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findArticleParRubriqueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findArticleParRubriqueResult" type="tns:ArrayOfCArticles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTousLesClients">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTousLesClientsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTousLesClientsResult" type="tns:ArrayOfCClient" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCClient">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CClient" nillable="true" type="tns:CClient" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientAModifier" type="tns:CClient" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateClientResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientAAjouter" type="tns:CClient" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addClientResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientASupprimer" type="tns:CClient" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteClientResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="getTousLesDepartementsSoapIn">
+    <wsdl:part name="parameters" element="tns:getTousLesDepartements" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesDepartementsSoapOut">
+    <wsdl:part name="parameters" element="tns:getTousLesDepartementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCLigneCommandeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCLigneCommande" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCLigneCommandeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCLigneCommandeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getToutesLesCommandesSoapIn">
+    <wsdl:part name="parameters" element="tns:getToutesLesCommandes" />
+  </wsdl:message>
+  <wsdl:message name="getToutesLesCommandesSoapOut">
+    <wsdl:part name="parameters" element="tns:getToutesLesCommandesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUneCommandeSoapIn">
+    <wsdl:part name="parameters" element="tns:getUneCommande" />
+  </wsdl:message>
+  <wsdl:message name="getUneCommandeSoapOut">
+    <wsdl:part name="parameters" element="tns:getUneCommandeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesStatutCommandesSoapIn">
+    <wsdl:part name="parameters" element="tns:getTousLesStatutCommandes" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesStatutCommandesSoapOut">
+    <wsdl:part name="parameters" element="tns:getTousLesStatutCommandesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnStatutCommandeSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnStatutCommande" />
+  </wsdl:message>
+  <wsdl:message name="getUnStatutCommandeSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnStatutCommandeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllLignePanierSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllLignePanier" />
+  </wsdl:message>
+  <wsdl:message name="GetAllLignePanierSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllLignePanierResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddLignePanierSoapIn">
+    <wsdl:part name="parameters" element="tns:AddLignePanier" />
+  </wsdl:message>
+  <wsdl:message name="AddLignePanierSoapOut">
+    <wsdl:part name="parameters" element="tns:AddLignePanierResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLignePanierClientSoapIn">
+    <wsdl:part name="parameters" element="tns:getLignePanierClient" />
+  </wsdl:message>
+  <wsdl:message name="getLignePanierClientSoapOut">
+    <wsdl:part name="parameters" element="tns:getLignePanierClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="paniertToCommandeSoapIn">
+    <wsdl:part name="parameters" element="tns:paniertToCommande" />
+  </wsdl:message>
+  <wsdl:message name="paniertToCommandeSoapOut">
+    <wsdl:part name="parameters" element="tns:paniertToCommandeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesFraisPortSoapIn">
+    <wsdl:part name="parameters" element="tns:getTousLesFraisPort" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesFraisPortSoapOut">
+    <wsdl:part name="parameters" element="tns:getTousLesFraisPortResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnFraisPortSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnFraisPort" />
+  </wsdl:message>
+  <wsdl:message name="getUnFraisPortSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnFraisPortResponse" />
+  </wsdl:message>
   <wsdl:message name="HelloWorldSoapIn">
     <wsdl:part name="parameters" element="tns:HelloWorld" />
   </wsdl:message>
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
-  <wsdl:message name="getTousLesArticlesSoapIn">
-    <wsdl:part name="parameters" element="tns:getTousLesArticles" />
+  <wsdl:message name="getConnectSoapIn">
+    <wsdl:part name="parameters" element="tns:getConnect" />
   </wsdl:message>
-  <wsdl:message name="getTousLesArticlesSoapOut">
-    <wsdl:part name="parameters" element="tns:getTousLesArticlesResponse" />
-  </wsdl:message>
-  <wsdl:message name="updateArticleSoapIn">
-    <wsdl:part name="parameters" element="tns:updateArticle" />
-  </wsdl:message>
-  <wsdl:message name="updateArticleSoapOut">
-    <wsdl:part name="parameters" element="tns:updateArticleResponse" />
-  </wsdl:message>
-  <wsdl:message name="deleteArticleSoapIn">
-    <wsdl:part name="parameters" element="tns:deleteArticle" />
-  </wsdl:message>
-  <wsdl:message name="deleteArticleSoapOut">
-    <wsdl:part name="parameters" element="tns:deleteArticleResponse" />
-  </wsdl:message>
-  <wsdl:message name="findUnArticleSoapIn">
-    <wsdl:part name="parameters" element="tns:findUnArticle" />
-  </wsdl:message>
-  <wsdl:message name="findUnArticleSoapOut">
-    <wsdl:part name="parameters" element="tns:findUnArticleResponse" />
-  </wsdl:message>
-  <wsdl:message name="findUnArticleParRubriqueSoapIn">
-    <wsdl:part name="parameters" element="tns:findUnArticleParRubrique" />
-  </wsdl:message>
-  <wsdl:message name="findUnArticleParRubriqueSoapOut">
-    <wsdl:part name="parameters" element="tns:findUnArticleParRubriqueResponse" />
+  <wsdl:message name="getConnectSoapOut">
+    <wsdl:part name="parameters" element="tns:getConnectResponse" />
   </wsdl:message>
   <wsdl:message name="getTousLesPaysSoapIn">
     <wsdl:part name="parameters" element="tns:getTousLesPays" />
@@ -216,30 +621,132 @@
   <wsdl:message name="getToutesLesRubriquesSoapOut">
     <wsdl:part name="parameters" element="tns:getToutesLesRubriquesResponse" />
   </wsdl:message>
+  <wsdl:message name="getToutesLesVillesSoapIn">
+    <wsdl:part name="parameters" element="tns:getToutesLesVilles" />
+  </wsdl:message>
+  <wsdl:message name="getToutesLesVillesSoapOut">
+    <wsdl:part name="parameters" element="tns:getToutesLesVillesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesArticlesSoapIn">
+    <wsdl:part name="parameters" element="tns:getTousLesArticles" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesArticlesSoapOut">
+    <wsdl:part name="parameters" element="tns:getTousLesArticlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:updateArticle" />
+  </wsdl:message>
+  <wsdl:message name="updateArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:updateArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="addArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:addArticle" />
+  </wsdl:message>
+  <wsdl:message name="addArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:addArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteArticle" />
+  </wsdl:message>
+  <wsdl:message name="deleteArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="findUnArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:findUnArticle" />
+  </wsdl:message>
+  <wsdl:message name="findUnArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:findUnArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="findArticleParRubriqueSoapIn">
+    <wsdl:part name="parameters" element="tns:findArticleParRubrique" />
+  </wsdl:message>
+  <wsdl:message name="findArticleParRubriqueSoapOut">
+    <wsdl:part name="parameters" element="tns:findArticleParRubriqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesClientsSoapIn">
+    <wsdl:part name="parameters" element="tns:getTousLesClients" />
+  </wsdl:message>
+  <wsdl:message name="getTousLesClientsSoapOut">
+    <wsdl:part name="parameters" element="tns:getTousLesClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateClientSoapIn">
+    <wsdl:part name="parameters" element="tns:updateClient" />
+  </wsdl:message>
+  <wsdl:message name="updateClientSoapOut">
+    <wsdl:part name="parameters" element="tns:updateClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="addClientSoapIn">
+    <wsdl:part name="parameters" element="tns:addClient" />
+  </wsdl:message>
+  <wsdl:message name="addClientSoapOut">
+    <wsdl:part name="parameters" element="tns:addClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteClient" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteClientResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="getTousLesDepartements">
+      <wsdl:input message="tns:getTousLesDepartementsSoapIn" />
+      <wsdl:output message="tns:getTousLesDepartementsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCLigneCommande">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Charge toutes les lignes commande</wsdl:documentation>
+      <wsdl:input message="tns:GetAllCLigneCommandeSoapIn" />
+      <wsdl:output message="tns:GetAllCLigneCommandeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesCommandes">
+      <wsdl:input message="tns:getToutesLesCommandesSoapIn" />
+      <wsdl:output message="tns:getToutesLesCommandesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUneCommande">
+      <wsdl:input message="tns:getUneCommandeSoapIn" />
+      <wsdl:output message="tns:getUneCommandeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesStatutCommandes">
+      <wsdl:input message="tns:getTousLesStatutCommandesSoapIn" />
+      <wsdl:output message="tns:getTousLesStatutCommandesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnStatutCommande">
+      <wsdl:input message="tns:getUnStatutCommandeSoapIn" />
+      <wsdl:output message="tns:getUnStatutCommandeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLignePanier">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Charge toutes les lignes panier</wsdl:documentation>
+      <wsdl:input message="tns:GetAllLignePanierSoapIn" />
+      <wsdl:output message="tns:GetAllLignePanierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLignePanier">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ajoute une ligne au panier</wsdl:documentation>
+      <wsdl:input message="tns:AddLignePanierSoapIn" />
+      <wsdl:output message="tns:AddLignePanierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLignePanierClient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">récupère les lignes panier d'un client</wsdl:documentation>
+      <wsdl:input message="tns:getLignePanierClientSoapIn" />
+      <wsdl:output message="tns:getLignePanierClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="paniertToCommande">
+      <wsdl:input message="tns:paniertToCommandeSoapIn" />
+      <wsdl:output message="tns:paniertToCommandeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesFraisPort">
+      <wsdl:input message="tns:getTousLesFraisPortSoapIn" />
+      <wsdl:output message="tns:getTousLesFraisPortSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnFraisPort">
+      <wsdl:input message="tns:getUnFraisPortSoapIn" />
+      <wsdl:output message="tns:getUnFraisPortSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="getTousLesArticles">
-      <wsdl:input message="tns:getTousLesArticlesSoapIn" />
-      <wsdl:output message="tns:getTousLesArticlesSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="updateArticle">
-      <wsdl:input message="tns:updateArticleSoapIn" />
-      <wsdl:output message="tns:updateArticleSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="deleteArticle">
-      <wsdl:input message="tns:deleteArticleSoapIn" />
-      <wsdl:output message="tns:deleteArticleSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="findUnArticle">
-      <wsdl:input message="tns:findUnArticleSoapIn" />
-      <wsdl:output message="tns:findUnArticleSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="findUnArticleParRubrique">
-      <wsdl:input message="tns:findUnArticleParRubriqueSoapIn" />
-      <wsdl:output message="tns:findUnArticleParRubriqueSoapOut" />
+    <wsdl:operation name="getConnect">
+      <wsdl:input message="tns:getConnectSoapIn" />
+      <wsdl:output message="tns:getConnectSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getTousLesPays">
       <wsdl:input message="tns:getTousLesPaysSoapIn" />
@@ -253,9 +760,161 @@
       <wsdl:input message="tns:getToutesLesRubriquesSoapIn" />
       <wsdl:output message="tns:getToutesLesRubriquesSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="getToutesLesVilles">
+      <wsdl:input message="tns:getToutesLesVillesSoapIn" />
+      <wsdl:output message="tns:getToutesLesVillesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesArticles">
+      <wsdl:input message="tns:getTousLesArticlesSoapIn" />
+      <wsdl:output message="tns:getTousLesArticlesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateArticle">
+      <wsdl:input message="tns:updateArticleSoapIn" />
+      <wsdl:output message="tns:updateArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addArticle">
+      <wsdl:input message="tns:addArticleSoapIn" />
+      <wsdl:output message="tns:addArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteArticle">
+      <wsdl:input message="tns:deleteArticleSoapIn" />
+      <wsdl:output message="tns:deleteArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findUnArticle">
+      <wsdl:input message="tns:findUnArticleSoapIn" />
+      <wsdl:output message="tns:findUnArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findArticleParRubrique">
+      <wsdl:input message="tns:findArticleParRubriqueSoapIn" />
+      <wsdl:output message="tns:findArticleParRubriqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesClients">
+      <wsdl:input message="tns:getTousLesClientsSoapIn" />
+      <wsdl:output message="tns:getTousLesClientsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <wsdl:input message="tns:updateClientSoapIn" />
+      <wsdl:output message="tns:updateClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addClient">
+      <wsdl:input message="tns:addClientSoapIn" />
+      <wsdl:output message="tns:addClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <wsdl:input message="tns:deleteClientSoapIn" />
+      <wsdl:output message="tns:deleteClientSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getTousLesDepartements">
+      <soap:operation soapAction="http://tempuri.org/getTousLesDepartements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCLigneCommande">
+      <soap:operation soapAction="http://tempuri.org/GetAllCLigneCommande" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesCommandes">
+      <soap:operation soapAction="http://tempuri.org/getToutesLesCommandes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUneCommande">
+      <soap:operation soapAction="http://tempuri.org/getUneCommande" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesStatutCommandes">
+      <soap:operation soapAction="http://tempuri.org/getTousLesStatutCommandes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnStatutCommande">
+      <soap:operation soapAction="http://tempuri.org/getUnStatutCommande" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLignePanier">
+      <soap:operation soapAction="http://tempuri.org/GetAllLignePanier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLignePanier">
+      <soap:operation soapAction="http://tempuri.org/AddLignePanier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLignePanierClient">
+      <soap:operation soapAction="http://tempuri.org/getLignePanierClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paniertToCommande">
+      <soap:operation soapAction="http://tempuri.org/paniertToCommande" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesFraisPort">
+      <soap:operation soapAction="http://tempuri.org/getTousLesFraisPort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnFraisPort">
+      <soap:operation soapAction="http://tempuri.org/getUnFraisPort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="HelloWorld">
       <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
       <wsdl:input>
@@ -265,44 +924,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getTousLesArticles">
-      <soap:operation soapAction="http://tempuri.org/getTousLesArticles" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateArticle">
-      <soap:operation soapAction="http://tempuri.org/updateArticle" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteArticle">
-      <soap:operation soapAction="http://tempuri.org/deleteArticle" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="findUnArticle">
-      <soap:operation soapAction="http://tempuri.org/findUnArticle" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="findUnArticleParRubrique">
-      <soap:operation soapAction="http://tempuri.org/findUnArticleParRubrique" style="document" />
+    <wsdl:operation name="getConnect">
+      <soap:operation soapAction="http://tempuri.org/getConnect" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -337,9 +960,216 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getToutesLesVilles">
+      <soap:operation soapAction="http://tempuri.org/getToutesLesVilles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesArticles">
+      <soap:operation soapAction="http://tempuri.org/getTousLesArticles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateArticle">
+      <soap:operation soapAction="http://tempuri.org/updateArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addArticle">
+      <soap:operation soapAction="http://tempuri.org/addArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteArticle">
+      <soap:operation soapAction="http://tempuri.org/deleteArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findUnArticle">
+      <soap:operation soapAction="http://tempuri.org/findUnArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findArticleParRubrique">
+      <soap:operation soapAction="http://tempuri.org/findArticleParRubrique" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesClients">
+      <soap:operation soapAction="http://tempuri.org/getTousLesClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <soap:operation soapAction="http://tempuri.org/updateClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addClient">
+      <soap:operation soapAction="http://tempuri.org/addClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <soap:operation soapAction="http://tempuri.org/deleteClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getTousLesDepartements">
+      <soap12:operation soapAction="http://tempuri.org/getTousLesDepartements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCLigneCommande">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCLigneCommande" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesCommandes">
+      <soap12:operation soapAction="http://tempuri.org/getToutesLesCommandes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUneCommande">
+      <soap12:operation soapAction="http://tempuri.org/getUneCommande" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesStatutCommandes">
+      <soap12:operation soapAction="http://tempuri.org/getTousLesStatutCommandes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnStatutCommande">
+      <soap12:operation soapAction="http://tempuri.org/getUnStatutCommande" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLignePanier">
+      <soap12:operation soapAction="http://tempuri.org/GetAllLignePanier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLignePanier">
+      <soap12:operation soapAction="http://tempuri.org/AddLignePanier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLignePanierClient">
+      <soap12:operation soapAction="http://tempuri.org/getLignePanierClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paniertToCommande">
+      <soap12:operation soapAction="http://tempuri.org/paniertToCommande" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesFraisPort">
+      <soap12:operation soapAction="http://tempuri.org/getTousLesFraisPort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnFraisPort">
+      <soap12:operation soapAction="http://tempuri.org/getUnFraisPort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
       <wsdl:input>
@@ -349,44 +1179,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getTousLesArticles">
-      <soap12:operation soapAction="http://tempuri.org/getTousLesArticles" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateArticle">
-      <soap12:operation soapAction="http://tempuri.org/updateArticle" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteArticle">
-      <soap12:operation soapAction="http://tempuri.org/deleteArticle" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="findUnArticle">
-      <soap12:operation soapAction="http://tempuri.org/findUnArticle" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="findUnArticleParRubrique">
-      <soap12:operation soapAction="http://tempuri.org/findUnArticleParRubrique" style="document" />
+    <wsdl:operation name="getConnect">
+      <soap12:operation soapAction="http://tempuri.org/getConnect" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -414,6 +1208,105 @@
     </wsdl:operation>
     <wsdl:operation name="getToutesLesRubriques">
       <soap12:operation soapAction="http://tempuri.org/getToutesLesRubriques" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getToutesLesVilles">
+      <soap12:operation soapAction="http://tempuri.org/getToutesLesVilles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesArticles">
+      <soap12:operation soapAction="http://tempuri.org/getTousLesArticles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateArticle">
+      <soap12:operation soapAction="http://tempuri.org/updateArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addArticle">
+      <soap12:operation soapAction="http://tempuri.org/addArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteArticle">
+      <soap12:operation soapAction="http://tempuri.org/deleteArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findUnArticle">
+      <soap12:operation soapAction="http://tempuri.org/findUnArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findArticleParRubrique">
+      <soap12:operation soapAction="http://tempuri.org/findArticleParRubrique" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTousLesClients">
+      <soap12:operation soapAction="http://tempuri.org/getTousLesClients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <soap12:operation soapAction="http://tempuri.org/updateClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addClient">
+      <soap12:operation soapAction="http://tempuri.org/addClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <soap12:operation soapAction="http://tempuri.org/deleteClient" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

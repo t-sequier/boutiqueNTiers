@@ -16,25 +16,57 @@ public partial class WebService : System.Web.Services.WebService
         return CArticles;
     }
 
-    /*MModification d'un article*/
+    /*Modification d'un article*/
     [WebMethod]
-    public List<CArticles> updateArticle()
+    public Boolean updateArticle(CArticles articleModifie)
     {
         //TODO faire la modification d'un article
-        List<CArticles> CArticles = new List<CArticles>();
-        CArticles = ClassLibrary1.DAO.DAOFactory.getCArticlesDAO().getAll();
-        return CArticles;
+        Boolean reponse;
+        try {
+            ClassLibrary1.DAO.DAOFactory.getCArticlesDAO().update(articleModifie);
+            reponse = true;
+        }
+        catch (Exception e){
+            reponse = false;
+        }
+        return reponse;
+        
+    }
+
+    /*Ajout d'un article*/
+    [WebMethod]
+    public int addArticle(CArticles articleAAjouter)
+    {
+        int reponse;
+        try
+        {
+            ClassLibrary1.DAO.DAOFactory.getCArticlesDAO().create(articleAAjouter);
+            reponse = 1;
+        }
+        catch(Exception e)
+        {
+            reponse = 0;
+        }
+        return reponse;
     }
 
 
     /*Supression d'un article*/
     [WebMethod]
-    public List<CArticles> deleteArticle()
+    public Boolean deleteArticle(CArticles articleASupprimer)
     {
-        //TODO faire la suppression d'un article
-        List<CArticles> CArticles = new List<CArticles>();
-        CArticles = ClassLibrary1.DAO.DAOFactory.getCArticlesDAO().getAll();
-        return CArticles;
+        Boolean reponse;
+        try
+        {
+            ClassLibrary1.DAO.DAOFactory.getCArticlesDAO().delete(articleASupprimer);
+            reponse = true;
+        }
+        catch (Exception e)
+        {
+            reponse = false;
+        }
+        return reponse;
+
     }
 
     //récupère un article dont l'id est précisé en paramètre
@@ -46,9 +78,9 @@ public partial class WebService : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public List<CArticles> findUnArticleParRubrique(int idRubrique)
+    public List<CArticles> findArticleParRubrique(int idRubrique)
     {
-        List<CArticles> article = ClassLibrary1.DAO.DAOFactory.getCArticlesDAO().findUnArticleParRubrique(idRubrique);
+        List<CArticles> article = ClassLibrary1.DAO.DAOFactory.getCArticlesDAO().findArticleParRubrique(idRubrique);
         return article;
     }
 

@@ -65,6 +65,24 @@
     <Compile Include="FormArticles.Designer.cs">
       <DependentUpon>FormArticles.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClient.designer.cs">
+      <DependentUpon>FormClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommandes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommandes.Designer.cs">
+      <DependentUpon>FormCommandes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagePrincipale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagePrincipale.Designer.cs">
+      <DependentUpon>FormPagePrincipale.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -72,6 +90,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormArticles.resx">
       <DependentUpon>FormArticles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClient.resx">
+      <DependentUpon>FormClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommandes.resx">
+      <DependentUpon>FormCommandes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagePrincipale.resx">
+      <DependentUpon>FormPagePrincipale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +112,24 @@
     <None Include="Connected Services\Webservice\AppClient.Webservice.CArticles.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CClient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CCommandes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CDepartements.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CFraisPort.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CLigneCommande.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CLignePanier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Webservice\AppClient.Webservice.CPays.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -92,6 +137,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Webservice\AppClient.Webservice.CRubrique.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CStatutCommande.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Webservice\AppClient.Webservice.CVilles.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Webservice\WebService1.wsdl" />

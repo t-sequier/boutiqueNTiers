@@ -15,9 +15,9 @@ namespace AppClient.Webservice {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CArticles", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CDepartements", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    public partial class CArticles : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class CDepartements : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -26,17 +26,6 @@ namespace AppClient.Webservice {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NomField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        private int IdRubriqueField;
-        
-        private float PoidsField;
-        
-        private float PrixUnitaireField;
-        
-        private int QuantiteStockField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -74,28 +63,94 @@ namespace AppClient.Webservice {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Description {
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CLigneCommande", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CLigneCommande : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int Numero_commandeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Id_articleField;
+        
+        private int QteField;
+        
+        private float Prix_unitaireField;
+        
+        private float PoidsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
-                return this.DescriptionField;
+                return this.extensionDataField;
             }
             set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Numero_commande {
+            get {
+                return this.Numero_commandeField;
+            }
+            set {
+                if ((this.Numero_commandeField.Equals(value) != true)) {
+                    this.Numero_commandeField = value;
+                    this.RaisePropertyChanged("Numero_commande");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Id_article {
+            get {
+                return this.Id_articleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Id_articleField, value) != true)) {
+                    this.Id_articleField = value;
+                    this.RaisePropertyChanged("Id_article");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Qte {
+            get {
+                return this.QteField;
+            }
+            set {
+                if ((this.QteField.Equals(value) != true)) {
+                    this.QteField = value;
+                    this.RaisePropertyChanged("Qte");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int IdRubrique {
+        public float Prix_unitaire {
             get {
-                return this.IdRubriqueField;
+                return this.Prix_unitaireField;
             }
             set {
-                if ((this.IdRubriqueField.Equals(value) != true)) {
-                    this.IdRubriqueField = value;
-                    this.RaisePropertyChanged("IdRubrique");
+                if ((this.Prix_unitaireField.Equals(value) != true)) {
+                    this.Prix_unitaireField = value;
+                    this.RaisePropertyChanged("Prix_unitaire");
                 }
             }
         }
@@ -113,28 +168,525 @@ namespace AppClient.Webservice {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public float PrixUnitaire {
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CCommandes", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CCommandes : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdComField;
+        
+        private int IdCliField;
+        
+        private int IdStatField;
+        
+        private int IdFPField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
-                return this.PrixUnitaireField;
+                return this.extensionDataField;
             }
             set {
-                if ((this.PrixUnitaireField.Equals(value) != true)) {
-                    this.PrixUnitaireField = value;
-                    this.RaisePropertyChanged("PrixUnitaire");
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdCom {
+            get {
+                return this.IdComField;
+            }
+            set {
+                if ((this.IdComField.Equals(value) != true)) {
+                    this.IdComField = value;
+                    this.RaisePropertyChanged("IdCom");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int QuantiteStock {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int IdCli {
             get {
-                return this.QuantiteStockField;
+                return this.IdCliField;
             }
             set {
-                if ((this.QuantiteStockField.Equals(value) != true)) {
-                    this.QuantiteStockField = value;
-                    this.RaisePropertyChanged("QuantiteStock");
+                if ((this.IdCliField.Equals(value) != true)) {
+                    this.IdCliField = value;
+                    this.RaisePropertyChanged("IdCli");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int IdStat {
+            get {
+                return this.IdStatField;
+            }
+            set {
+                if ((this.IdStatField.Equals(value) != true)) {
+                    this.IdStatField = value;
+                    this.RaisePropertyChanged("IdStat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int IdFP {
+            get {
+                return this.IdFPField;
+            }
+            set {
+                if ((this.IdFPField.Equals(value) != true)) {
+                    this.IdFPField = value;
+                    this.RaisePropertyChanged("IdFP");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CStatutCommande", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CStatutCommande : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LibelleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FiniField;
+        
+        private int OrdreField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Libelle {
+            get {
+                return this.LibelleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LibelleField, value) != true)) {
+                    this.LibelleField = value;
+                    this.RaisePropertyChanged("Libelle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Fini {
+            get {
+                return this.FiniField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FiniField, value) != true)) {
+                    this.FiniField = value;
+                    this.RaisePropertyChanged("Fini");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Ordre {
+            get {
+                return this.OrdreField;
+            }
+            set {
+                if ((this.OrdreField.Equals(value) != true)) {
+                    this.OrdreField = value;
+                    this.RaisePropertyChanged("Ordre");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CLignePanier", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CLignePanier : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int Numero_clientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Id_articleField;
+        
+        private int QteField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Numero_client {
+            get {
+                return this.Numero_clientField;
+            }
+            set {
+                if ((this.Numero_clientField.Equals(value) != true)) {
+                    this.Numero_clientField = value;
+                    this.RaisePropertyChanged("Numero_client");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Id_article {
+            get {
+                return this.Id_articleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Id_articleField, value) != true)) {
+                    this.Id_articleField = value;
+                    this.RaisePropertyChanged("Id_article");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Qte {
+            get {
+                return this.QteField;
+            }
+            set {
+                if ((this.QteField.Equals(value) != true)) {
+                    this.QteField = value;
+                    this.RaisePropertyChanged("Qte");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CFraisPort", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CFraisPort : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        private int PoidsMaxField;
+        
+        private int PrixField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int PoidsMax {
+            get {
+                return this.PoidsMaxField;
+            }
+            set {
+                if ((this.PoidsMaxField.Equals(value) != true)) {
+                    this.PoidsMaxField = value;
+                    this.RaisePropertyChanged("PoidsMax");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Prix {
+            get {
+                return this.PrixField;
+            }
+            set {
+                if ((this.PrixField.Equals(value) != true)) {
+                    this.PrixField = value;
+                    this.RaisePropertyChanged("Prix");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CClient", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CClient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrenomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NumAdrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RueAdrField;
+        
+        private int CpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TelField;
+        
+        private int CivField;
+
+        public CClient(string nom, string prenom, string numadr, string rueadr, int cp, string email, string tel, int civ)
+        {
+            Nom = nom;
+            Prenom = prenom;
+            NumAdr = numadr;
+            RueAdr = rueadr;
+            Cp = cp;
+            Email = email;
+            Tel = tel;
+            Civ = civ;
+        }
+
+        public CClient(int id, string nom, string prenom, string numadr, string rueadr, int cp, string email, string tel, int civ)
+        {
+            Nom = nom;
+            Prenom = prenom;
+            NumAdr = numadr;
+            RueAdr = rueadr;
+            Cp = cp;
+            Email = email;
+            Tel = tel;
+            Civ = civ;
+        }
+
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Prenom {
+            get {
+                return this.PrenomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrenomField, value) != true)) {
+                    this.PrenomField = value;
+                    this.RaisePropertyChanged("Prenom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string NumAdr {
+            get {
+                return this.NumAdrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumAdrField, value) != true)) {
+                    this.NumAdrField = value;
+                    this.RaisePropertyChanged("NumAdr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string RueAdr {
+            get {
+                return this.RueAdrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RueAdrField, value) != true)) {
+                    this.RueAdrField = value;
+                    this.RaisePropertyChanged("RueAdr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Cp {
+            get {
+                return this.CpField;
+            }
+            set {
+                if ((this.CpField.Equals(value) != true)) {
+                    this.CpField = value;
+                    this.RaisePropertyChanged("Cp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Tel {
+            get {
+                return this.TelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TelField, value) != true)) {
+                    this.TelField = value;
+                    this.RaisePropertyChanged("Tel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public int Civ {
+            get {
+                return this.CivField;
+            }
+            set {
+                if ((this.CivField.Equals(value) != true)) {
+                    this.CivField = value;
+                    this.RaisePropertyChanged("Civ");
                 }
             }
         }
@@ -376,9 +928,334 @@ namespace AppClient.Webservice {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CVilles", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CVilles : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CArticles", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CArticles : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        private int IdRubriqueField;
+        
+        private float PoidsField;
+        
+        private float PrixUnitaireField;
+        
+        private int QuantiteStockField;
+        private float prix;
+        private int quantite;
+
+        public CArticles(string nom, string description, int idRubrique, float poids, float prix, int quantite)
+        {
+            Nom = nom;
+            Description = description;
+            IdRubrique = idRubrique;
+            Poids = poids;
+            this.prix = prix;
+            this.quantite = quantite;
+        }
+
+        public CArticles(int id, string nom, string description, int idRubrique, float poids, float prix, int quantite)
+        {
+            Nom = nom;
+            Description = description;
+            IdRubrique = idRubrique;
+            Poids = poids;
+            this.prix = prix;
+            this.quantite = quantite;
+        }
+
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int IdRubrique {
+            get {
+                return this.IdRubriqueField;
+            }
+            set {
+                if ((this.IdRubriqueField.Equals(value) != true)) {
+                    this.IdRubriqueField = value;
+                    this.RaisePropertyChanged("IdRubrique");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public float Poids {
+            get {
+                return this.PoidsField;
+            }
+            set {
+                if ((this.PoidsField.Equals(value) != true)) {
+                    this.PoidsField = value;
+                    this.RaisePropertyChanged("Poids");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public float PrixUnitaire {
+            get {
+                return this.PrixUnitaireField;
+            }
+            set {
+                if ((this.PrixUnitaireField.Equals(value) != true)) {
+                    this.PrixUnitaireField = value;
+                    this.RaisePropertyChanged("PrixUnitaire");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int QuantiteStock {
+            get {
+                return this.QuantiteStockField;
+            }
+            set {
+                if ((this.QuantiteStockField.Equals(value) != true)) {
+                    this.QuantiteStockField = value;
+                    this.RaisePropertyChanged("QuantiteStock");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Webservice.WebServiceSoap")]
     public interface WebServiceSoap {
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getTousLesDepartementsResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getTousLesDepartements", ReplyAction="*")]
+        AppClient.Webservice.getTousLesDepartementsResponse getTousLesDepartements(AppClient.Webservice.getTousLesDepartementsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getTousLesDepartements", ReplyAction="*")]
+        System.IAsyncResult BegingetTousLesDepartements(AppClient.Webservice.getTousLesDepartementsRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getTousLesDepartementsResponse EndgetTousLesDepartements(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément GetAllCLigneCommandeResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllCLigneCommande", ReplyAction="*")]
+        AppClient.Webservice.GetAllCLigneCommandeResponse GetAllCLigneCommande(AppClient.Webservice.GetAllCLigneCommandeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/GetAllCLigneCommande", ReplyAction="*")]
+        System.IAsyncResult BeginGetAllCLigneCommande(AppClient.Webservice.GetAllCLigneCommandeRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.GetAllCLigneCommandeResponse EndGetAllCLigneCommande(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getToutesLesCommandesResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getToutesLesCommandes", ReplyAction="*")]
+        AppClient.Webservice.getToutesLesCommandesResponse getToutesLesCommandes(AppClient.Webservice.getToutesLesCommandesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getToutesLesCommandes", ReplyAction="*")]
+        System.IAsyncResult BegingetToutesLesCommandes(AppClient.Webservice.getToutesLesCommandesRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getToutesLesCommandesResponse EndgetToutesLesCommandes(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getUneCommandeResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getUneCommande", ReplyAction="*")]
+        AppClient.Webservice.getUneCommandeResponse getUneCommande(AppClient.Webservice.getUneCommandeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getUneCommande", ReplyAction="*")]
+        System.IAsyncResult BegingetUneCommande(AppClient.Webservice.getUneCommandeRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getUneCommandeResponse EndgetUneCommande(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getTousLesStatutCommandesResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getTousLesStatutCommandes", ReplyAction="*")]
+        AppClient.Webservice.getTousLesStatutCommandesResponse getTousLesStatutCommandes(AppClient.Webservice.getTousLesStatutCommandesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getTousLesStatutCommandes", ReplyAction="*")]
+        System.IAsyncResult BegingetTousLesStatutCommandes(AppClient.Webservice.getTousLesStatutCommandesRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getTousLesStatutCommandesResponse EndgetTousLesStatutCommandes(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getUnStatutCommandeResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getUnStatutCommande", ReplyAction="*")]
+        AppClient.Webservice.getUnStatutCommandeResponse getUnStatutCommande(AppClient.Webservice.getUnStatutCommandeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getUnStatutCommande", ReplyAction="*")]
+        System.IAsyncResult BegingetUnStatutCommande(AppClient.Webservice.getUnStatutCommandeRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getUnStatutCommandeResponse EndgetUnStatutCommande(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément GetAllLignePanierResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllLignePanier", ReplyAction="*")]
+        AppClient.Webservice.GetAllLignePanierResponse GetAllLignePanier(AppClient.Webservice.GetAllLignePanierRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/GetAllLignePanier", ReplyAction="*")]
+        System.IAsyncResult BeginGetAllLignePanier(AppClient.Webservice.GetAllLignePanierRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.GetAllLignePanierResponse EndGetAllLignePanier(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément idArticle de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddLignePanier", ReplyAction="*")]
+        AppClient.Webservice.AddLignePanierResponse AddLignePanier(AppClient.Webservice.AddLignePanierRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/AddLignePanier", ReplyAction="*")]
+        System.IAsyncResult BeginAddLignePanier(AppClient.Webservice.AddLignePanierRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.AddLignePanierResponse EndAddLignePanier(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getLignePanierClientResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getLignePanierClient", ReplyAction="*")]
+        AppClient.Webservice.getLignePanierClientResponse getLignePanierClient(AppClient.Webservice.getLignePanierClientRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getLignePanierClient", ReplyAction="*")]
+        System.IAsyncResult BegingetLignePanierClient(AppClient.Webservice.getLignePanierClientRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getLignePanierClientResponse EndgetLignePanierClient(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/paniertToCommande", ReplyAction="*")]
+        int paniertToCommande(int numClient);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/paniertToCommande", ReplyAction="*")]
+        System.IAsyncResult BeginpaniertToCommande(int numClient, System.AsyncCallback callback, object asyncState);
+        
+        int EndpaniertToCommande(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getTousLesFraisPortResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getTousLesFraisPort", ReplyAction="*")]
+        AppClient.Webservice.getTousLesFraisPortResponse getTousLesFraisPort(AppClient.Webservice.getTousLesFraisPortRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getTousLesFraisPort", ReplyAction="*")]
+        System.IAsyncResult BegingetTousLesFraisPort(AppClient.Webservice.getTousLesFraisPortRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getTousLesFraisPortResponse EndgetTousLesFraisPort(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getUnFraisPortResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getUnFraisPort", ReplyAction="*")]
+        AppClient.Webservice.getUnFraisPortResponse getUnFraisPort(AppClient.Webservice.getUnFraisPortRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getUnFraisPort", ReplyAction="*")]
+        System.IAsyncResult BegingetUnFraisPort(AppClient.Webservice.getUnFraisPortRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getUnFraisPortResponse EndgetUnFraisPort(System.IAsyncResult result);
         
         // CODEGEN : La génération du contrat de message depuis le nom d'élément nom de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
@@ -389,50 +1266,14 @@ namespace AppClient.Webservice {
         
         AppClient.Webservice.HelloWorldResponse EndHelloWorld(System.IAsyncResult result);
         
-        // CODEGEN : La génération du contrat de message depuis le nom d'élément getTousLesArticlesResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getTousLesArticles", ReplyAction="*")]
-        AppClient.Webservice.getTousLesArticlesResponse getTousLesArticles(AppClient.Webservice.getTousLesArticlesRequest request);
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément nom de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getConnect", ReplyAction="*")]
+        AppClient.Webservice.getConnectResponse getConnect(AppClient.Webservice.getConnectRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getTousLesArticles", ReplyAction="*")]
-        System.IAsyncResult BegingetTousLesArticles(AppClient.Webservice.getTousLesArticlesRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getConnect", ReplyAction="*")]
+        System.IAsyncResult BegingetConnect(AppClient.Webservice.getConnectRequest request, System.AsyncCallback callback, object asyncState);
         
-        AppClient.Webservice.getTousLesArticlesResponse EndgetTousLesArticles(System.IAsyncResult result);
-        
-        // CODEGEN : La génération du contrat de message depuis le nom d'élément updateArticleResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/updateArticle", ReplyAction="*")]
-        AppClient.Webservice.updateArticleResponse updateArticle(AppClient.Webservice.updateArticleRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/updateArticle", ReplyAction="*")]
-        System.IAsyncResult BeginupdateArticle(AppClient.Webservice.updateArticleRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AppClient.Webservice.updateArticleResponse EndupdateArticle(System.IAsyncResult result);
-        
-        // CODEGEN : La génération du contrat de message depuis le nom d'élément deleteArticleResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/deleteArticle", ReplyAction="*")]
-        AppClient.Webservice.deleteArticleResponse deleteArticle(AppClient.Webservice.deleteArticleRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/deleteArticle", ReplyAction="*")]
-        System.IAsyncResult BegindeleteArticle(AppClient.Webservice.deleteArticleRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AppClient.Webservice.deleteArticleResponse EnddeleteArticle(System.IAsyncResult result);
-        
-        // CODEGEN : La génération du contrat de message depuis le nom d'élément findUnArticleResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/findUnArticle", ReplyAction="*")]
-        AppClient.Webservice.findUnArticleResponse findUnArticle(AppClient.Webservice.findUnArticleRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/findUnArticle", ReplyAction="*")]
-        System.IAsyncResult BeginfindUnArticle(AppClient.Webservice.findUnArticleRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AppClient.Webservice.findUnArticleResponse EndfindUnArticle(System.IAsyncResult result);
-        
-        // CODEGEN : La génération du contrat de message depuis le nom d'élément findUnArticleParRubriqueResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/findUnArticleParRubrique", ReplyAction="*")]
-        AppClient.Webservice.findUnArticleParRubriqueResponse findUnArticleParRubrique(AppClient.Webservice.findUnArticleParRubriqueRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/findUnArticleParRubrique", ReplyAction="*")]
-        System.IAsyncResult BeginfindUnArticleParRubrique(AppClient.Webservice.findUnArticleParRubriqueRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AppClient.Webservice.findUnArticleParRubriqueResponse EndfindUnArticleParRubrique(System.IAsyncResult result);
+        AppClient.Webservice.getConnectResponse EndgetConnect(System.IAsyncResult result);
         
         // CODEGEN : La génération du contrat de message depuis le nom d'élément getTousLesPaysResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getTousLesPays", ReplyAction="*")]
@@ -460,6 +1301,826 @@ namespace AppClient.Webservice {
         System.IAsyncResult BegingetToutesLesRubriques(AppClient.Webservice.getToutesLesRubriquesRequest request, System.AsyncCallback callback, object asyncState);
         
         AppClient.Webservice.getToutesLesRubriquesResponse EndgetToutesLesRubriques(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getToutesLesVillesResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getToutesLesVilles", ReplyAction="*")]
+        AppClient.Webservice.getToutesLesVillesResponse getToutesLesVilles(AppClient.Webservice.getToutesLesVillesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getToutesLesVilles", ReplyAction="*")]
+        System.IAsyncResult BegingetToutesLesVilles(AppClient.Webservice.getToutesLesVillesRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getToutesLesVillesResponse EndgetToutesLesVilles(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getTousLesArticlesResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getTousLesArticles", ReplyAction="*")]
+        AppClient.Webservice.getTousLesArticlesResponse getTousLesArticles(AppClient.Webservice.getTousLesArticlesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getTousLesArticles", ReplyAction="*")]
+        System.IAsyncResult BegingetTousLesArticles(AppClient.Webservice.getTousLesArticlesRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getTousLesArticlesResponse EndgetTousLesArticles(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément articleModifie de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/updateArticle", ReplyAction="*")]
+        AppClient.Webservice.updateArticleResponse updateArticle(AppClient.Webservice.updateArticleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/updateArticle", ReplyAction="*")]
+        System.IAsyncResult BeginupdateArticle(AppClient.Webservice.updateArticleRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.updateArticleResponse EndupdateArticle(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément articleAAjouter de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/addArticle", ReplyAction="*")]
+        AppClient.Webservice.addArticleResponse addArticle(AppClient.Webservice.addArticleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/addArticle", ReplyAction="*")]
+        System.IAsyncResult BeginaddArticle(AppClient.Webservice.addArticleRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.addArticleResponse EndaddArticle(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément articleASupprimer de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/deleteArticle", ReplyAction="*")]
+        AppClient.Webservice.deleteArticleResponse deleteArticle(AppClient.Webservice.deleteArticleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/deleteArticle", ReplyAction="*")]
+        System.IAsyncResult BegindeleteArticle(AppClient.Webservice.deleteArticleRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.deleteArticleResponse EnddeleteArticle(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément findUnArticleResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/findUnArticle", ReplyAction="*")]
+        AppClient.Webservice.findUnArticleResponse findUnArticle(AppClient.Webservice.findUnArticleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/findUnArticle", ReplyAction="*")]
+        System.IAsyncResult BeginfindUnArticle(AppClient.Webservice.findUnArticleRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.findUnArticleResponse EndfindUnArticle(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément findArticleParRubriqueResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/findArticleParRubrique", ReplyAction="*")]
+        AppClient.Webservice.findArticleParRubriqueResponse findArticleParRubrique(AppClient.Webservice.findArticleParRubriqueRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/findArticleParRubrique", ReplyAction="*")]
+        System.IAsyncResult BeginfindArticleParRubrique(AppClient.Webservice.findArticleParRubriqueRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.findArticleParRubriqueResponse EndfindArticleParRubrique(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getTousLesClientsResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getTousLesClients", ReplyAction="*")]
+        AppClient.Webservice.getTousLesClientsResponse getTousLesClients(AppClient.Webservice.getTousLesClientsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/getTousLesClients", ReplyAction="*")]
+        System.IAsyncResult BegingetTousLesClients(AppClient.Webservice.getTousLesClientsRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.getTousLesClientsResponse EndgetTousLesClients(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément clientAModifier de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/updateClient", ReplyAction="*")]
+        AppClient.Webservice.updateClientResponse updateClient(AppClient.Webservice.updateClientRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/updateClient", ReplyAction="*")]
+        System.IAsyncResult BeginupdateClient(AppClient.Webservice.updateClientRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.updateClientResponse EndupdateClient(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément clientAAjouter de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/addClient", ReplyAction="*")]
+        AppClient.Webservice.addClientResponse addClient(AppClient.Webservice.addClientRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/addClient", ReplyAction="*")]
+        System.IAsyncResult BeginaddClient(AppClient.Webservice.addClientRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.addClientResponse EndaddClient(System.IAsyncResult result);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément clientASupprimer de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/deleteClient", ReplyAction="*")]
+        AppClient.Webservice.deleteClientResponse deleteClient(AppClient.Webservice.deleteClientRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/deleteClient", ReplyAction="*")]
+        System.IAsyncResult BegindeleteClient(AppClient.Webservice.deleteClientRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AppClient.Webservice.deleteClientResponse EnddeleteClient(System.IAsyncResult result);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesDepartementsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesDepartements", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesDepartementsRequestBody Body;
+        
+        public getTousLesDepartementsRequest() {
+        }
+        
+        public getTousLesDepartementsRequest(AppClient.Webservice.getTousLesDepartementsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getTousLesDepartementsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idRegion;
+        
+        public getTousLesDepartementsRequestBody() {
+        }
+        
+        public getTousLesDepartementsRequestBody(int idRegion) {
+            this.idRegion = idRegion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesDepartementsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesDepartementsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesDepartementsResponseBody Body;
+        
+        public getTousLesDepartementsResponse() {
+        }
+        
+        public getTousLesDepartementsResponse(AppClient.Webservice.getTousLesDepartementsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getTousLesDepartementsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CDepartements[] getTousLesDepartementsResult;
+        
+        public getTousLesDepartementsResponseBody() {
+        }
+        
+        public getTousLesDepartementsResponseBody(AppClient.Webservice.CDepartements[] getTousLesDepartementsResult) {
+            this.getTousLesDepartementsResult = getTousLesDepartementsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllCLigneCommandeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllCLigneCommande", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.GetAllCLigneCommandeRequestBody Body;
+        
+        public GetAllCLigneCommandeRequest() {
+        }
+        
+        public GetAllCLigneCommandeRequest(AppClient.Webservice.GetAllCLigneCommandeRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllCLigneCommandeRequestBody {
+        
+        public GetAllCLigneCommandeRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllCLigneCommandeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllCLigneCommandeResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.GetAllCLigneCommandeResponseBody Body;
+        
+        public GetAllCLigneCommandeResponse() {
+        }
+        
+        public GetAllCLigneCommandeResponse(AppClient.Webservice.GetAllCLigneCommandeResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllCLigneCommandeResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CLigneCommande[] GetAllCLigneCommandeResult;
+        
+        public GetAllCLigneCommandeResponseBody() {
+        }
+        
+        public GetAllCLigneCommandeResponseBody(AppClient.Webservice.CLigneCommande[] GetAllCLigneCommandeResult) {
+            this.GetAllCLigneCommandeResult = GetAllCLigneCommandeResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getToutesLesCommandesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getToutesLesCommandes", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getToutesLesCommandesRequestBody Body;
+        
+        public getToutesLesCommandesRequest() {
+        }
+        
+        public getToutesLesCommandesRequest(AppClient.Webservice.getToutesLesCommandesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getToutesLesCommandesRequestBody {
+        
+        public getToutesLesCommandesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getToutesLesCommandesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getToutesLesCommandesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getToutesLesCommandesResponseBody Body;
+        
+        public getToutesLesCommandesResponse() {
+        }
+        
+        public getToutesLesCommandesResponse(AppClient.Webservice.getToutesLesCommandesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getToutesLesCommandesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CCommandes[] getToutesLesCommandesResult;
+        
+        public getToutesLesCommandesResponseBody() {
+        }
+        
+        public getToutesLesCommandesResponseBody(AppClient.Webservice.CCommandes[] getToutesLesCommandesResult) {
+            this.getToutesLesCommandesResult = getToutesLesCommandesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getUneCommandeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getUneCommande", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getUneCommandeRequestBody Body;
+        
+        public getUneCommandeRequest() {
+        }
+        
+        public getUneCommandeRequest(AppClient.Webservice.getUneCommandeRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getUneCommandeRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idCommande;
+        
+        public getUneCommandeRequestBody() {
+        }
+        
+        public getUneCommandeRequestBody(int idCommande) {
+            this.idCommande = idCommande;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getUneCommandeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getUneCommandeResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getUneCommandeResponseBody Body;
+        
+        public getUneCommandeResponse() {
+        }
+        
+        public getUneCommandeResponse(AppClient.Webservice.getUneCommandeResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getUneCommandeResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CCommandes[] getUneCommandeResult;
+        
+        public getUneCommandeResponseBody() {
+        }
+        
+        public getUneCommandeResponseBody(AppClient.Webservice.CCommandes[] getUneCommandeResult) {
+            this.getUneCommandeResult = getUneCommandeResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesStatutCommandesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesStatutCommandes", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesStatutCommandesRequestBody Body;
+        
+        public getTousLesStatutCommandesRequest() {
+        }
+        
+        public getTousLesStatutCommandesRequest(AppClient.Webservice.getTousLesStatutCommandesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getTousLesStatutCommandesRequestBody {
+        
+        public getTousLesStatutCommandesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesStatutCommandesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesStatutCommandesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesStatutCommandesResponseBody Body;
+        
+        public getTousLesStatutCommandesResponse() {
+        }
+        
+        public getTousLesStatutCommandesResponse(AppClient.Webservice.getTousLesStatutCommandesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getTousLesStatutCommandesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CStatutCommande[] getTousLesStatutCommandesResult;
+        
+        public getTousLesStatutCommandesResponseBody() {
+        }
+        
+        public getTousLesStatutCommandesResponseBody(AppClient.Webservice.CStatutCommande[] getTousLesStatutCommandesResult) {
+            this.getTousLesStatutCommandesResult = getTousLesStatutCommandesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getUnStatutCommandeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getUnStatutCommande", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getUnStatutCommandeRequestBody Body;
+        
+        public getUnStatutCommandeRequest() {
+        }
+        
+        public getUnStatutCommandeRequest(AppClient.Webservice.getUnStatutCommandeRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getUnStatutCommandeRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idStatut;
+        
+        public getUnStatutCommandeRequestBody() {
+        }
+        
+        public getUnStatutCommandeRequestBody(int idStatut) {
+            this.idStatut = idStatut;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getUnStatutCommandeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getUnStatutCommandeResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getUnStatutCommandeResponseBody Body;
+        
+        public getUnStatutCommandeResponse() {
+        }
+        
+        public getUnStatutCommandeResponse(AppClient.Webservice.getUnStatutCommandeResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getUnStatutCommandeResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CStatutCommande[] getUnStatutCommandeResult;
+        
+        public getUnStatutCommandeResponseBody() {
+        }
+        
+        public getUnStatutCommandeResponseBody(AppClient.Webservice.CStatutCommande[] getUnStatutCommandeResult) {
+            this.getUnStatutCommandeResult = getUnStatutCommandeResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllLignePanierRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllLignePanier", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.GetAllLignePanierRequestBody Body;
+        
+        public GetAllLignePanierRequest() {
+        }
+        
+        public GetAllLignePanierRequest(AppClient.Webservice.GetAllLignePanierRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllLignePanierRequestBody {
+        
+        public GetAllLignePanierRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllLignePanierResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllLignePanierResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.GetAllLignePanierResponseBody Body;
+        
+        public GetAllLignePanierResponse() {
+        }
+        
+        public GetAllLignePanierResponse(AppClient.Webservice.GetAllLignePanierResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllLignePanierResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CLignePanier[] GetAllLignePanierResult;
+        
+        public GetAllLignePanierResponseBody() {
+        }
+        
+        public GetAllLignePanierResponseBody(AppClient.Webservice.CLignePanier[] GetAllLignePanierResult) {
+            this.GetAllLignePanierResult = GetAllLignePanierResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddLignePanierRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddLignePanier", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.AddLignePanierRequestBody Body;
+        
+        public AddLignePanierRequest() {
+        }
+        
+        public AddLignePanierRequest(AppClient.Webservice.AddLignePanierRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AddLignePanierRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int numClient;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string idArticle;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int qte;
+        
+        public AddLignePanierRequestBody() {
+        }
+        
+        public AddLignePanierRequestBody(int numClient, string idArticle, int qte) {
+            this.numClient = numClient;
+            this.idArticle = idArticle;
+            this.qte = qte;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddLignePanierResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddLignePanierResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.AddLignePanierResponseBody Body;
+        
+        public AddLignePanierResponse() {
+        }
+        
+        public AddLignePanierResponse(AppClient.Webservice.AddLignePanierResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AddLignePanierResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int AddLignePanierResult;
+        
+        public AddLignePanierResponseBody() {
+        }
+        
+        public AddLignePanierResponseBody(int AddLignePanierResult) {
+            this.AddLignePanierResult = AddLignePanierResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getLignePanierClientRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getLignePanierClient", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getLignePanierClientRequestBody Body;
+        
+        public getLignePanierClientRequest() {
+        }
+        
+        public getLignePanierClientRequest(AppClient.Webservice.getLignePanierClientRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getLignePanierClientRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idClient;
+        
+        public getLignePanierClientRequestBody() {
+        }
+        
+        public getLignePanierClientRequestBody(int idClient) {
+            this.idClient = idClient;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getLignePanierClientResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getLignePanierClientResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getLignePanierClientResponseBody Body;
+        
+        public getLignePanierClientResponse() {
+        }
+        
+        public getLignePanierClientResponse(AppClient.Webservice.getLignePanierClientResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getLignePanierClientResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CLignePanier[] getLignePanierClientResult;
+        
+        public getLignePanierClientResponseBody() {
+        }
+        
+        public getLignePanierClientResponseBody(AppClient.Webservice.CLignePanier[] getLignePanierClientResult) {
+            this.getLignePanierClientResult = getLignePanierClientResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesFraisPortRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesFraisPort", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesFraisPortRequestBody Body;
+        
+        public getTousLesFraisPortRequest() {
+        }
+        
+        public getTousLesFraisPortRequest(AppClient.Webservice.getTousLesFraisPortRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getTousLesFraisPortRequestBody {
+        
+        public getTousLesFraisPortRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesFraisPortResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesFraisPortResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesFraisPortResponseBody Body;
+        
+        public getTousLesFraisPortResponse() {
+        }
+        
+        public getTousLesFraisPortResponse(AppClient.Webservice.getTousLesFraisPortResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getTousLesFraisPortResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CFraisPort[] getTousLesFraisPortResult;
+        
+        public getTousLesFraisPortResponseBody() {
+        }
+        
+        public getTousLesFraisPortResponseBody(AppClient.Webservice.CFraisPort[] getTousLesFraisPortResult) {
+            this.getTousLesFraisPortResult = getTousLesFraisPortResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getUnFraisPortRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getUnFraisPort", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getUnFraisPortRequestBody Body;
+        
+        public getUnFraisPortRequest() {
+        }
+        
+        public getUnFraisPortRequest(AppClient.Webservice.getUnFraisPortRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getUnFraisPortRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idFP;
+        
+        public getUnFraisPortRequestBody() {
+        }
+        
+        public getUnFraisPortRequestBody(int idFP) {
+            this.idFP = idFP;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getUnFraisPortResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getUnFraisPortResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getUnFraisPortResponseBody Body;
+        
+        public getUnFraisPortResponse() {
+        }
+        
+        public getUnFraisPortResponse(AppClient.Webservice.getUnFraisPortResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getUnFraisPortResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CFraisPort[] getUnFraisPortResult;
+        
+        public getUnFraisPortResponseBody() {
+        }
+        
+        public getUnFraisPortResponseBody(AppClient.Webservice.CFraisPort[] getUnFraisPortResult) {
+            this.getUnFraisPortResult = getUnFraisPortResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -534,42 +2195,15 @@ namespace AppClient.Webservice {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class getTousLesArticlesRequest {
+    public partial class getConnectRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesArticles", Namespace="http://tempuri.org/", Order=0)]
-        public AppClient.Webservice.getTousLesArticlesRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getConnect", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getConnectRequestBody Body;
         
-        public getTousLesArticlesRequest() {
+        public getConnectRequest() {
         }
         
-        public getTousLesArticlesRequest(AppClient.Webservice.getTousLesArticlesRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class getTousLesArticlesRequestBody {
-        
-        public getTousLesArticlesRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class getTousLesArticlesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesArticlesResponse", Namespace="http://tempuri.org/", Order=0)]
-        public AppClient.Webservice.getTousLesArticlesResponseBody Body;
-        
-        public getTousLesArticlesResponse() {
-        }
-        
-        public getTousLesArticlesResponse(AppClient.Webservice.getTousLesArticlesResponseBody Body) {
+        public getConnectRequest(AppClient.Webservice.getConnectRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -578,43 +2212,20 @@ namespace AppClient.Webservice {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class getTousLesArticlesResponseBody {
+    public partial class getConnectRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public AppClient.Webservice.CArticles[] getTousLesArticlesResult;
+        public string nom;
         
-        public getTousLesArticlesResponseBody() {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string mail;
+        
+        public getConnectRequestBody() {
         }
         
-        public getTousLesArticlesResponseBody(AppClient.Webservice.CArticles[] getTousLesArticlesResult) {
-            this.getTousLesArticlesResult = getTousLesArticlesResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class updateArticleRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="updateArticle", Namespace="http://tempuri.org/", Order=0)]
-        public AppClient.Webservice.updateArticleRequestBody Body;
-        
-        public updateArticleRequest() {
-        }
-        
-        public updateArticleRequest(AppClient.Webservice.updateArticleRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class updateArticleRequestBody {
-        
-        public updateArticleRequestBody() {
+        public getConnectRequestBody(string nom, string mail) {
+            this.nom = nom;
+            this.mail = mail;
         }
     }
     
@@ -622,15 +2233,15 @@ namespace AppClient.Webservice {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class updateArticleResponse {
+    public partial class getConnectResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="updateArticleResponse", Namespace="http://tempuri.org/", Order=0)]
-        public AppClient.Webservice.updateArticleResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getConnectResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getConnectResponseBody Body;
         
-        public updateArticleResponse() {
+        public getConnectResponse() {
         }
         
-        public updateArticleResponse(AppClient.Webservice.updateArticleResponseBody Body) {
+        public getConnectResponse(AppClient.Webservice.getConnectResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -639,213 +2250,16 @@ namespace AppClient.Webservice {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class updateArticleResponseBody {
+    public partial class getConnectResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public AppClient.Webservice.CArticles[] updateArticleResult;
+        public AppClient.Webservice.CClient getConnectResult;
         
-        public updateArticleResponseBody() {
+        public getConnectResponseBody() {
         }
         
-        public updateArticleResponseBody(AppClient.Webservice.CArticles[] updateArticleResult) {
-            this.updateArticleResult = updateArticleResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class deleteArticleRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="deleteArticle", Namespace="http://tempuri.org/", Order=0)]
-        public AppClient.Webservice.deleteArticleRequestBody Body;
-        
-        public deleteArticleRequest() {
-        }
-        
-        public deleteArticleRequest(AppClient.Webservice.deleteArticleRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class deleteArticleRequestBody {
-        
-        public deleteArticleRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class deleteArticleResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="deleteArticleResponse", Namespace="http://tempuri.org/", Order=0)]
-        public AppClient.Webservice.deleteArticleResponseBody Body;
-        
-        public deleteArticleResponse() {
-        }
-        
-        public deleteArticleResponse(AppClient.Webservice.deleteArticleResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class deleteArticleResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public AppClient.Webservice.CArticles[] deleteArticleResult;
-        
-        public deleteArticleResponseBody() {
-        }
-        
-        public deleteArticleResponseBody(AppClient.Webservice.CArticles[] deleteArticleResult) {
-            this.deleteArticleResult = deleteArticleResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class findUnArticleRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="findUnArticle", Namespace="http://tempuri.org/", Order=0)]
-        public AppClient.Webservice.findUnArticleRequestBody Body;
-        
-        public findUnArticleRequest() {
-        }
-        
-        public findUnArticleRequest(AppClient.Webservice.findUnArticleRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class findUnArticleRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int idArticle;
-        
-        public findUnArticleRequestBody() {
-        }
-        
-        public findUnArticleRequestBody(int idArticle) {
-            this.idArticle = idArticle;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class findUnArticleResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="findUnArticleResponse", Namespace="http://tempuri.org/", Order=0)]
-        public AppClient.Webservice.findUnArticleResponseBody Body;
-        
-        public findUnArticleResponse() {
-        }
-        
-        public findUnArticleResponse(AppClient.Webservice.findUnArticleResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class findUnArticleResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public AppClient.Webservice.CArticles findUnArticleResult;
-        
-        public findUnArticleResponseBody() {
-        }
-        
-        public findUnArticleResponseBody(AppClient.Webservice.CArticles findUnArticleResult) {
-            this.findUnArticleResult = findUnArticleResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class findUnArticleParRubriqueRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="findUnArticleParRubrique", Namespace="http://tempuri.org/", Order=0)]
-        public AppClient.Webservice.findUnArticleParRubriqueRequestBody Body;
-        
-        public findUnArticleParRubriqueRequest() {
-        }
-        
-        public findUnArticleParRubriqueRequest(AppClient.Webservice.findUnArticleParRubriqueRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class findUnArticleParRubriqueRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int idRubrique;
-        
-        public findUnArticleParRubriqueRequestBody() {
-        }
-        
-        public findUnArticleParRubriqueRequestBody(int idRubrique) {
-            this.idRubrique = idRubrique;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class findUnArticleParRubriqueResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="findUnArticleParRubriqueResponse", Namespace="http://tempuri.org/", Order=0)]
-        public AppClient.Webservice.findUnArticleParRubriqueResponseBody Body;
-        
-        public findUnArticleParRubriqueResponse() {
-        }
-        
-        public findUnArticleParRubriqueResponse(AppClient.Webservice.findUnArticleParRubriqueResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class findUnArticleParRubriqueResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public AppClient.Webservice.CArticles[] findUnArticleParRubriqueResult;
-        
-        public findUnArticleParRubriqueResponseBody() {
-        }
-        
-        public findUnArticleParRubriqueResponseBody(AppClient.Webservice.CArticles[] findUnArticleParRubriqueResult) {
-            this.findUnArticleParRubriqueResult = findUnArticleParRubriqueResult;
+        public getConnectResponseBody(AppClient.Webservice.CClient getConnectResult) {
+            this.getConnectResult = getConnectResult;
         }
     }
     
@@ -1039,8 +2453,970 @@ namespace AppClient.Webservice {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getToutesLesVillesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getToutesLesVilles", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getToutesLesVillesRequestBody Body;
+        
+        public getToutesLesVillesRequest() {
+        }
+        
+        public getToutesLesVillesRequest(AppClient.Webservice.getToutesLesVillesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getToutesLesVillesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idDepartement;
+        
+        public getToutesLesVillesRequestBody() {
+        }
+        
+        public getToutesLesVillesRequestBody(int idDepartement) {
+            this.idDepartement = idDepartement;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getToutesLesVillesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getToutesLesVillesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getToutesLesVillesResponseBody Body;
+        
+        public getToutesLesVillesResponse() {
+        }
+        
+        public getToutesLesVillesResponse(AppClient.Webservice.getToutesLesVillesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getToutesLesVillesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CVilles[] getToutesLesVillesResult;
+        
+        public getToutesLesVillesResponseBody() {
+        }
+        
+        public getToutesLesVillesResponseBody(AppClient.Webservice.CVilles[] getToutesLesVillesResult) {
+            this.getToutesLesVillesResult = getToutesLesVillesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesArticlesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesArticles", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesArticlesRequestBody Body;
+        
+        public getTousLesArticlesRequest() {
+        }
+        
+        public getTousLesArticlesRequest(AppClient.Webservice.getTousLesArticlesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getTousLesArticlesRequestBody {
+        
+        public getTousLesArticlesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesArticlesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesArticlesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesArticlesResponseBody Body;
+        
+        public getTousLesArticlesResponse() {
+        }
+        
+        public getTousLesArticlesResponse(AppClient.Webservice.getTousLesArticlesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getTousLesArticlesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CArticles[] getTousLesArticlesResult;
+        
+        public getTousLesArticlesResponseBody() {
+        }
+        
+        public getTousLesArticlesResponseBody(AppClient.Webservice.CArticles[] getTousLesArticlesResult) {
+            this.getTousLesArticlesResult = getTousLesArticlesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class updateArticleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="updateArticle", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.updateArticleRequestBody Body;
+        
+        public updateArticleRequest() {
+        }
+        
+        public updateArticleRequest(AppClient.Webservice.updateArticleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class updateArticleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CArticles articleModifie;
+        
+        public updateArticleRequestBody() {
+        }
+        
+        public updateArticleRequestBody(AppClient.Webservice.CArticles articleModifie) {
+            this.articleModifie = articleModifie;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class updateArticleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="updateArticleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.updateArticleResponseBody Body;
+        
+        public updateArticleResponse() {
+        }
+        
+        public updateArticleResponse(AppClient.Webservice.updateArticleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class updateArticleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool updateArticleResult;
+        
+        public updateArticleResponseBody() {
+        }
+        
+        public updateArticleResponseBody(bool updateArticleResult) {
+            this.updateArticleResult = updateArticleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class addArticleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="addArticle", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.addArticleRequestBody Body;
+        
+        public addArticleRequest() {
+        }
+        
+        public addArticleRequest(AppClient.Webservice.addArticleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class addArticleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CArticles articleAAjouter;
+        
+        public addArticleRequestBody() {
+        }
+        
+        public addArticleRequestBody(AppClient.Webservice.CArticles articleAAjouter) {
+            this.articleAAjouter = articleAAjouter;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class addArticleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="addArticleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.addArticleResponseBody Body;
+        
+        public addArticleResponse() {
+        }
+        
+        public addArticleResponse(AppClient.Webservice.addArticleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class addArticleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int addArticleResult;
+        
+        public addArticleResponseBody() {
+        }
+        
+        public addArticleResponseBody(int addArticleResult) {
+            this.addArticleResult = addArticleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class deleteArticleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="deleteArticle", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.deleteArticleRequestBody Body;
+        
+        public deleteArticleRequest() {
+        }
+        
+        public deleteArticleRequest(AppClient.Webservice.deleteArticleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class deleteArticleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CArticles articleASupprimer;
+        
+        public deleteArticleRequestBody() {
+        }
+        
+        public deleteArticleRequestBody(AppClient.Webservice.CArticles articleASupprimer) {
+            this.articleASupprimer = articleASupprimer;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class deleteArticleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="deleteArticleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.deleteArticleResponseBody Body;
+        
+        public deleteArticleResponse() {
+        }
+        
+        public deleteArticleResponse(AppClient.Webservice.deleteArticleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class deleteArticleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool deleteArticleResult;
+        
+        public deleteArticleResponseBody() {
+        }
+        
+        public deleteArticleResponseBody(bool deleteArticleResult) {
+            this.deleteArticleResult = deleteArticleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class findUnArticleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="findUnArticle", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.findUnArticleRequestBody Body;
+        
+        public findUnArticleRequest() {
+        }
+        
+        public findUnArticleRequest(AppClient.Webservice.findUnArticleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class findUnArticleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idArticle;
+        
+        public findUnArticleRequestBody() {
+        }
+        
+        public findUnArticleRequestBody(int idArticle) {
+            this.idArticle = idArticle;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class findUnArticleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="findUnArticleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.findUnArticleResponseBody Body;
+        
+        public findUnArticleResponse() {
+        }
+        
+        public findUnArticleResponse(AppClient.Webservice.findUnArticleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class findUnArticleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CArticles findUnArticleResult;
+        
+        public findUnArticleResponseBody() {
+        }
+        
+        public findUnArticleResponseBody(AppClient.Webservice.CArticles findUnArticleResult) {
+            this.findUnArticleResult = findUnArticleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class findArticleParRubriqueRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="findArticleParRubrique", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.findArticleParRubriqueRequestBody Body;
+        
+        public findArticleParRubriqueRequest() {
+        }
+        
+        public findArticleParRubriqueRequest(AppClient.Webservice.findArticleParRubriqueRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class findArticleParRubriqueRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idRubrique;
+        
+        public findArticleParRubriqueRequestBody() {
+        }
+        
+        public findArticleParRubriqueRequestBody(int idRubrique) {
+            this.idRubrique = idRubrique;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class findArticleParRubriqueResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="findArticleParRubriqueResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.findArticleParRubriqueResponseBody Body;
+        
+        public findArticleParRubriqueResponse() {
+        }
+        
+        public findArticleParRubriqueResponse(AppClient.Webservice.findArticleParRubriqueResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class findArticleParRubriqueResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CArticles[] findArticleParRubriqueResult;
+        
+        public findArticleParRubriqueResponseBody() {
+        }
+        
+        public findArticleParRubriqueResponseBody(AppClient.Webservice.CArticles[] findArticleParRubriqueResult) {
+            this.findArticleParRubriqueResult = findArticleParRubriqueResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesClientsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesClients", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesClientsRequestBody Body;
+        
+        public getTousLesClientsRequest() {
+        }
+        
+        public getTousLesClientsRequest(AppClient.Webservice.getTousLesClientsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getTousLesClientsRequestBody {
+        
+        public getTousLesClientsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getTousLesClientsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getTousLesClientsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.getTousLesClientsResponseBody Body;
+        
+        public getTousLesClientsResponse() {
+        }
+        
+        public getTousLesClientsResponse(AppClient.Webservice.getTousLesClientsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getTousLesClientsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CClient[] getTousLesClientsResult;
+        
+        public getTousLesClientsResponseBody() {
+        }
+        
+        public getTousLesClientsResponseBody(AppClient.Webservice.CClient[] getTousLesClientsResult) {
+            this.getTousLesClientsResult = getTousLesClientsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class updateClientRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="updateClient", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.updateClientRequestBody Body;
+        
+        public updateClientRequest() {
+        }
+        
+        public updateClientRequest(AppClient.Webservice.updateClientRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class updateClientRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CClient clientAModifier;
+        
+        public updateClientRequestBody() {
+        }
+        
+        public updateClientRequestBody(AppClient.Webservice.CClient clientAModifier) {
+            this.clientAModifier = clientAModifier;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class updateClientResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="updateClientResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.updateClientResponseBody Body;
+        
+        public updateClientResponse() {
+        }
+        
+        public updateClientResponse(AppClient.Webservice.updateClientResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class updateClientResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool updateClientResult;
+        
+        public updateClientResponseBody() {
+        }
+        
+        public updateClientResponseBody(bool updateClientResult) {
+            this.updateClientResult = updateClientResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class addClientRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="addClient", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.addClientRequestBody Body;
+        
+        public addClientRequest() {
+        }
+        
+        public addClientRequest(AppClient.Webservice.addClientRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class addClientRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CClient clientAAjouter;
+        
+        public addClientRequestBody() {
+        }
+        
+        public addClientRequestBody(AppClient.Webservice.CClient clientAAjouter) {
+            this.clientAAjouter = clientAAjouter;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class addClientResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="addClientResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.addClientResponseBody Body;
+        
+        public addClientResponse() {
+        }
+        
+        public addClientResponse(AppClient.Webservice.addClientResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class addClientResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int addClientResult;
+        
+        public addClientResponseBody() {
+        }
+        
+        public addClientResponseBody(int addClientResult) {
+            this.addClientResult = addClientResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class deleteClientRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="deleteClient", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.deleteClientRequestBody Body;
+        
+        public deleteClientRequest() {
+        }
+        
+        public deleteClientRequest(AppClient.Webservice.deleteClientRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class deleteClientRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public AppClient.Webservice.CClient clientASupprimer;
+        
+        public deleteClientRequestBody() {
+        }
+        
+        public deleteClientRequestBody(AppClient.Webservice.CClient clientASupprimer) {
+            this.clientASupprimer = clientASupprimer;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class deleteClientResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="deleteClientResponse", Namespace="http://tempuri.org/", Order=0)]
+        public AppClient.Webservice.deleteClientResponseBody Body;
+        
+        public deleteClientResponse() {
+        }
+        
+        public deleteClientResponse(AppClient.Webservice.deleteClientResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class deleteClientResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool deleteClientResult;
+        
+        public deleteClientResponseBody() {
+        }
+        
+        public deleteClientResponseBody(bool deleteClientResult) {
+            this.deleteClientResult = deleteClientResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebServiceSoapChannel : AppClient.Webservice.WebServiceSoap, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getTousLesDepartementsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getTousLesDepartementsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CDepartements[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CDepartements[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAllCLigneCommandeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAllCLigneCommandeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CLigneCommande[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CLigneCommande[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getToutesLesCommandesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getToutesLesCommandesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CCommandes[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CCommandes[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getUneCommandeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getUneCommandeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CCommandes[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CCommandes[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getTousLesStatutCommandesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getTousLesStatutCommandesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CStatutCommande[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CStatutCommande[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getUnStatutCommandeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getUnStatutCommandeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CStatutCommande[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CStatutCommande[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAllLignePanierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAllLignePanierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CLignePanier[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CLignePanier[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddLignePanierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddLignePanierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getLignePanierClientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getLignePanierClientCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CLignePanier[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CLignePanier[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class paniertToCommandeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public paniertToCommandeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getTousLesFraisPortCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getTousLesFraisPortCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CFraisPort[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CFraisPort[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getUnFraisPortCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getUnFraisPortCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CFraisPort[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CFraisPort[])(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1064,95 +3440,19 @@ namespace AppClient.Webservice {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class getTousLesArticlesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getConnectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public getTousLesArticlesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public getConnectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
-        public AppClient.Webservice.CArticles[] Result {
+        public AppClient.Webservice.CClient Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((AppClient.Webservice.CArticles[])(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class updateArticleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public updateArticleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AppClient.Webservice.CArticles[] Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AppClient.Webservice.CArticles[])(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class deleteArticleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public deleteArticleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AppClient.Webservice.CArticles[] Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AppClient.Webservice.CArticles[])(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class findUnArticleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public findUnArticleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AppClient.Webservice.CArticles Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AppClient.Webservice.CArticles)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class findUnArticleParRubriqueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public findUnArticleParRubriqueCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AppClient.Webservice.CArticles[] Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AppClient.Webservice.CArticles[])(this.results[0]));
+                return ((AppClient.Webservice.CClient)(this.results[0]));
             }
         }
     }
@@ -1216,7 +3516,288 @@ namespace AppClient.Webservice {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getToutesLesVillesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getToutesLesVillesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CVilles[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CVilles[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getTousLesArticlesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getTousLesArticlesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CArticles[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CArticles[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class updateArticleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public updateArticleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class addArticleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public addArticleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class deleteArticleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public deleteArticleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class findUnArticleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public findUnArticleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CArticles Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CArticles)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class findArticleParRubriqueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public findArticleParRubriqueCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CArticles[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CArticles[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getTousLesClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getTousLesClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AppClient.Webservice.CClient[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AppClient.Webservice.CClient[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class updateClientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public updateClientCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class addClientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public addClientCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class deleteClientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public deleteClientCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class WebServiceSoapClient : System.ServiceModel.ClientBase<AppClient.Webservice.WebServiceSoap>, AppClient.Webservice.WebServiceSoap {
+        
+        private BeginOperationDelegate onBegingetTousLesDepartementsDelegate;
+        
+        private EndOperationDelegate onEndgetTousLesDepartementsDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetTousLesDepartementsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAllCLigneCommandeDelegate;
+        
+        private EndOperationDelegate onEndGetAllCLigneCommandeDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAllCLigneCommandeCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetToutesLesCommandesDelegate;
+        
+        private EndOperationDelegate onEndgetToutesLesCommandesDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetToutesLesCommandesCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetUneCommandeDelegate;
+        
+        private EndOperationDelegate onEndgetUneCommandeDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetUneCommandeCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetTousLesStatutCommandesDelegate;
+        
+        private EndOperationDelegate onEndgetTousLesStatutCommandesDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetTousLesStatutCommandesCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetUnStatutCommandeDelegate;
+        
+        private EndOperationDelegate onEndgetUnStatutCommandeDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetUnStatutCommandeCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAllLignePanierDelegate;
+        
+        private EndOperationDelegate onEndGetAllLignePanierDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAllLignePanierCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddLignePanierDelegate;
+        
+        private EndOperationDelegate onEndAddLignePanierDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddLignePanierCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetLignePanierClientDelegate;
+        
+        private EndOperationDelegate onEndgetLignePanierClientDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetLignePanierClientCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginpaniertToCommandeDelegate;
+        
+        private EndOperationDelegate onEndpaniertToCommandeDelegate;
+        
+        private System.Threading.SendOrPostCallback onpaniertToCommandeCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetTousLesFraisPortDelegate;
+        
+        private EndOperationDelegate onEndgetTousLesFraisPortDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetTousLesFraisPortCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetUnFraisPortDelegate;
+        
+        private EndOperationDelegate onEndgetUnFraisPortDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetUnFraisPortCompletedDelegate;
         
         private BeginOperationDelegate onBeginHelloWorldDelegate;
         
@@ -1224,35 +3805,11 @@ namespace AppClient.Webservice {
         
         private System.Threading.SendOrPostCallback onHelloWorldCompletedDelegate;
         
-        private BeginOperationDelegate onBegingetTousLesArticlesDelegate;
+        private BeginOperationDelegate onBegingetConnectDelegate;
         
-        private EndOperationDelegate onEndgetTousLesArticlesDelegate;
+        private EndOperationDelegate onEndgetConnectDelegate;
         
-        private System.Threading.SendOrPostCallback ongetTousLesArticlesCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginupdateArticleDelegate;
-        
-        private EndOperationDelegate onEndupdateArticleDelegate;
-        
-        private System.Threading.SendOrPostCallback onupdateArticleCompletedDelegate;
-        
-        private BeginOperationDelegate onBegindeleteArticleDelegate;
-        
-        private EndOperationDelegate onEnddeleteArticleDelegate;
-        
-        private System.Threading.SendOrPostCallback ondeleteArticleCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginfindUnArticleDelegate;
-        
-        private EndOperationDelegate onEndfindUnArticleDelegate;
-        
-        private System.Threading.SendOrPostCallback onfindUnArticleCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginfindUnArticleParRubriqueDelegate;
-        
-        private EndOperationDelegate onEndfindUnArticleParRubriqueDelegate;
-        
-        private System.Threading.SendOrPostCallback onfindUnArticleParRubriqueCompletedDelegate;
+        private System.Threading.SendOrPostCallback ongetConnectCompletedDelegate;
         
         private BeginOperationDelegate onBegingetTousLesPaysDelegate;
         
@@ -1271,6 +3828,72 @@ namespace AppClient.Webservice {
         private EndOperationDelegate onEndgetToutesLesRubriquesDelegate;
         
         private System.Threading.SendOrPostCallback ongetToutesLesRubriquesCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetToutesLesVillesDelegate;
+        
+        private EndOperationDelegate onEndgetToutesLesVillesDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetToutesLesVillesCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetTousLesArticlesDelegate;
+        
+        private EndOperationDelegate onEndgetTousLesArticlesDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetTousLesArticlesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginupdateArticleDelegate;
+        
+        private EndOperationDelegate onEndupdateArticleDelegate;
+        
+        private System.Threading.SendOrPostCallback onupdateArticleCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginaddArticleDelegate;
+        
+        private EndOperationDelegate onEndaddArticleDelegate;
+        
+        private System.Threading.SendOrPostCallback onaddArticleCompletedDelegate;
+        
+        private BeginOperationDelegate onBegindeleteArticleDelegate;
+        
+        private EndOperationDelegate onEnddeleteArticleDelegate;
+        
+        private System.Threading.SendOrPostCallback ondeleteArticleCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginfindUnArticleDelegate;
+        
+        private EndOperationDelegate onEndfindUnArticleDelegate;
+        
+        private System.Threading.SendOrPostCallback onfindUnArticleCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginfindArticleParRubriqueDelegate;
+        
+        private EndOperationDelegate onEndfindArticleParRubriqueDelegate;
+        
+        private System.Threading.SendOrPostCallback onfindArticleParRubriqueCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetTousLesClientsDelegate;
+        
+        private EndOperationDelegate onEndgetTousLesClientsDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetTousLesClientsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginupdateClientDelegate;
+        
+        private EndOperationDelegate onEndupdateClientDelegate;
+        
+        private System.Threading.SendOrPostCallback onupdateClientCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginaddClientDelegate;
+        
+        private EndOperationDelegate onEndaddClientDelegate;
+        
+        private System.Threading.SendOrPostCallback onaddClientCompletedDelegate;
+        
+        private BeginOperationDelegate onBegindeleteClientDelegate;
+        
+        private EndOperationDelegate onEnddeleteClientDelegate;
+        
+        private System.Threading.SendOrPostCallback ondeleteClientCompletedDelegate;
         
         public WebServiceSoapClient() {
         }
@@ -1291,23 +3914,902 @@ namespace AppClient.Webservice {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<getTousLesDepartementsCompletedEventArgs> getTousLesDepartementsCompleted;
+        
+        public event System.EventHandler<GetAllCLigneCommandeCompletedEventArgs> GetAllCLigneCommandeCompleted;
+        
+        public event System.EventHandler<getToutesLesCommandesCompletedEventArgs> getToutesLesCommandesCompleted;
+        
+        public event System.EventHandler<getUneCommandeCompletedEventArgs> getUneCommandeCompleted;
+        
+        public event System.EventHandler<getTousLesStatutCommandesCompletedEventArgs> getTousLesStatutCommandesCompleted;
+        
+        public event System.EventHandler<getUnStatutCommandeCompletedEventArgs> getUnStatutCommandeCompleted;
+        
+        public event System.EventHandler<GetAllLignePanierCompletedEventArgs> GetAllLignePanierCompleted;
+        
+        public event System.EventHandler<AddLignePanierCompletedEventArgs> AddLignePanierCompleted;
+        
+        public event System.EventHandler<getLignePanierClientCompletedEventArgs> getLignePanierClientCompleted;
+        
+        public event System.EventHandler<paniertToCommandeCompletedEventArgs> paniertToCommandeCompleted;
+        
+        public event System.EventHandler<getTousLesFraisPortCompletedEventArgs> getTousLesFraisPortCompleted;
+        
+        public event System.EventHandler<getUnFraisPortCompletedEventArgs> getUnFraisPortCompleted;
+        
         public event System.EventHandler<HelloWorldCompletedEventArgs> HelloWorldCompleted;
         
-        public event System.EventHandler<getTousLesArticlesCompletedEventArgs> getTousLesArticlesCompleted;
-        
-        public event System.EventHandler<updateArticleCompletedEventArgs> updateArticleCompleted;
-        
-        public event System.EventHandler<deleteArticleCompletedEventArgs> deleteArticleCompleted;
-        
-        public event System.EventHandler<findUnArticleCompletedEventArgs> findUnArticleCompleted;
-        
-        public event System.EventHandler<findUnArticleParRubriqueCompletedEventArgs> findUnArticleParRubriqueCompleted;
+        public event System.EventHandler<getConnectCompletedEventArgs> getConnectCompleted;
         
         public event System.EventHandler<getTousLesPaysCompletedEventArgs> getTousLesPaysCompleted;
         
         public event System.EventHandler<getToutesLesRegionsCompletedEventArgs> getToutesLesRegionsCompleted;
         
         public event System.EventHandler<getToutesLesRubriquesCompletedEventArgs> getToutesLesRubriquesCompleted;
+        
+        public event System.EventHandler<getToutesLesVillesCompletedEventArgs> getToutesLesVillesCompleted;
+        
+        public event System.EventHandler<getTousLesArticlesCompletedEventArgs> getTousLesArticlesCompleted;
+        
+        public event System.EventHandler<updateArticleCompletedEventArgs> updateArticleCompleted;
+        
+        public event System.EventHandler<addArticleCompletedEventArgs> addArticleCompleted;
+        
+        public event System.EventHandler<deleteArticleCompletedEventArgs> deleteArticleCompleted;
+        
+        public event System.EventHandler<findUnArticleCompletedEventArgs> findUnArticleCompleted;
+        
+        public event System.EventHandler<findArticleParRubriqueCompletedEventArgs> findArticleParRubriqueCompleted;
+        
+        public event System.EventHandler<getTousLesClientsCompletedEventArgs> getTousLesClientsCompleted;
+        
+        public event System.EventHandler<updateClientCompletedEventArgs> updateClientCompleted;
+        
+        public event System.EventHandler<addClientCompletedEventArgs> addClientCompleted;
+        
+        public event System.EventHandler<deleteClientCompletedEventArgs> deleteClientCompleted;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesDepartementsResponse AppClient.Webservice.WebServiceSoap.getTousLesDepartements(AppClient.Webservice.getTousLesDepartementsRequest request) {
+            return base.Channel.getTousLesDepartements(request);
+        }
+        
+        public AppClient.Webservice.CDepartements[] getTousLesDepartements(int idRegion) {
+            AppClient.Webservice.getTousLesDepartementsRequest inValue = new AppClient.Webservice.getTousLesDepartementsRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesDepartementsRequestBody();
+            inValue.Body.idRegion = idRegion;
+            AppClient.Webservice.getTousLesDepartementsResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getTousLesDepartements(inValue);
+            return retVal.Body.getTousLesDepartementsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetTousLesDepartements(AppClient.Webservice.getTousLesDepartementsRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetTousLesDepartements(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetTousLesDepartements(int idRegion, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getTousLesDepartementsRequest inValue = new AppClient.Webservice.getTousLesDepartementsRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesDepartementsRequestBody();
+            inValue.Body.idRegion = idRegion;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetTousLesDepartements(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesDepartementsResponse AppClient.Webservice.WebServiceSoap.EndgetTousLesDepartements(System.IAsyncResult result) {
+            return base.Channel.EndgetTousLesDepartements(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CDepartements[] EndgetTousLesDepartements(System.IAsyncResult result) {
+            AppClient.Webservice.getTousLesDepartementsResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetTousLesDepartements(result);
+            return retVal.Body.getTousLesDepartementsResult;
+        }
+        
+        private System.IAsyncResult OnBegingetTousLesDepartements(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int idRegion = ((int)(inValues[0]));
+            return this.BegingetTousLesDepartements(idRegion, callback, asyncState);
+        }
+        
+        private object[] OnEndgetTousLesDepartements(System.IAsyncResult result) {
+            AppClient.Webservice.CDepartements[] retVal = this.EndgetTousLesDepartements(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetTousLesDepartementsCompleted(object state) {
+            if ((this.getTousLesDepartementsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getTousLesDepartementsCompleted(this, new getTousLesDepartementsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getTousLesDepartementsAsync(int idRegion) {
+            this.getTousLesDepartementsAsync(idRegion, null);
+        }
+        
+        public void getTousLesDepartementsAsync(int idRegion, object userState) {
+            if ((this.onBegingetTousLesDepartementsDelegate == null)) {
+                this.onBegingetTousLesDepartementsDelegate = new BeginOperationDelegate(this.OnBegingetTousLesDepartements);
+            }
+            if ((this.onEndgetTousLesDepartementsDelegate == null)) {
+                this.onEndgetTousLesDepartementsDelegate = new EndOperationDelegate(this.OnEndgetTousLesDepartements);
+            }
+            if ((this.ongetTousLesDepartementsCompletedDelegate == null)) {
+                this.ongetTousLesDepartementsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetTousLesDepartementsCompleted);
+            }
+            base.InvokeAsync(this.onBegingetTousLesDepartementsDelegate, new object[] {
+                        idRegion}, this.onEndgetTousLesDepartementsDelegate, this.ongetTousLesDepartementsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.GetAllCLigneCommandeResponse AppClient.Webservice.WebServiceSoap.GetAllCLigneCommande(AppClient.Webservice.GetAllCLigneCommandeRequest request) {
+            return base.Channel.GetAllCLigneCommande(request);
+        }
+        
+        public AppClient.Webservice.CLigneCommande[] GetAllCLigneCommande() {
+            AppClient.Webservice.GetAllCLigneCommandeRequest inValue = new AppClient.Webservice.GetAllCLigneCommandeRequest();
+            inValue.Body = new AppClient.Webservice.GetAllCLigneCommandeRequestBody();
+            AppClient.Webservice.GetAllCLigneCommandeResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).GetAllCLigneCommande(inValue);
+            return retVal.Body.GetAllCLigneCommandeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginGetAllCLigneCommande(AppClient.Webservice.GetAllCLigneCommandeRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllCLigneCommande(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetAllCLigneCommande(System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.GetAllCLigneCommandeRequest inValue = new AppClient.Webservice.GetAllCLigneCommandeRequest();
+            inValue.Body = new AppClient.Webservice.GetAllCLigneCommandeRequestBody();
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginGetAllCLigneCommande(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.GetAllCLigneCommandeResponse AppClient.Webservice.WebServiceSoap.EndGetAllCLigneCommande(System.IAsyncResult result) {
+            return base.Channel.EndGetAllCLigneCommande(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CLigneCommande[] EndGetAllCLigneCommande(System.IAsyncResult result) {
+            AppClient.Webservice.GetAllCLigneCommandeResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndGetAllCLigneCommande(result);
+            return retVal.Body.GetAllCLigneCommandeResult;
+        }
+        
+        private System.IAsyncResult OnBeginGetAllCLigneCommande(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetAllCLigneCommande(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAllCLigneCommande(System.IAsyncResult result) {
+            AppClient.Webservice.CLigneCommande[] retVal = this.EndGetAllCLigneCommande(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAllCLigneCommandeCompleted(object state) {
+            if ((this.GetAllCLigneCommandeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAllCLigneCommandeCompleted(this, new GetAllCLigneCommandeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAllCLigneCommandeAsync() {
+            this.GetAllCLigneCommandeAsync(null);
+        }
+        
+        public void GetAllCLigneCommandeAsync(object userState) {
+            if ((this.onBeginGetAllCLigneCommandeDelegate == null)) {
+                this.onBeginGetAllCLigneCommandeDelegate = new BeginOperationDelegate(this.OnBeginGetAllCLigneCommande);
+            }
+            if ((this.onEndGetAllCLigneCommandeDelegate == null)) {
+                this.onEndGetAllCLigneCommandeDelegate = new EndOperationDelegate(this.OnEndGetAllCLigneCommande);
+            }
+            if ((this.onGetAllCLigneCommandeCompletedDelegate == null)) {
+                this.onGetAllCLigneCommandeCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllCLigneCommandeCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAllCLigneCommandeDelegate, null, this.onEndGetAllCLigneCommandeDelegate, this.onGetAllCLigneCommandeCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getToutesLesCommandesResponse AppClient.Webservice.WebServiceSoap.getToutesLesCommandes(AppClient.Webservice.getToutesLesCommandesRequest request) {
+            return base.Channel.getToutesLesCommandes(request);
+        }
+        
+        public AppClient.Webservice.CCommandes[] getToutesLesCommandes() {
+            AppClient.Webservice.getToutesLesCommandesRequest inValue = new AppClient.Webservice.getToutesLesCommandesRequest();
+            inValue.Body = new AppClient.Webservice.getToutesLesCommandesRequestBody();
+            AppClient.Webservice.getToutesLesCommandesResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getToutesLesCommandes(inValue);
+            return retVal.Body.getToutesLesCommandesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetToutesLesCommandes(AppClient.Webservice.getToutesLesCommandesRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetToutesLesCommandes(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetToutesLesCommandes(System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getToutesLesCommandesRequest inValue = new AppClient.Webservice.getToutesLesCommandesRequest();
+            inValue.Body = new AppClient.Webservice.getToutesLesCommandesRequestBody();
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetToutesLesCommandes(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getToutesLesCommandesResponse AppClient.Webservice.WebServiceSoap.EndgetToutesLesCommandes(System.IAsyncResult result) {
+            return base.Channel.EndgetToutesLesCommandes(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CCommandes[] EndgetToutesLesCommandes(System.IAsyncResult result) {
+            AppClient.Webservice.getToutesLesCommandesResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetToutesLesCommandes(result);
+            return retVal.Body.getToutesLesCommandesResult;
+        }
+        
+        private System.IAsyncResult OnBegingetToutesLesCommandes(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BegingetToutesLesCommandes(callback, asyncState);
+        }
+        
+        private object[] OnEndgetToutesLesCommandes(System.IAsyncResult result) {
+            AppClient.Webservice.CCommandes[] retVal = this.EndgetToutesLesCommandes(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetToutesLesCommandesCompleted(object state) {
+            if ((this.getToutesLesCommandesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getToutesLesCommandesCompleted(this, new getToutesLesCommandesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getToutesLesCommandesAsync() {
+            this.getToutesLesCommandesAsync(null);
+        }
+        
+        public void getToutesLesCommandesAsync(object userState) {
+            if ((this.onBegingetToutesLesCommandesDelegate == null)) {
+                this.onBegingetToutesLesCommandesDelegate = new BeginOperationDelegate(this.OnBegingetToutesLesCommandes);
+            }
+            if ((this.onEndgetToutesLesCommandesDelegate == null)) {
+                this.onEndgetToutesLesCommandesDelegate = new EndOperationDelegate(this.OnEndgetToutesLesCommandes);
+            }
+            if ((this.ongetToutesLesCommandesCompletedDelegate == null)) {
+                this.ongetToutesLesCommandesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetToutesLesCommandesCompleted);
+            }
+            base.InvokeAsync(this.onBegingetToutesLesCommandesDelegate, null, this.onEndgetToutesLesCommandesDelegate, this.ongetToutesLesCommandesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getUneCommandeResponse AppClient.Webservice.WebServiceSoap.getUneCommande(AppClient.Webservice.getUneCommandeRequest request) {
+            return base.Channel.getUneCommande(request);
+        }
+        
+        public AppClient.Webservice.CCommandes[] getUneCommande(int idCommande) {
+            AppClient.Webservice.getUneCommandeRequest inValue = new AppClient.Webservice.getUneCommandeRequest();
+            inValue.Body = new AppClient.Webservice.getUneCommandeRequestBody();
+            inValue.Body.idCommande = idCommande;
+            AppClient.Webservice.getUneCommandeResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getUneCommande(inValue);
+            return retVal.Body.getUneCommandeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetUneCommande(AppClient.Webservice.getUneCommandeRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetUneCommande(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetUneCommande(int idCommande, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getUneCommandeRequest inValue = new AppClient.Webservice.getUneCommandeRequest();
+            inValue.Body = new AppClient.Webservice.getUneCommandeRequestBody();
+            inValue.Body.idCommande = idCommande;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetUneCommande(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getUneCommandeResponse AppClient.Webservice.WebServiceSoap.EndgetUneCommande(System.IAsyncResult result) {
+            return base.Channel.EndgetUneCommande(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CCommandes[] EndgetUneCommande(System.IAsyncResult result) {
+            AppClient.Webservice.getUneCommandeResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetUneCommande(result);
+            return retVal.Body.getUneCommandeResult;
+        }
+        
+        private System.IAsyncResult OnBegingetUneCommande(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int idCommande = ((int)(inValues[0]));
+            return this.BegingetUneCommande(idCommande, callback, asyncState);
+        }
+        
+        private object[] OnEndgetUneCommande(System.IAsyncResult result) {
+            AppClient.Webservice.CCommandes[] retVal = this.EndgetUneCommande(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetUneCommandeCompleted(object state) {
+            if ((this.getUneCommandeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getUneCommandeCompleted(this, new getUneCommandeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getUneCommandeAsync(int idCommande) {
+            this.getUneCommandeAsync(idCommande, null);
+        }
+        
+        public void getUneCommandeAsync(int idCommande, object userState) {
+            if ((this.onBegingetUneCommandeDelegate == null)) {
+                this.onBegingetUneCommandeDelegate = new BeginOperationDelegate(this.OnBegingetUneCommande);
+            }
+            if ((this.onEndgetUneCommandeDelegate == null)) {
+                this.onEndgetUneCommandeDelegate = new EndOperationDelegate(this.OnEndgetUneCommande);
+            }
+            if ((this.ongetUneCommandeCompletedDelegate == null)) {
+                this.ongetUneCommandeCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetUneCommandeCompleted);
+            }
+            base.InvokeAsync(this.onBegingetUneCommandeDelegate, new object[] {
+                        idCommande}, this.onEndgetUneCommandeDelegate, this.ongetUneCommandeCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesStatutCommandesResponse AppClient.Webservice.WebServiceSoap.getTousLesStatutCommandes(AppClient.Webservice.getTousLesStatutCommandesRequest request) {
+            return base.Channel.getTousLesStatutCommandes(request);
+        }
+        
+        public AppClient.Webservice.CStatutCommande[] getTousLesStatutCommandes() {
+            AppClient.Webservice.getTousLesStatutCommandesRequest inValue = new AppClient.Webservice.getTousLesStatutCommandesRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesStatutCommandesRequestBody();
+            AppClient.Webservice.getTousLesStatutCommandesResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getTousLesStatutCommandes(inValue);
+            return retVal.Body.getTousLesStatutCommandesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetTousLesStatutCommandes(AppClient.Webservice.getTousLesStatutCommandesRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetTousLesStatutCommandes(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetTousLesStatutCommandes(System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getTousLesStatutCommandesRequest inValue = new AppClient.Webservice.getTousLesStatutCommandesRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesStatutCommandesRequestBody();
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetTousLesStatutCommandes(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesStatutCommandesResponse AppClient.Webservice.WebServiceSoap.EndgetTousLesStatutCommandes(System.IAsyncResult result) {
+            return base.Channel.EndgetTousLesStatutCommandes(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CStatutCommande[] EndgetTousLesStatutCommandes(System.IAsyncResult result) {
+            AppClient.Webservice.getTousLesStatutCommandesResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetTousLesStatutCommandes(result);
+            return retVal.Body.getTousLesStatutCommandesResult;
+        }
+        
+        private System.IAsyncResult OnBegingetTousLesStatutCommandes(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BegingetTousLesStatutCommandes(callback, asyncState);
+        }
+        
+        private object[] OnEndgetTousLesStatutCommandes(System.IAsyncResult result) {
+            AppClient.Webservice.CStatutCommande[] retVal = this.EndgetTousLesStatutCommandes(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetTousLesStatutCommandesCompleted(object state) {
+            if ((this.getTousLesStatutCommandesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getTousLesStatutCommandesCompleted(this, new getTousLesStatutCommandesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getTousLesStatutCommandesAsync() {
+            this.getTousLesStatutCommandesAsync(null);
+        }
+        
+        public void getTousLesStatutCommandesAsync(object userState) {
+            if ((this.onBegingetTousLesStatutCommandesDelegate == null)) {
+                this.onBegingetTousLesStatutCommandesDelegate = new BeginOperationDelegate(this.OnBegingetTousLesStatutCommandes);
+            }
+            if ((this.onEndgetTousLesStatutCommandesDelegate == null)) {
+                this.onEndgetTousLesStatutCommandesDelegate = new EndOperationDelegate(this.OnEndgetTousLesStatutCommandes);
+            }
+            if ((this.ongetTousLesStatutCommandesCompletedDelegate == null)) {
+                this.ongetTousLesStatutCommandesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetTousLesStatutCommandesCompleted);
+            }
+            base.InvokeAsync(this.onBegingetTousLesStatutCommandesDelegate, null, this.onEndgetTousLesStatutCommandesDelegate, this.ongetTousLesStatutCommandesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getUnStatutCommandeResponse AppClient.Webservice.WebServiceSoap.getUnStatutCommande(AppClient.Webservice.getUnStatutCommandeRequest request) {
+            return base.Channel.getUnStatutCommande(request);
+        }
+        
+        public AppClient.Webservice.CStatutCommande[] getUnStatutCommande(int idStatut) {
+            AppClient.Webservice.getUnStatutCommandeRequest inValue = new AppClient.Webservice.getUnStatutCommandeRequest();
+            inValue.Body = new AppClient.Webservice.getUnStatutCommandeRequestBody();
+            inValue.Body.idStatut = idStatut;
+            AppClient.Webservice.getUnStatutCommandeResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getUnStatutCommande(inValue);
+            return retVal.Body.getUnStatutCommandeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetUnStatutCommande(AppClient.Webservice.getUnStatutCommandeRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetUnStatutCommande(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetUnStatutCommande(int idStatut, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getUnStatutCommandeRequest inValue = new AppClient.Webservice.getUnStatutCommandeRequest();
+            inValue.Body = new AppClient.Webservice.getUnStatutCommandeRequestBody();
+            inValue.Body.idStatut = idStatut;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetUnStatutCommande(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getUnStatutCommandeResponse AppClient.Webservice.WebServiceSoap.EndgetUnStatutCommande(System.IAsyncResult result) {
+            return base.Channel.EndgetUnStatutCommande(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CStatutCommande[] EndgetUnStatutCommande(System.IAsyncResult result) {
+            AppClient.Webservice.getUnStatutCommandeResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetUnStatutCommande(result);
+            return retVal.Body.getUnStatutCommandeResult;
+        }
+        
+        private System.IAsyncResult OnBegingetUnStatutCommande(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int idStatut = ((int)(inValues[0]));
+            return this.BegingetUnStatutCommande(idStatut, callback, asyncState);
+        }
+        
+        private object[] OnEndgetUnStatutCommande(System.IAsyncResult result) {
+            AppClient.Webservice.CStatutCommande[] retVal = this.EndgetUnStatutCommande(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetUnStatutCommandeCompleted(object state) {
+            if ((this.getUnStatutCommandeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getUnStatutCommandeCompleted(this, new getUnStatutCommandeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getUnStatutCommandeAsync(int idStatut) {
+            this.getUnStatutCommandeAsync(idStatut, null);
+        }
+        
+        public void getUnStatutCommandeAsync(int idStatut, object userState) {
+            if ((this.onBegingetUnStatutCommandeDelegate == null)) {
+                this.onBegingetUnStatutCommandeDelegate = new BeginOperationDelegate(this.OnBegingetUnStatutCommande);
+            }
+            if ((this.onEndgetUnStatutCommandeDelegate == null)) {
+                this.onEndgetUnStatutCommandeDelegate = new EndOperationDelegate(this.OnEndgetUnStatutCommande);
+            }
+            if ((this.ongetUnStatutCommandeCompletedDelegate == null)) {
+                this.ongetUnStatutCommandeCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetUnStatutCommandeCompleted);
+            }
+            base.InvokeAsync(this.onBegingetUnStatutCommandeDelegate, new object[] {
+                        idStatut}, this.onEndgetUnStatutCommandeDelegate, this.ongetUnStatutCommandeCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.GetAllLignePanierResponse AppClient.Webservice.WebServiceSoap.GetAllLignePanier(AppClient.Webservice.GetAllLignePanierRequest request) {
+            return base.Channel.GetAllLignePanier(request);
+        }
+        
+        public AppClient.Webservice.CLignePanier[] GetAllLignePanier() {
+            AppClient.Webservice.GetAllLignePanierRequest inValue = new AppClient.Webservice.GetAllLignePanierRequest();
+            inValue.Body = new AppClient.Webservice.GetAllLignePanierRequestBody();
+            AppClient.Webservice.GetAllLignePanierResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).GetAllLignePanier(inValue);
+            return retVal.Body.GetAllLignePanierResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginGetAllLignePanier(AppClient.Webservice.GetAllLignePanierRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllLignePanier(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetAllLignePanier(System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.GetAllLignePanierRequest inValue = new AppClient.Webservice.GetAllLignePanierRequest();
+            inValue.Body = new AppClient.Webservice.GetAllLignePanierRequestBody();
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginGetAllLignePanier(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.GetAllLignePanierResponse AppClient.Webservice.WebServiceSoap.EndGetAllLignePanier(System.IAsyncResult result) {
+            return base.Channel.EndGetAllLignePanier(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CLignePanier[] EndGetAllLignePanier(System.IAsyncResult result) {
+            AppClient.Webservice.GetAllLignePanierResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndGetAllLignePanier(result);
+            return retVal.Body.GetAllLignePanierResult;
+        }
+        
+        private System.IAsyncResult OnBeginGetAllLignePanier(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetAllLignePanier(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAllLignePanier(System.IAsyncResult result) {
+            AppClient.Webservice.CLignePanier[] retVal = this.EndGetAllLignePanier(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAllLignePanierCompleted(object state) {
+            if ((this.GetAllLignePanierCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAllLignePanierCompleted(this, new GetAllLignePanierCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAllLignePanierAsync() {
+            this.GetAllLignePanierAsync(null);
+        }
+        
+        public void GetAllLignePanierAsync(object userState) {
+            if ((this.onBeginGetAllLignePanierDelegate == null)) {
+                this.onBeginGetAllLignePanierDelegate = new BeginOperationDelegate(this.OnBeginGetAllLignePanier);
+            }
+            if ((this.onEndGetAllLignePanierDelegate == null)) {
+                this.onEndGetAllLignePanierDelegate = new EndOperationDelegate(this.OnEndGetAllLignePanier);
+            }
+            if ((this.onGetAllLignePanierCompletedDelegate == null)) {
+                this.onGetAllLignePanierCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllLignePanierCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAllLignePanierDelegate, null, this.onEndGetAllLignePanierDelegate, this.onGetAllLignePanierCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.AddLignePanierResponse AppClient.Webservice.WebServiceSoap.AddLignePanier(AppClient.Webservice.AddLignePanierRequest request) {
+            return base.Channel.AddLignePanier(request);
+        }
+        
+        public int AddLignePanier(int numClient, string idArticle, int qte) {
+            AppClient.Webservice.AddLignePanierRequest inValue = new AppClient.Webservice.AddLignePanierRequest();
+            inValue.Body = new AppClient.Webservice.AddLignePanierRequestBody();
+            inValue.Body.numClient = numClient;
+            inValue.Body.idArticle = idArticle;
+            inValue.Body.qte = qte;
+            AppClient.Webservice.AddLignePanierResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).AddLignePanier(inValue);
+            return retVal.Body.AddLignePanierResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginAddLignePanier(AppClient.Webservice.AddLignePanierRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddLignePanier(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddLignePanier(int numClient, string idArticle, int qte, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.AddLignePanierRequest inValue = new AppClient.Webservice.AddLignePanierRequest();
+            inValue.Body = new AppClient.Webservice.AddLignePanierRequestBody();
+            inValue.Body.numClient = numClient;
+            inValue.Body.idArticle = idArticle;
+            inValue.Body.qte = qte;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginAddLignePanier(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.AddLignePanierResponse AppClient.Webservice.WebServiceSoap.EndAddLignePanier(System.IAsyncResult result) {
+            return base.Channel.EndAddLignePanier(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndAddLignePanier(System.IAsyncResult result) {
+            AppClient.Webservice.AddLignePanierResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndAddLignePanier(result);
+            return retVal.Body.AddLignePanierResult;
+        }
+        
+        private System.IAsyncResult OnBeginAddLignePanier(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int numClient = ((int)(inValues[0]));
+            string idArticle = ((string)(inValues[1]));
+            int qte = ((int)(inValues[2]));
+            return this.BeginAddLignePanier(numClient, idArticle, qte, callback, asyncState);
+        }
+        
+        private object[] OnEndAddLignePanier(System.IAsyncResult result) {
+            int retVal = this.EndAddLignePanier(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddLignePanierCompleted(object state) {
+            if ((this.AddLignePanierCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddLignePanierCompleted(this, new AddLignePanierCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddLignePanierAsync(int numClient, string idArticle, int qte) {
+            this.AddLignePanierAsync(numClient, idArticle, qte, null);
+        }
+        
+        public void AddLignePanierAsync(int numClient, string idArticle, int qte, object userState) {
+            if ((this.onBeginAddLignePanierDelegate == null)) {
+                this.onBeginAddLignePanierDelegate = new BeginOperationDelegate(this.OnBeginAddLignePanier);
+            }
+            if ((this.onEndAddLignePanierDelegate == null)) {
+                this.onEndAddLignePanierDelegate = new EndOperationDelegate(this.OnEndAddLignePanier);
+            }
+            if ((this.onAddLignePanierCompletedDelegate == null)) {
+                this.onAddLignePanierCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddLignePanierCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddLignePanierDelegate, new object[] {
+                        numClient,
+                        idArticle,
+                        qte}, this.onEndAddLignePanierDelegate, this.onAddLignePanierCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getLignePanierClientResponse AppClient.Webservice.WebServiceSoap.getLignePanierClient(AppClient.Webservice.getLignePanierClientRequest request) {
+            return base.Channel.getLignePanierClient(request);
+        }
+        
+        public AppClient.Webservice.CLignePanier[] getLignePanierClient(int idClient) {
+            AppClient.Webservice.getLignePanierClientRequest inValue = new AppClient.Webservice.getLignePanierClientRequest();
+            inValue.Body = new AppClient.Webservice.getLignePanierClientRequestBody();
+            inValue.Body.idClient = idClient;
+            AppClient.Webservice.getLignePanierClientResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getLignePanierClient(inValue);
+            return retVal.Body.getLignePanierClientResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetLignePanierClient(AppClient.Webservice.getLignePanierClientRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetLignePanierClient(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetLignePanierClient(int idClient, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getLignePanierClientRequest inValue = new AppClient.Webservice.getLignePanierClientRequest();
+            inValue.Body = new AppClient.Webservice.getLignePanierClientRequestBody();
+            inValue.Body.idClient = idClient;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetLignePanierClient(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getLignePanierClientResponse AppClient.Webservice.WebServiceSoap.EndgetLignePanierClient(System.IAsyncResult result) {
+            return base.Channel.EndgetLignePanierClient(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CLignePanier[] EndgetLignePanierClient(System.IAsyncResult result) {
+            AppClient.Webservice.getLignePanierClientResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetLignePanierClient(result);
+            return retVal.Body.getLignePanierClientResult;
+        }
+        
+        private System.IAsyncResult OnBegingetLignePanierClient(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int idClient = ((int)(inValues[0]));
+            return this.BegingetLignePanierClient(idClient, callback, asyncState);
+        }
+        
+        private object[] OnEndgetLignePanierClient(System.IAsyncResult result) {
+            AppClient.Webservice.CLignePanier[] retVal = this.EndgetLignePanierClient(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetLignePanierClientCompleted(object state) {
+            if ((this.getLignePanierClientCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getLignePanierClientCompleted(this, new getLignePanierClientCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getLignePanierClientAsync(int idClient) {
+            this.getLignePanierClientAsync(idClient, null);
+        }
+        
+        public void getLignePanierClientAsync(int idClient, object userState) {
+            if ((this.onBegingetLignePanierClientDelegate == null)) {
+                this.onBegingetLignePanierClientDelegate = new BeginOperationDelegate(this.OnBegingetLignePanierClient);
+            }
+            if ((this.onEndgetLignePanierClientDelegate == null)) {
+                this.onEndgetLignePanierClientDelegate = new EndOperationDelegate(this.OnEndgetLignePanierClient);
+            }
+            if ((this.ongetLignePanierClientCompletedDelegate == null)) {
+                this.ongetLignePanierClientCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetLignePanierClientCompleted);
+            }
+            base.InvokeAsync(this.onBegingetLignePanierClientDelegate, new object[] {
+                        idClient}, this.onEndgetLignePanierClientDelegate, this.ongetLignePanierClientCompletedDelegate, userState);
+        }
+        
+        public int paniertToCommande(int numClient) {
+            return base.Channel.paniertToCommande(numClient);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginpaniertToCommande(int numClient, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginpaniertToCommande(numClient, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndpaniertToCommande(System.IAsyncResult result) {
+            return base.Channel.EndpaniertToCommande(result);
+        }
+        
+        private System.IAsyncResult OnBeginpaniertToCommande(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int numClient = ((int)(inValues[0]));
+            return this.BeginpaniertToCommande(numClient, callback, asyncState);
+        }
+        
+        private object[] OnEndpaniertToCommande(System.IAsyncResult result) {
+            int retVal = this.EndpaniertToCommande(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnpaniertToCommandeCompleted(object state) {
+            if ((this.paniertToCommandeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.paniertToCommandeCompleted(this, new paniertToCommandeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void paniertToCommandeAsync(int numClient) {
+            this.paniertToCommandeAsync(numClient, null);
+        }
+        
+        public void paniertToCommandeAsync(int numClient, object userState) {
+            if ((this.onBeginpaniertToCommandeDelegate == null)) {
+                this.onBeginpaniertToCommandeDelegate = new BeginOperationDelegate(this.OnBeginpaniertToCommande);
+            }
+            if ((this.onEndpaniertToCommandeDelegate == null)) {
+                this.onEndpaniertToCommandeDelegate = new EndOperationDelegate(this.OnEndpaniertToCommande);
+            }
+            if ((this.onpaniertToCommandeCompletedDelegate == null)) {
+                this.onpaniertToCommandeCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnpaniertToCommandeCompleted);
+            }
+            base.InvokeAsync(this.onBeginpaniertToCommandeDelegate, new object[] {
+                        numClient}, this.onEndpaniertToCommandeDelegate, this.onpaniertToCommandeCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesFraisPortResponse AppClient.Webservice.WebServiceSoap.getTousLesFraisPort(AppClient.Webservice.getTousLesFraisPortRequest request) {
+            return base.Channel.getTousLesFraisPort(request);
+        }
+        
+        public AppClient.Webservice.CFraisPort[] getTousLesFraisPort() {
+            AppClient.Webservice.getTousLesFraisPortRequest inValue = new AppClient.Webservice.getTousLesFraisPortRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesFraisPortRequestBody();
+            AppClient.Webservice.getTousLesFraisPortResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getTousLesFraisPort(inValue);
+            return retVal.Body.getTousLesFraisPortResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetTousLesFraisPort(AppClient.Webservice.getTousLesFraisPortRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetTousLesFraisPort(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetTousLesFraisPort(System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getTousLesFraisPortRequest inValue = new AppClient.Webservice.getTousLesFraisPortRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesFraisPortRequestBody();
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetTousLesFraisPort(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesFraisPortResponse AppClient.Webservice.WebServiceSoap.EndgetTousLesFraisPort(System.IAsyncResult result) {
+            return base.Channel.EndgetTousLesFraisPort(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CFraisPort[] EndgetTousLesFraisPort(System.IAsyncResult result) {
+            AppClient.Webservice.getTousLesFraisPortResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetTousLesFraisPort(result);
+            return retVal.Body.getTousLesFraisPortResult;
+        }
+        
+        private System.IAsyncResult OnBegingetTousLesFraisPort(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BegingetTousLesFraisPort(callback, asyncState);
+        }
+        
+        private object[] OnEndgetTousLesFraisPort(System.IAsyncResult result) {
+            AppClient.Webservice.CFraisPort[] retVal = this.EndgetTousLesFraisPort(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetTousLesFraisPortCompleted(object state) {
+            if ((this.getTousLesFraisPortCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getTousLesFraisPortCompleted(this, new getTousLesFraisPortCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getTousLesFraisPortAsync() {
+            this.getTousLesFraisPortAsync(null);
+        }
+        
+        public void getTousLesFraisPortAsync(object userState) {
+            if ((this.onBegingetTousLesFraisPortDelegate == null)) {
+                this.onBegingetTousLesFraisPortDelegate = new BeginOperationDelegate(this.OnBegingetTousLesFraisPort);
+            }
+            if ((this.onEndgetTousLesFraisPortDelegate == null)) {
+                this.onEndgetTousLesFraisPortDelegate = new EndOperationDelegate(this.OnEndgetTousLesFraisPort);
+            }
+            if ((this.ongetTousLesFraisPortCompletedDelegate == null)) {
+                this.ongetTousLesFraisPortCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetTousLesFraisPortCompleted);
+            }
+            base.InvokeAsync(this.onBegingetTousLesFraisPortDelegate, null, this.onEndgetTousLesFraisPortDelegate, this.ongetTousLesFraisPortCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getUnFraisPortResponse AppClient.Webservice.WebServiceSoap.getUnFraisPort(AppClient.Webservice.getUnFraisPortRequest request) {
+            return base.Channel.getUnFraisPort(request);
+        }
+        
+        public AppClient.Webservice.CFraisPort[] getUnFraisPort(int idFP) {
+            AppClient.Webservice.getUnFraisPortRequest inValue = new AppClient.Webservice.getUnFraisPortRequest();
+            inValue.Body = new AppClient.Webservice.getUnFraisPortRequestBody();
+            inValue.Body.idFP = idFP;
+            AppClient.Webservice.getUnFraisPortResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getUnFraisPort(inValue);
+            return retVal.Body.getUnFraisPortResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetUnFraisPort(AppClient.Webservice.getUnFraisPortRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetUnFraisPort(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetUnFraisPort(int idFP, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getUnFraisPortRequest inValue = new AppClient.Webservice.getUnFraisPortRequest();
+            inValue.Body = new AppClient.Webservice.getUnFraisPortRequestBody();
+            inValue.Body.idFP = idFP;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetUnFraisPort(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getUnFraisPortResponse AppClient.Webservice.WebServiceSoap.EndgetUnFraisPort(System.IAsyncResult result) {
+            return base.Channel.EndgetUnFraisPort(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CFraisPort[] EndgetUnFraisPort(System.IAsyncResult result) {
+            AppClient.Webservice.getUnFraisPortResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetUnFraisPort(result);
+            return retVal.Body.getUnFraisPortResult;
+        }
+        
+        private System.IAsyncResult OnBegingetUnFraisPort(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int idFP = ((int)(inValues[0]));
+            return this.BegingetUnFraisPort(idFP, callback, asyncState);
+        }
+        
+        private object[] OnEndgetUnFraisPort(System.IAsyncResult result) {
+            AppClient.Webservice.CFraisPort[] retVal = this.EndgetUnFraisPort(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetUnFraisPortCompleted(object state) {
+            if ((this.getUnFraisPortCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getUnFraisPortCompleted(this, new getUnFraisPortCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getUnFraisPortAsync(int idFP) {
+            this.getUnFraisPortAsync(idFP, null);
+        }
+        
+        public void getUnFraisPortAsync(int idFP, object userState) {
+            if ((this.onBegingetUnFraisPortDelegate == null)) {
+                this.onBegingetUnFraisPortDelegate = new BeginOperationDelegate(this.OnBegingetUnFraisPort);
+            }
+            if ((this.onEndgetUnFraisPortDelegate == null)) {
+                this.onEndgetUnFraisPortDelegate = new EndOperationDelegate(this.OnEndgetUnFraisPort);
+            }
+            if ((this.ongetUnFraisPortCompletedDelegate == null)) {
+                this.ongetUnFraisPortCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetUnFraisPortCompleted);
+            }
+            base.InvokeAsync(this.onBegingetUnFraisPortDelegate, new object[] {
+                        idFP}, this.onEndgetUnFraisPortDelegate, this.ongetUnFraisPortCompletedDelegate, userState);
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         AppClient.Webservice.HelloWorldResponse AppClient.Webservice.WebServiceSoap.HelloWorld(AppClient.Webservice.HelloWorldRequest request) {
@@ -1383,356 +4885,80 @@ namespace AppClient.Webservice {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AppClient.Webservice.getTousLesArticlesResponse AppClient.Webservice.WebServiceSoap.getTousLesArticles(AppClient.Webservice.getTousLesArticlesRequest request) {
-            return base.Channel.getTousLesArticles(request);
+        AppClient.Webservice.getConnectResponse AppClient.Webservice.WebServiceSoap.getConnect(AppClient.Webservice.getConnectRequest request) {
+            return base.Channel.getConnect(request);
         }
         
-        public AppClient.Webservice.CArticles[] getTousLesArticles() {
-            AppClient.Webservice.getTousLesArticlesRequest inValue = new AppClient.Webservice.getTousLesArticlesRequest();
-            inValue.Body = new AppClient.Webservice.getTousLesArticlesRequestBody();
-            AppClient.Webservice.getTousLesArticlesResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getTousLesArticles(inValue);
-            return retVal.Body.getTousLesArticlesResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetTousLesArticles(AppClient.Webservice.getTousLesArticlesRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BegingetTousLesArticles(request, callback, asyncState);
+        public AppClient.Webservice.CClient getConnect(string nom, string mail) {
+            AppClient.Webservice.getConnectRequest inValue = new AppClient.Webservice.getConnectRequest();
+            inValue.Body = new AppClient.Webservice.getConnectRequestBody();
+            inValue.Body.nom = nom;
+            inValue.Body.mail = mail;
+            AppClient.Webservice.getConnectResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getConnect(inValue);
+            return retVal.Body.getConnectResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BegingetTousLesArticles(System.AsyncCallback callback, object asyncState) {
-            AppClient.Webservice.getTousLesArticlesRequest inValue = new AppClient.Webservice.getTousLesArticlesRequest();
-            inValue.Body = new AppClient.Webservice.getTousLesArticlesRequestBody();
-            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetTousLesArticles(inValue, callback, asyncState);
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetConnect(AppClient.Webservice.getConnectRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetConnect(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AppClient.Webservice.getTousLesArticlesResponse AppClient.Webservice.WebServiceSoap.EndgetTousLesArticles(System.IAsyncResult result) {
-            return base.Channel.EndgetTousLesArticles(result);
+        public System.IAsyncResult BegingetConnect(string nom, string mail, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getConnectRequest inValue = new AppClient.Webservice.getConnectRequest();
+            inValue.Body = new AppClient.Webservice.getConnectRequestBody();
+            inValue.Body.nom = nom;
+            inValue.Body.mail = mail;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetConnect(inValue, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AppClient.Webservice.CArticles[] EndgetTousLesArticles(System.IAsyncResult result) {
-            AppClient.Webservice.getTousLesArticlesResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetTousLesArticles(result);
-            return retVal.Body.getTousLesArticlesResult;
+        AppClient.Webservice.getConnectResponse AppClient.Webservice.WebServiceSoap.EndgetConnect(System.IAsyncResult result) {
+            return base.Channel.EndgetConnect(result);
         }
         
-        private System.IAsyncResult OnBegingetTousLesArticles(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BegingetTousLesArticles(callback, asyncState);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CClient EndgetConnect(System.IAsyncResult result) {
+            AppClient.Webservice.getConnectResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetConnect(result);
+            return retVal.Body.getConnectResult;
         }
         
-        private object[] OnEndgetTousLesArticles(System.IAsyncResult result) {
-            AppClient.Webservice.CArticles[] retVal = this.EndgetTousLesArticles(result);
+        private System.IAsyncResult OnBegingetConnect(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string nom = ((string)(inValues[0]));
+            string mail = ((string)(inValues[1]));
+            return this.BegingetConnect(nom, mail, callback, asyncState);
+        }
+        
+        private object[] OnEndgetConnect(System.IAsyncResult result) {
+            AppClient.Webservice.CClient retVal = this.EndgetConnect(result);
             return new object[] {
                     retVal};
         }
         
-        private void OngetTousLesArticlesCompleted(object state) {
-            if ((this.getTousLesArticlesCompleted != null)) {
+        private void OngetConnectCompleted(object state) {
+            if ((this.getConnectCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.getTousLesArticlesCompleted(this, new getTousLesArticlesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.getConnectCompleted(this, new getConnectCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void getTousLesArticlesAsync() {
-            this.getTousLesArticlesAsync(null);
+        public void getConnectAsync(string nom, string mail) {
+            this.getConnectAsync(nom, mail, null);
         }
         
-        public void getTousLesArticlesAsync(object userState) {
-            if ((this.onBegingetTousLesArticlesDelegate == null)) {
-                this.onBegingetTousLesArticlesDelegate = new BeginOperationDelegate(this.OnBegingetTousLesArticles);
+        public void getConnectAsync(string nom, string mail, object userState) {
+            if ((this.onBegingetConnectDelegate == null)) {
+                this.onBegingetConnectDelegate = new BeginOperationDelegate(this.OnBegingetConnect);
             }
-            if ((this.onEndgetTousLesArticlesDelegate == null)) {
-                this.onEndgetTousLesArticlesDelegate = new EndOperationDelegate(this.OnEndgetTousLesArticles);
+            if ((this.onEndgetConnectDelegate == null)) {
+                this.onEndgetConnectDelegate = new EndOperationDelegate(this.OnEndgetConnect);
             }
-            if ((this.ongetTousLesArticlesCompletedDelegate == null)) {
-                this.ongetTousLesArticlesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetTousLesArticlesCompleted);
+            if ((this.ongetConnectCompletedDelegate == null)) {
+                this.ongetConnectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetConnectCompleted);
             }
-            base.InvokeAsync(this.onBegingetTousLesArticlesDelegate, null, this.onEndgetTousLesArticlesDelegate, this.ongetTousLesArticlesCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AppClient.Webservice.updateArticleResponse AppClient.Webservice.WebServiceSoap.updateArticle(AppClient.Webservice.updateArticleRequest request) {
-            return base.Channel.updateArticle(request);
-        }
-        
-        public AppClient.Webservice.CArticles[] updateArticle() {
-            AppClient.Webservice.updateArticleRequest inValue = new AppClient.Webservice.updateArticleRequest();
-            inValue.Body = new AppClient.Webservice.updateArticleRequestBody();
-            AppClient.Webservice.updateArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).updateArticle(inValue);
-            return retVal.Body.updateArticleResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginupdateArticle(AppClient.Webservice.updateArticleRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginupdateArticle(request, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginupdateArticle(System.AsyncCallback callback, object asyncState) {
-            AppClient.Webservice.updateArticleRequest inValue = new AppClient.Webservice.updateArticleRequest();
-            inValue.Body = new AppClient.Webservice.updateArticleRequestBody();
-            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginupdateArticle(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AppClient.Webservice.updateArticleResponse AppClient.Webservice.WebServiceSoap.EndupdateArticle(System.IAsyncResult result) {
-            return base.Channel.EndupdateArticle(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AppClient.Webservice.CArticles[] EndupdateArticle(System.IAsyncResult result) {
-            AppClient.Webservice.updateArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndupdateArticle(result);
-            return retVal.Body.updateArticleResult;
-        }
-        
-        private System.IAsyncResult OnBeginupdateArticle(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BeginupdateArticle(callback, asyncState);
-        }
-        
-        private object[] OnEndupdateArticle(System.IAsyncResult result) {
-            AppClient.Webservice.CArticles[] retVal = this.EndupdateArticle(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnupdateArticleCompleted(object state) {
-            if ((this.updateArticleCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.updateArticleCompleted(this, new updateArticleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void updateArticleAsync() {
-            this.updateArticleAsync(null);
-        }
-        
-        public void updateArticleAsync(object userState) {
-            if ((this.onBeginupdateArticleDelegate == null)) {
-                this.onBeginupdateArticleDelegate = new BeginOperationDelegate(this.OnBeginupdateArticle);
-            }
-            if ((this.onEndupdateArticleDelegate == null)) {
-                this.onEndupdateArticleDelegate = new EndOperationDelegate(this.OnEndupdateArticle);
-            }
-            if ((this.onupdateArticleCompletedDelegate == null)) {
-                this.onupdateArticleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnupdateArticleCompleted);
-            }
-            base.InvokeAsync(this.onBeginupdateArticleDelegate, null, this.onEndupdateArticleDelegate, this.onupdateArticleCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AppClient.Webservice.deleteArticleResponse AppClient.Webservice.WebServiceSoap.deleteArticle(AppClient.Webservice.deleteArticleRequest request) {
-            return base.Channel.deleteArticle(request);
-        }
-        
-        public AppClient.Webservice.CArticles[] deleteArticle() {
-            AppClient.Webservice.deleteArticleRequest inValue = new AppClient.Webservice.deleteArticleRequest();
-            inValue.Body = new AppClient.Webservice.deleteArticleRequestBody();
-            AppClient.Webservice.deleteArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).deleteArticle(inValue);
-            return retVal.Body.deleteArticleResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegindeleteArticle(AppClient.Webservice.deleteArticleRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BegindeleteArticle(request, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BegindeleteArticle(System.AsyncCallback callback, object asyncState) {
-            AppClient.Webservice.deleteArticleRequest inValue = new AppClient.Webservice.deleteArticleRequest();
-            inValue.Body = new AppClient.Webservice.deleteArticleRequestBody();
-            return ((AppClient.Webservice.WebServiceSoap)(this)).BegindeleteArticle(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AppClient.Webservice.deleteArticleResponse AppClient.Webservice.WebServiceSoap.EnddeleteArticle(System.IAsyncResult result) {
-            return base.Channel.EnddeleteArticle(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AppClient.Webservice.CArticles[] EnddeleteArticle(System.IAsyncResult result) {
-            AppClient.Webservice.deleteArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EnddeleteArticle(result);
-            return retVal.Body.deleteArticleResult;
-        }
-        
-        private System.IAsyncResult OnBegindeleteArticle(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BegindeleteArticle(callback, asyncState);
-        }
-        
-        private object[] OnEnddeleteArticle(System.IAsyncResult result) {
-            AppClient.Webservice.CArticles[] retVal = this.EnddeleteArticle(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OndeleteArticleCompleted(object state) {
-            if ((this.deleteArticleCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.deleteArticleCompleted(this, new deleteArticleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void deleteArticleAsync() {
-            this.deleteArticleAsync(null);
-        }
-        
-        public void deleteArticleAsync(object userState) {
-            if ((this.onBegindeleteArticleDelegate == null)) {
-                this.onBegindeleteArticleDelegate = new BeginOperationDelegate(this.OnBegindeleteArticle);
-            }
-            if ((this.onEnddeleteArticleDelegate == null)) {
-                this.onEnddeleteArticleDelegate = new EndOperationDelegate(this.OnEnddeleteArticle);
-            }
-            if ((this.ondeleteArticleCompletedDelegate == null)) {
-                this.ondeleteArticleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OndeleteArticleCompleted);
-            }
-            base.InvokeAsync(this.onBegindeleteArticleDelegate, null, this.onEnddeleteArticleDelegate, this.ondeleteArticleCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AppClient.Webservice.findUnArticleResponse AppClient.Webservice.WebServiceSoap.findUnArticle(AppClient.Webservice.findUnArticleRequest request) {
-            return base.Channel.findUnArticle(request);
-        }
-        
-        public AppClient.Webservice.CArticles findUnArticle(int idArticle) {
-            AppClient.Webservice.findUnArticleRequest inValue = new AppClient.Webservice.findUnArticleRequest();
-            inValue.Body = new AppClient.Webservice.findUnArticleRequestBody();
-            inValue.Body.idArticle = idArticle;
-            AppClient.Webservice.findUnArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).findUnArticle(inValue);
-            return retVal.Body.findUnArticleResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginfindUnArticle(AppClient.Webservice.findUnArticleRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginfindUnArticle(request, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginfindUnArticle(int idArticle, System.AsyncCallback callback, object asyncState) {
-            AppClient.Webservice.findUnArticleRequest inValue = new AppClient.Webservice.findUnArticleRequest();
-            inValue.Body = new AppClient.Webservice.findUnArticleRequestBody();
-            inValue.Body.idArticle = idArticle;
-            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginfindUnArticle(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AppClient.Webservice.findUnArticleResponse AppClient.Webservice.WebServiceSoap.EndfindUnArticle(System.IAsyncResult result) {
-            return base.Channel.EndfindUnArticle(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AppClient.Webservice.CArticles EndfindUnArticle(System.IAsyncResult result) {
-            AppClient.Webservice.findUnArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndfindUnArticle(result);
-            return retVal.Body.findUnArticleResult;
-        }
-        
-        private System.IAsyncResult OnBeginfindUnArticle(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int idArticle = ((int)(inValues[0]));
-            return this.BeginfindUnArticle(idArticle, callback, asyncState);
-        }
-        
-        private object[] OnEndfindUnArticle(System.IAsyncResult result) {
-            AppClient.Webservice.CArticles retVal = this.EndfindUnArticle(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnfindUnArticleCompleted(object state) {
-            if ((this.findUnArticleCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.findUnArticleCompleted(this, new findUnArticleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void findUnArticleAsync(int idArticle) {
-            this.findUnArticleAsync(idArticle, null);
-        }
-        
-        public void findUnArticleAsync(int idArticle, object userState) {
-            if ((this.onBeginfindUnArticleDelegate == null)) {
-                this.onBeginfindUnArticleDelegate = new BeginOperationDelegate(this.OnBeginfindUnArticle);
-            }
-            if ((this.onEndfindUnArticleDelegate == null)) {
-                this.onEndfindUnArticleDelegate = new EndOperationDelegate(this.OnEndfindUnArticle);
-            }
-            if ((this.onfindUnArticleCompletedDelegate == null)) {
-                this.onfindUnArticleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnfindUnArticleCompleted);
-            }
-            base.InvokeAsync(this.onBeginfindUnArticleDelegate, new object[] {
-                        idArticle}, this.onEndfindUnArticleDelegate, this.onfindUnArticleCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AppClient.Webservice.findUnArticleParRubriqueResponse AppClient.Webservice.WebServiceSoap.findUnArticleParRubrique(AppClient.Webservice.findUnArticleParRubriqueRequest request) {
-            return base.Channel.findUnArticleParRubrique(request);
-        }
-        
-        public AppClient.Webservice.CArticles[] findUnArticleParRubrique(int idRubrique) {
-            AppClient.Webservice.findUnArticleParRubriqueRequest inValue = new AppClient.Webservice.findUnArticleParRubriqueRequest();
-            inValue.Body = new AppClient.Webservice.findUnArticleParRubriqueRequestBody();
-            inValue.Body.idRubrique = idRubrique;
-            AppClient.Webservice.findUnArticleParRubriqueResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).findUnArticleParRubrique(inValue);
-            return retVal.Body.findUnArticleParRubriqueResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginfindUnArticleParRubrique(AppClient.Webservice.findUnArticleParRubriqueRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginfindUnArticleParRubrique(request, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginfindUnArticleParRubrique(int idRubrique, System.AsyncCallback callback, object asyncState) {
-            AppClient.Webservice.findUnArticleParRubriqueRequest inValue = new AppClient.Webservice.findUnArticleParRubriqueRequest();
-            inValue.Body = new AppClient.Webservice.findUnArticleParRubriqueRequestBody();
-            inValue.Body.idRubrique = idRubrique;
-            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginfindUnArticleParRubrique(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AppClient.Webservice.findUnArticleParRubriqueResponse AppClient.Webservice.WebServiceSoap.EndfindUnArticleParRubrique(System.IAsyncResult result) {
-            return base.Channel.EndfindUnArticleParRubrique(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AppClient.Webservice.CArticles[] EndfindUnArticleParRubrique(System.IAsyncResult result) {
-            AppClient.Webservice.findUnArticleParRubriqueResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndfindUnArticleParRubrique(result);
-            return retVal.Body.findUnArticleParRubriqueResult;
-        }
-        
-        private System.IAsyncResult OnBeginfindUnArticleParRubrique(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int idRubrique = ((int)(inValues[0]));
-            return this.BeginfindUnArticleParRubrique(idRubrique, callback, asyncState);
-        }
-        
-        private object[] OnEndfindUnArticleParRubrique(System.IAsyncResult result) {
-            AppClient.Webservice.CArticles[] retVal = this.EndfindUnArticleParRubrique(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnfindUnArticleParRubriqueCompleted(object state) {
-            if ((this.findUnArticleParRubriqueCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.findUnArticleParRubriqueCompleted(this, new findUnArticleParRubriqueCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void findUnArticleParRubriqueAsync(int idRubrique) {
-            this.findUnArticleParRubriqueAsync(idRubrique, null);
-        }
-        
-        public void findUnArticleParRubriqueAsync(int idRubrique, object userState) {
-            if ((this.onBeginfindUnArticleParRubriqueDelegate == null)) {
-                this.onBeginfindUnArticleParRubriqueDelegate = new BeginOperationDelegate(this.OnBeginfindUnArticleParRubrique);
-            }
-            if ((this.onEndfindUnArticleParRubriqueDelegate == null)) {
-                this.onEndfindUnArticleParRubriqueDelegate = new EndOperationDelegate(this.OnEndfindUnArticleParRubrique);
-            }
-            if ((this.onfindUnArticleParRubriqueCompletedDelegate == null)) {
-                this.onfindUnArticleParRubriqueCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnfindUnArticleParRubriqueCompleted);
-            }
-            base.InvokeAsync(this.onBeginfindUnArticleParRubriqueDelegate, new object[] {
-                        idRubrique}, this.onEndfindUnArticleParRubriqueDelegate, this.onfindUnArticleParRubriqueCompletedDelegate, userState);
+            base.InvokeAsync(this.onBegingetConnectDelegate, new object[] {
+                        nom,
+                        mail}, this.onEndgetConnectDelegate, this.ongetConnectCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1944,6 +5170,801 @@ namespace AppClient.Webservice {
                 this.ongetToutesLesRubriquesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetToutesLesRubriquesCompleted);
             }
             base.InvokeAsync(this.onBegingetToutesLesRubriquesDelegate, null, this.onEndgetToutesLesRubriquesDelegate, this.ongetToutesLesRubriquesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getToutesLesVillesResponse AppClient.Webservice.WebServiceSoap.getToutesLesVilles(AppClient.Webservice.getToutesLesVillesRequest request) {
+            return base.Channel.getToutesLesVilles(request);
+        }
+        
+        public AppClient.Webservice.CVilles[] getToutesLesVilles(int idDepartement) {
+            AppClient.Webservice.getToutesLesVillesRequest inValue = new AppClient.Webservice.getToutesLesVillesRequest();
+            inValue.Body = new AppClient.Webservice.getToutesLesVillesRequestBody();
+            inValue.Body.idDepartement = idDepartement;
+            AppClient.Webservice.getToutesLesVillesResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getToutesLesVilles(inValue);
+            return retVal.Body.getToutesLesVillesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetToutesLesVilles(AppClient.Webservice.getToutesLesVillesRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetToutesLesVilles(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetToutesLesVilles(int idDepartement, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getToutesLesVillesRequest inValue = new AppClient.Webservice.getToutesLesVillesRequest();
+            inValue.Body = new AppClient.Webservice.getToutesLesVillesRequestBody();
+            inValue.Body.idDepartement = idDepartement;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetToutesLesVilles(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getToutesLesVillesResponse AppClient.Webservice.WebServiceSoap.EndgetToutesLesVilles(System.IAsyncResult result) {
+            return base.Channel.EndgetToutesLesVilles(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CVilles[] EndgetToutesLesVilles(System.IAsyncResult result) {
+            AppClient.Webservice.getToutesLesVillesResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetToutesLesVilles(result);
+            return retVal.Body.getToutesLesVillesResult;
+        }
+        
+        private System.IAsyncResult OnBegingetToutesLesVilles(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int idDepartement = ((int)(inValues[0]));
+            return this.BegingetToutesLesVilles(idDepartement, callback, asyncState);
+        }
+        
+        private object[] OnEndgetToutesLesVilles(System.IAsyncResult result) {
+            AppClient.Webservice.CVilles[] retVal = this.EndgetToutesLesVilles(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetToutesLesVillesCompleted(object state) {
+            if ((this.getToutesLesVillesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getToutesLesVillesCompleted(this, new getToutesLesVillesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getToutesLesVillesAsync(int idDepartement) {
+            this.getToutesLesVillesAsync(idDepartement, null);
+        }
+        
+        public void getToutesLesVillesAsync(int idDepartement, object userState) {
+            if ((this.onBegingetToutesLesVillesDelegate == null)) {
+                this.onBegingetToutesLesVillesDelegate = new BeginOperationDelegate(this.OnBegingetToutesLesVilles);
+            }
+            if ((this.onEndgetToutesLesVillesDelegate == null)) {
+                this.onEndgetToutesLesVillesDelegate = new EndOperationDelegate(this.OnEndgetToutesLesVilles);
+            }
+            if ((this.ongetToutesLesVillesCompletedDelegate == null)) {
+                this.ongetToutesLesVillesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetToutesLesVillesCompleted);
+            }
+            base.InvokeAsync(this.onBegingetToutesLesVillesDelegate, new object[] {
+                        idDepartement}, this.onEndgetToutesLesVillesDelegate, this.ongetToutesLesVillesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesArticlesResponse AppClient.Webservice.WebServiceSoap.getTousLesArticles(AppClient.Webservice.getTousLesArticlesRequest request) {
+            return base.Channel.getTousLesArticles(request);
+        }
+        
+        public AppClient.Webservice.CArticles[] getTousLesArticles() {
+            AppClient.Webservice.getTousLesArticlesRequest inValue = new AppClient.Webservice.getTousLesArticlesRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesArticlesRequestBody();
+            AppClient.Webservice.getTousLesArticlesResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getTousLesArticles(inValue);
+            return retVal.Body.getTousLesArticlesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetTousLesArticles(AppClient.Webservice.getTousLesArticlesRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetTousLesArticles(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetTousLesArticles(System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getTousLesArticlesRequest inValue = new AppClient.Webservice.getTousLesArticlesRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesArticlesRequestBody();
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetTousLesArticles(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesArticlesResponse AppClient.Webservice.WebServiceSoap.EndgetTousLesArticles(System.IAsyncResult result) {
+            return base.Channel.EndgetTousLesArticles(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CArticles[] EndgetTousLesArticles(System.IAsyncResult result) {
+            AppClient.Webservice.getTousLesArticlesResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetTousLesArticles(result);
+            return retVal.Body.getTousLesArticlesResult;
+        }
+        
+        private System.IAsyncResult OnBegingetTousLesArticles(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BegingetTousLesArticles(callback, asyncState);
+        }
+        
+        private object[] OnEndgetTousLesArticles(System.IAsyncResult result) {
+            AppClient.Webservice.CArticles[] retVal = this.EndgetTousLesArticles(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetTousLesArticlesCompleted(object state) {
+            if ((this.getTousLesArticlesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getTousLesArticlesCompleted(this, new getTousLesArticlesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getTousLesArticlesAsync() {
+            this.getTousLesArticlesAsync(null);
+        }
+        
+        public void getTousLesArticlesAsync(object userState) {
+            if ((this.onBegingetTousLesArticlesDelegate == null)) {
+                this.onBegingetTousLesArticlesDelegate = new BeginOperationDelegate(this.OnBegingetTousLesArticles);
+            }
+            if ((this.onEndgetTousLesArticlesDelegate == null)) {
+                this.onEndgetTousLesArticlesDelegate = new EndOperationDelegate(this.OnEndgetTousLesArticles);
+            }
+            if ((this.ongetTousLesArticlesCompletedDelegate == null)) {
+                this.ongetTousLesArticlesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetTousLesArticlesCompleted);
+            }
+            base.InvokeAsync(this.onBegingetTousLesArticlesDelegate, null, this.onEndgetTousLesArticlesDelegate, this.ongetTousLesArticlesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.updateArticleResponse AppClient.Webservice.WebServiceSoap.updateArticle(AppClient.Webservice.updateArticleRequest request) {
+            return base.Channel.updateArticle(request);
+        }
+        
+        public bool updateArticle(AppClient.Webservice.CArticles articleModifie) {
+            AppClient.Webservice.updateArticleRequest inValue = new AppClient.Webservice.updateArticleRequest();
+            inValue.Body = new AppClient.Webservice.updateArticleRequestBody();
+            inValue.Body.articleModifie = articleModifie;
+            AppClient.Webservice.updateArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).updateArticle(inValue);
+            return retVal.Body.updateArticleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginupdateArticle(AppClient.Webservice.updateArticleRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginupdateArticle(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginupdateArticle(AppClient.Webservice.CArticles articleModifie, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.updateArticleRequest inValue = new AppClient.Webservice.updateArticleRequest();
+            inValue.Body = new AppClient.Webservice.updateArticleRequestBody();
+            inValue.Body.articleModifie = articleModifie;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginupdateArticle(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.updateArticleResponse AppClient.Webservice.WebServiceSoap.EndupdateArticle(System.IAsyncResult result) {
+            return base.Channel.EndupdateArticle(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndupdateArticle(System.IAsyncResult result) {
+            AppClient.Webservice.updateArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndupdateArticle(result);
+            return retVal.Body.updateArticleResult;
+        }
+        
+        private System.IAsyncResult OnBeginupdateArticle(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.CArticles articleModifie = ((AppClient.Webservice.CArticles)(inValues[0]));
+            return this.BeginupdateArticle(articleModifie, callback, asyncState);
+        }
+        
+        private object[] OnEndupdateArticle(System.IAsyncResult result) {
+            bool retVal = this.EndupdateArticle(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnupdateArticleCompleted(object state) {
+            if ((this.updateArticleCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.updateArticleCompleted(this, new updateArticleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void updateArticleAsync(AppClient.Webservice.CArticles articleModifie) {
+            this.updateArticleAsync(articleModifie, null);
+        }
+        
+        public void updateArticleAsync(AppClient.Webservice.CArticles articleModifie, object userState) {
+            if ((this.onBeginupdateArticleDelegate == null)) {
+                this.onBeginupdateArticleDelegate = new BeginOperationDelegate(this.OnBeginupdateArticle);
+            }
+            if ((this.onEndupdateArticleDelegate == null)) {
+                this.onEndupdateArticleDelegate = new EndOperationDelegate(this.OnEndupdateArticle);
+            }
+            if ((this.onupdateArticleCompletedDelegate == null)) {
+                this.onupdateArticleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnupdateArticleCompleted);
+            }
+            base.InvokeAsync(this.onBeginupdateArticleDelegate, new object[] {
+                        articleModifie}, this.onEndupdateArticleDelegate, this.onupdateArticleCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.addArticleResponse AppClient.Webservice.WebServiceSoap.addArticle(AppClient.Webservice.addArticleRequest request) {
+            return base.Channel.addArticle(request);
+        }
+        
+        public int addArticle(AppClient.Webservice.CArticles articleAAjouter) {
+            AppClient.Webservice.addArticleRequest inValue = new AppClient.Webservice.addArticleRequest();
+            inValue.Body = new AppClient.Webservice.addArticleRequestBody();
+            inValue.Body.articleAAjouter = articleAAjouter;
+            AppClient.Webservice.addArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).addArticle(inValue);
+            return retVal.Body.addArticleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginaddArticle(AppClient.Webservice.addArticleRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginaddArticle(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginaddArticle(AppClient.Webservice.CArticles articleAAjouter, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.addArticleRequest inValue = new AppClient.Webservice.addArticleRequest();
+            inValue.Body = new AppClient.Webservice.addArticleRequestBody();
+            inValue.Body.articleAAjouter = articleAAjouter;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginaddArticle(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.addArticleResponse AppClient.Webservice.WebServiceSoap.EndaddArticle(System.IAsyncResult result) {
+            return base.Channel.EndaddArticle(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndaddArticle(System.IAsyncResult result) {
+            AppClient.Webservice.addArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndaddArticle(result);
+            return retVal.Body.addArticleResult;
+        }
+        
+        private System.IAsyncResult OnBeginaddArticle(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.CArticles articleAAjouter = ((AppClient.Webservice.CArticles)(inValues[0]));
+            return this.BeginaddArticle(articleAAjouter, callback, asyncState);
+        }
+        
+        private object[] OnEndaddArticle(System.IAsyncResult result) {
+            int retVal = this.EndaddArticle(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnaddArticleCompleted(object state) {
+            if ((this.addArticleCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.addArticleCompleted(this, new addArticleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void addArticleAsync(AppClient.Webservice.CArticles articleAAjouter) {
+            this.addArticleAsync(articleAAjouter, null);
+        }
+        
+        public void addArticleAsync(AppClient.Webservice.CArticles articleAAjouter, object userState) {
+            if ((this.onBeginaddArticleDelegate == null)) {
+                this.onBeginaddArticleDelegate = new BeginOperationDelegate(this.OnBeginaddArticle);
+            }
+            if ((this.onEndaddArticleDelegate == null)) {
+                this.onEndaddArticleDelegate = new EndOperationDelegate(this.OnEndaddArticle);
+            }
+            if ((this.onaddArticleCompletedDelegate == null)) {
+                this.onaddArticleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnaddArticleCompleted);
+            }
+            base.InvokeAsync(this.onBeginaddArticleDelegate, new object[] {
+                        articleAAjouter}, this.onEndaddArticleDelegate, this.onaddArticleCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.deleteArticleResponse AppClient.Webservice.WebServiceSoap.deleteArticle(AppClient.Webservice.deleteArticleRequest request) {
+            return base.Channel.deleteArticle(request);
+        }
+        
+        public bool deleteArticle(AppClient.Webservice.CArticles articleASupprimer) {
+            AppClient.Webservice.deleteArticleRequest inValue = new AppClient.Webservice.deleteArticleRequest();
+            inValue.Body = new AppClient.Webservice.deleteArticleRequestBody();
+            inValue.Body.articleASupprimer = articleASupprimer;
+            AppClient.Webservice.deleteArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).deleteArticle(inValue);
+            return retVal.Body.deleteArticleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegindeleteArticle(AppClient.Webservice.deleteArticleRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegindeleteArticle(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegindeleteArticle(AppClient.Webservice.CArticles articleASupprimer, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.deleteArticleRequest inValue = new AppClient.Webservice.deleteArticleRequest();
+            inValue.Body = new AppClient.Webservice.deleteArticleRequestBody();
+            inValue.Body.articleASupprimer = articleASupprimer;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegindeleteArticle(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.deleteArticleResponse AppClient.Webservice.WebServiceSoap.EnddeleteArticle(System.IAsyncResult result) {
+            return base.Channel.EnddeleteArticle(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EnddeleteArticle(System.IAsyncResult result) {
+            AppClient.Webservice.deleteArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EnddeleteArticle(result);
+            return retVal.Body.deleteArticleResult;
+        }
+        
+        private System.IAsyncResult OnBegindeleteArticle(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.CArticles articleASupprimer = ((AppClient.Webservice.CArticles)(inValues[0]));
+            return this.BegindeleteArticle(articleASupprimer, callback, asyncState);
+        }
+        
+        private object[] OnEnddeleteArticle(System.IAsyncResult result) {
+            bool retVal = this.EnddeleteArticle(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OndeleteArticleCompleted(object state) {
+            if ((this.deleteArticleCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.deleteArticleCompleted(this, new deleteArticleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void deleteArticleAsync(AppClient.Webservice.CArticles articleASupprimer) {
+            this.deleteArticleAsync(articleASupprimer, null);
+        }
+        
+        public void deleteArticleAsync(AppClient.Webservice.CArticles articleASupprimer, object userState) {
+            if ((this.onBegindeleteArticleDelegate == null)) {
+                this.onBegindeleteArticleDelegate = new BeginOperationDelegate(this.OnBegindeleteArticle);
+            }
+            if ((this.onEnddeleteArticleDelegate == null)) {
+                this.onEnddeleteArticleDelegate = new EndOperationDelegate(this.OnEnddeleteArticle);
+            }
+            if ((this.ondeleteArticleCompletedDelegate == null)) {
+                this.ondeleteArticleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OndeleteArticleCompleted);
+            }
+            base.InvokeAsync(this.onBegindeleteArticleDelegate, new object[] {
+                        articleASupprimer}, this.onEnddeleteArticleDelegate, this.ondeleteArticleCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.findUnArticleResponse AppClient.Webservice.WebServiceSoap.findUnArticle(AppClient.Webservice.findUnArticleRequest request) {
+            return base.Channel.findUnArticle(request);
+        }
+        
+        public AppClient.Webservice.CArticles findUnArticle(int idArticle) {
+            AppClient.Webservice.findUnArticleRequest inValue = new AppClient.Webservice.findUnArticleRequest();
+            inValue.Body = new AppClient.Webservice.findUnArticleRequestBody();
+            inValue.Body.idArticle = idArticle;
+            AppClient.Webservice.findUnArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).findUnArticle(inValue);
+            return retVal.Body.findUnArticleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginfindUnArticle(AppClient.Webservice.findUnArticleRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginfindUnArticle(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginfindUnArticle(int idArticle, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.findUnArticleRequest inValue = new AppClient.Webservice.findUnArticleRequest();
+            inValue.Body = new AppClient.Webservice.findUnArticleRequestBody();
+            inValue.Body.idArticle = idArticle;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginfindUnArticle(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.findUnArticleResponse AppClient.Webservice.WebServiceSoap.EndfindUnArticle(System.IAsyncResult result) {
+            return base.Channel.EndfindUnArticle(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CArticles EndfindUnArticle(System.IAsyncResult result) {
+            AppClient.Webservice.findUnArticleResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndfindUnArticle(result);
+            return retVal.Body.findUnArticleResult;
+        }
+        
+        private System.IAsyncResult OnBeginfindUnArticle(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int idArticle = ((int)(inValues[0]));
+            return this.BeginfindUnArticle(idArticle, callback, asyncState);
+        }
+        
+        private object[] OnEndfindUnArticle(System.IAsyncResult result) {
+            AppClient.Webservice.CArticles retVal = this.EndfindUnArticle(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnfindUnArticleCompleted(object state) {
+            if ((this.findUnArticleCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.findUnArticleCompleted(this, new findUnArticleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void findUnArticleAsync(int idArticle) {
+            this.findUnArticleAsync(idArticle, null);
+        }
+        
+        public void findUnArticleAsync(int idArticle, object userState) {
+            if ((this.onBeginfindUnArticleDelegate == null)) {
+                this.onBeginfindUnArticleDelegate = new BeginOperationDelegate(this.OnBeginfindUnArticle);
+            }
+            if ((this.onEndfindUnArticleDelegate == null)) {
+                this.onEndfindUnArticleDelegate = new EndOperationDelegate(this.OnEndfindUnArticle);
+            }
+            if ((this.onfindUnArticleCompletedDelegate == null)) {
+                this.onfindUnArticleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnfindUnArticleCompleted);
+            }
+            base.InvokeAsync(this.onBeginfindUnArticleDelegate, new object[] {
+                        idArticle}, this.onEndfindUnArticleDelegate, this.onfindUnArticleCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.findArticleParRubriqueResponse AppClient.Webservice.WebServiceSoap.findArticleParRubrique(AppClient.Webservice.findArticleParRubriqueRequest request) {
+            return base.Channel.findArticleParRubrique(request);
+        }
+        
+        public AppClient.Webservice.CArticles[] findArticleParRubrique(int idRubrique) {
+            AppClient.Webservice.findArticleParRubriqueRequest inValue = new AppClient.Webservice.findArticleParRubriqueRequest();
+            inValue.Body = new AppClient.Webservice.findArticleParRubriqueRequestBody();
+            inValue.Body.idRubrique = idRubrique;
+            AppClient.Webservice.findArticleParRubriqueResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).findArticleParRubrique(inValue);
+            return retVal.Body.findArticleParRubriqueResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginfindArticleParRubrique(AppClient.Webservice.findArticleParRubriqueRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginfindArticleParRubrique(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginfindArticleParRubrique(int idRubrique, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.findArticleParRubriqueRequest inValue = new AppClient.Webservice.findArticleParRubriqueRequest();
+            inValue.Body = new AppClient.Webservice.findArticleParRubriqueRequestBody();
+            inValue.Body.idRubrique = idRubrique;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginfindArticleParRubrique(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.findArticleParRubriqueResponse AppClient.Webservice.WebServiceSoap.EndfindArticleParRubrique(System.IAsyncResult result) {
+            return base.Channel.EndfindArticleParRubrique(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CArticles[] EndfindArticleParRubrique(System.IAsyncResult result) {
+            AppClient.Webservice.findArticleParRubriqueResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndfindArticleParRubrique(result);
+            return retVal.Body.findArticleParRubriqueResult;
+        }
+        
+        private System.IAsyncResult OnBeginfindArticleParRubrique(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int idRubrique = ((int)(inValues[0]));
+            return this.BeginfindArticleParRubrique(idRubrique, callback, asyncState);
+        }
+        
+        private object[] OnEndfindArticleParRubrique(System.IAsyncResult result) {
+            AppClient.Webservice.CArticles[] retVal = this.EndfindArticleParRubrique(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnfindArticleParRubriqueCompleted(object state) {
+            if ((this.findArticleParRubriqueCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.findArticleParRubriqueCompleted(this, new findArticleParRubriqueCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void findArticleParRubriqueAsync(int idRubrique) {
+            this.findArticleParRubriqueAsync(idRubrique, null);
+        }
+        
+        public void findArticleParRubriqueAsync(int idRubrique, object userState) {
+            if ((this.onBeginfindArticleParRubriqueDelegate == null)) {
+                this.onBeginfindArticleParRubriqueDelegate = new BeginOperationDelegate(this.OnBeginfindArticleParRubrique);
+            }
+            if ((this.onEndfindArticleParRubriqueDelegate == null)) {
+                this.onEndfindArticleParRubriqueDelegate = new EndOperationDelegate(this.OnEndfindArticleParRubrique);
+            }
+            if ((this.onfindArticleParRubriqueCompletedDelegate == null)) {
+                this.onfindArticleParRubriqueCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnfindArticleParRubriqueCompleted);
+            }
+            base.InvokeAsync(this.onBeginfindArticleParRubriqueDelegate, new object[] {
+                        idRubrique}, this.onEndfindArticleParRubriqueDelegate, this.onfindArticleParRubriqueCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesClientsResponse AppClient.Webservice.WebServiceSoap.getTousLesClients(AppClient.Webservice.getTousLesClientsRequest request) {
+            return base.Channel.getTousLesClients(request);
+        }
+        
+        public AppClient.Webservice.CClient[] getTousLesClients() {
+            AppClient.Webservice.getTousLesClientsRequest inValue = new AppClient.Webservice.getTousLesClientsRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesClientsRequestBody();
+            AppClient.Webservice.getTousLesClientsResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).getTousLesClients(inValue);
+            return retVal.Body.getTousLesClientsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegingetTousLesClients(AppClient.Webservice.getTousLesClientsRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetTousLesClients(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetTousLesClients(System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.getTousLesClientsRequest inValue = new AppClient.Webservice.getTousLesClientsRequest();
+            inValue.Body = new AppClient.Webservice.getTousLesClientsRequestBody();
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegingetTousLesClients(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.getTousLesClientsResponse AppClient.Webservice.WebServiceSoap.EndgetTousLesClients(System.IAsyncResult result) {
+            return base.Channel.EndgetTousLesClients(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AppClient.Webservice.CClient[] EndgetTousLesClients(System.IAsyncResult result) {
+            AppClient.Webservice.getTousLesClientsResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndgetTousLesClients(result);
+            return retVal.Body.getTousLesClientsResult;
+        }
+        
+        private System.IAsyncResult OnBegingetTousLesClients(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BegingetTousLesClients(callback, asyncState);
+        }
+        
+        private object[] OnEndgetTousLesClients(System.IAsyncResult result) {
+            AppClient.Webservice.CClient[] retVal = this.EndgetTousLesClients(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetTousLesClientsCompleted(object state) {
+            if ((this.getTousLesClientsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getTousLesClientsCompleted(this, new getTousLesClientsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getTousLesClientsAsync() {
+            this.getTousLesClientsAsync(null);
+        }
+        
+        public void getTousLesClientsAsync(object userState) {
+            if ((this.onBegingetTousLesClientsDelegate == null)) {
+                this.onBegingetTousLesClientsDelegate = new BeginOperationDelegate(this.OnBegingetTousLesClients);
+            }
+            if ((this.onEndgetTousLesClientsDelegate == null)) {
+                this.onEndgetTousLesClientsDelegate = new EndOperationDelegate(this.OnEndgetTousLesClients);
+            }
+            if ((this.ongetTousLesClientsCompletedDelegate == null)) {
+                this.ongetTousLesClientsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetTousLesClientsCompleted);
+            }
+            base.InvokeAsync(this.onBegingetTousLesClientsDelegate, null, this.onEndgetTousLesClientsDelegate, this.ongetTousLesClientsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.updateClientResponse AppClient.Webservice.WebServiceSoap.updateClient(AppClient.Webservice.updateClientRequest request) {
+            return base.Channel.updateClient(request);
+        }
+        
+        public bool updateClient(AppClient.Webservice.CClient clientAModifier) {
+            AppClient.Webservice.updateClientRequest inValue = new AppClient.Webservice.updateClientRequest();
+            inValue.Body = new AppClient.Webservice.updateClientRequestBody();
+            inValue.Body.clientAModifier = clientAModifier;
+            AppClient.Webservice.updateClientResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).updateClient(inValue);
+            return retVal.Body.updateClientResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginupdateClient(AppClient.Webservice.updateClientRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginupdateClient(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginupdateClient(AppClient.Webservice.CClient clientAModifier, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.updateClientRequest inValue = new AppClient.Webservice.updateClientRequest();
+            inValue.Body = new AppClient.Webservice.updateClientRequestBody();
+            inValue.Body.clientAModifier = clientAModifier;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginupdateClient(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.updateClientResponse AppClient.Webservice.WebServiceSoap.EndupdateClient(System.IAsyncResult result) {
+            return base.Channel.EndupdateClient(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndupdateClient(System.IAsyncResult result) {
+            AppClient.Webservice.updateClientResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndupdateClient(result);
+            return retVal.Body.updateClientResult;
+        }
+        
+        private System.IAsyncResult OnBeginupdateClient(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.CClient clientAModifier = ((AppClient.Webservice.CClient)(inValues[0]));
+            return this.BeginupdateClient(clientAModifier, callback, asyncState);
+        }
+        
+        private object[] OnEndupdateClient(System.IAsyncResult result) {
+            bool retVal = this.EndupdateClient(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnupdateClientCompleted(object state) {
+            if ((this.updateClientCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.updateClientCompleted(this, new updateClientCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void updateClientAsync(AppClient.Webservice.CClient clientAModifier) {
+            this.updateClientAsync(clientAModifier, null);
+        }
+        
+        public void updateClientAsync(AppClient.Webservice.CClient clientAModifier, object userState) {
+            if ((this.onBeginupdateClientDelegate == null)) {
+                this.onBeginupdateClientDelegate = new BeginOperationDelegate(this.OnBeginupdateClient);
+            }
+            if ((this.onEndupdateClientDelegate == null)) {
+                this.onEndupdateClientDelegate = new EndOperationDelegate(this.OnEndupdateClient);
+            }
+            if ((this.onupdateClientCompletedDelegate == null)) {
+                this.onupdateClientCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnupdateClientCompleted);
+            }
+            base.InvokeAsync(this.onBeginupdateClientDelegate, new object[] {
+                        clientAModifier}, this.onEndupdateClientDelegate, this.onupdateClientCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.addClientResponse AppClient.Webservice.WebServiceSoap.addClient(AppClient.Webservice.addClientRequest request) {
+            return base.Channel.addClient(request);
+        }
+        
+        public int addClient(AppClient.Webservice.CClient clientAAjouter) {
+            AppClient.Webservice.addClientRequest inValue = new AppClient.Webservice.addClientRequest();
+            inValue.Body = new AppClient.Webservice.addClientRequestBody();
+            inValue.Body.clientAAjouter = clientAAjouter;
+            AppClient.Webservice.addClientResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).addClient(inValue);
+            return retVal.Body.addClientResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BeginaddClient(AppClient.Webservice.addClientRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginaddClient(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginaddClient(AppClient.Webservice.CClient clientAAjouter, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.addClientRequest inValue = new AppClient.Webservice.addClientRequest();
+            inValue.Body = new AppClient.Webservice.addClientRequestBody();
+            inValue.Body.clientAAjouter = clientAAjouter;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BeginaddClient(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.addClientResponse AppClient.Webservice.WebServiceSoap.EndaddClient(System.IAsyncResult result) {
+            return base.Channel.EndaddClient(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndaddClient(System.IAsyncResult result) {
+            AppClient.Webservice.addClientResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EndaddClient(result);
+            return retVal.Body.addClientResult;
+        }
+        
+        private System.IAsyncResult OnBeginaddClient(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.CClient clientAAjouter = ((AppClient.Webservice.CClient)(inValues[0]));
+            return this.BeginaddClient(clientAAjouter, callback, asyncState);
+        }
+        
+        private object[] OnEndaddClient(System.IAsyncResult result) {
+            int retVal = this.EndaddClient(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnaddClientCompleted(object state) {
+            if ((this.addClientCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.addClientCompleted(this, new addClientCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void addClientAsync(AppClient.Webservice.CClient clientAAjouter) {
+            this.addClientAsync(clientAAjouter, null);
+        }
+        
+        public void addClientAsync(AppClient.Webservice.CClient clientAAjouter, object userState) {
+            if ((this.onBeginaddClientDelegate == null)) {
+                this.onBeginaddClientDelegate = new BeginOperationDelegate(this.OnBeginaddClient);
+            }
+            if ((this.onEndaddClientDelegate == null)) {
+                this.onEndaddClientDelegate = new EndOperationDelegate(this.OnEndaddClient);
+            }
+            if ((this.onaddClientCompletedDelegate == null)) {
+                this.onaddClientCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnaddClientCompleted);
+            }
+            base.InvokeAsync(this.onBeginaddClientDelegate, new object[] {
+                        clientAAjouter}, this.onEndaddClientDelegate, this.onaddClientCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.deleteClientResponse AppClient.Webservice.WebServiceSoap.deleteClient(AppClient.Webservice.deleteClientRequest request) {
+            return base.Channel.deleteClient(request);
+        }
+        
+        public bool deleteClient(AppClient.Webservice.CClient clientASupprimer) {
+            AppClient.Webservice.deleteClientRequest inValue = new AppClient.Webservice.deleteClientRequest();
+            inValue.Body = new AppClient.Webservice.deleteClientRequestBody();
+            inValue.Body.clientASupprimer = clientASupprimer;
+            AppClient.Webservice.deleteClientResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).deleteClient(inValue);
+            return retVal.Body.deleteClientResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult AppClient.Webservice.WebServiceSoap.BegindeleteClient(AppClient.Webservice.deleteClientRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegindeleteClient(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegindeleteClient(AppClient.Webservice.CClient clientASupprimer, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.deleteClientRequest inValue = new AppClient.Webservice.deleteClientRequest();
+            inValue.Body = new AppClient.Webservice.deleteClientRequestBody();
+            inValue.Body.clientASupprimer = clientASupprimer;
+            return ((AppClient.Webservice.WebServiceSoap)(this)).BegindeleteClient(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AppClient.Webservice.deleteClientResponse AppClient.Webservice.WebServiceSoap.EnddeleteClient(System.IAsyncResult result) {
+            return base.Channel.EnddeleteClient(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EnddeleteClient(System.IAsyncResult result) {
+            AppClient.Webservice.deleteClientResponse retVal = ((AppClient.Webservice.WebServiceSoap)(this)).EnddeleteClient(result);
+            return retVal.Body.deleteClientResult;
+        }
+        
+        private System.IAsyncResult OnBegindeleteClient(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AppClient.Webservice.CClient clientASupprimer = ((AppClient.Webservice.CClient)(inValues[0]));
+            return this.BegindeleteClient(clientASupprimer, callback, asyncState);
+        }
+        
+        private object[] OnEnddeleteClient(System.IAsyncResult result) {
+            bool retVal = this.EnddeleteClient(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OndeleteClientCompleted(object state) {
+            if ((this.deleteClientCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.deleteClientCompleted(this, new deleteClientCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void deleteClientAsync(AppClient.Webservice.CClient clientASupprimer) {
+            this.deleteClientAsync(clientASupprimer, null);
+        }
+        
+        public void deleteClientAsync(AppClient.Webservice.CClient clientASupprimer, object userState) {
+            if ((this.onBegindeleteClientDelegate == null)) {
+                this.onBegindeleteClientDelegate = new BeginOperationDelegate(this.OnBegindeleteClient);
+            }
+            if ((this.onEnddeleteClientDelegate == null)) {
+                this.onEnddeleteClientDelegate = new EndOperationDelegate(this.OnEnddeleteClient);
+            }
+            if ((this.ondeleteClientCompletedDelegate == null)) {
+                this.ondeleteClientCompletedDelegate = new System.Threading.SendOrPostCallback(this.OndeleteClientCompleted);
+            }
+            base.InvokeAsync(this.onBegindeleteClientDelegate, new object[] {
+                        clientASupprimer}, this.onEnddeleteClientDelegate, this.ondeleteClientCompletedDelegate, userState);
         }
     }
 }

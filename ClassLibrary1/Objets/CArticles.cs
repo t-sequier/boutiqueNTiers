@@ -27,10 +27,20 @@ namespace ClassLibrary1.Objets
 
         public CArticles() { this.id = 1; this.nom = "unset";}
 
-        /*Constructeur*/
+        /*Constructeurs*/
         public CArticles(int id, String nom, String description, int idRubrique, float poids, float prixUnitaire, int quantiteStock)
         {
             this.id = id;
+            this.nom = nom;
+            this.description = description;
+            this.IdRubrique = idRubrique;
+            this.poids = poids;
+            this.prixUnitaire = prixUnitaire;
+            this.quantiteStock = quantiteStock;
+        }
+
+        public CArticles (String nom, String description, int idRubrique, float poids, float prixUnitaire, int quantiteStock)
+        {
             this.nom = nom;
             this.description = description;
             this.IdRubrique = idRubrique;
